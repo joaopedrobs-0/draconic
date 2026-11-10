@@ -4,7 +4,7 @@ Comment=Ícones do Draconic, a partir do Phosphor 2.1.1 (MIT)
 Inherits=breeze,hicolor
 Example=folder
 FollowsColorScheme=true
-Directories=scalable/actions,scalable/apps,scalable/devices,scalable/emblems,scalable/mimetypes,scalable/places,scalable/status
+Directories=scalable/actions,scalable/apps,scalable/categories,scalable/devices,scalable/emblems,scalable/mimetypes,scalable/places,scalable/status
 
 [scalable/actions]
 Size=16
@@ -19,6 +19,13 @@ MinSize=8
 MaxSize=512
 Type=Scalable
 Context=Applications
+
+[scalable/categories]
+Size=16
+MinSize=8
+MaxSize=512
+Type=Scalable
+Context=Categories
 
 [scalable/devices]
 Size=16
