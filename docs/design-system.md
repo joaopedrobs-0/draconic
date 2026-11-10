@@ -136,6 +136,13 @@ A tecla **Meta** (a do logo do Windows) é a base de tudo.
 | Arquivos | Meta+E |
 | Pré-visualizar arquivo selecionado | Espaço (no Arquivos) |
 
+**Hoje no sistema** (`files/system/etc/skel/.config/kglobalshortcutsrc`, só para usuários novos):
+- **Conflito:** `Meta+Shift+4` está na captura de área e em "Levar a janela para a área 4". Hoje vale a captura; a janela não tem atalho para a área 4. Precisa de decisão.
+- `Meta+Q` fecha a janela (o KDE não tem "fechar o app" genérico).
+- `Meta+A` está livre até existir a Central de controle (Fase 7).
+- Espaço no Arquivos (pré-visualizar) ainda não existe.
+- Atalhos com Shift + número usam o símbolo (`Meta+$`); a área 6 usa `Meta+^`, porque no ABNT2 o Shift+6 é tecla morta.
+
 ## O que o Draconic não faz
 
 - Esferas, brilhos e anéis decorativos; letras gigantes vazadas no fundo.

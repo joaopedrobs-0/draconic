@@ -1,0 +1,3 @@
+# Busca (Meta+Espaço): KRunner solto no centro da tela, como em design/telas/Busca.png.
+[General]
+FreeFloating=true

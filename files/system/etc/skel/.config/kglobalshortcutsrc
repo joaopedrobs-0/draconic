@@ -1,0 +1,62 @@
+# Atalhos do Draconic (docs/design-system.md, seção Atalhos).
+# Fica em /etc/skel: é copiado para cada usuário NOVO quando ele é criado.
+# (O gerenciador de atalhos do KDE não lê padrões de /etc/xdg.)
+# Formato do KDE: Ação=atalho atual,atalho padrão do Plasma,descrição
+# Vários atalhos para a mesma ação são separados por \t.
+# Atalhos com Shift + número usam o SÍMBOLO que o Shift produz (Meta+$ = Meta+Shift+4,
+# Meta+@ = Meta+Shift+2...): é assim que o KDE compara. Valem para ABNT2 e teclado
+# americano, exceto Shift+6 (no ABNT2 é o trema, tecla morta; ficou Meta+^ do americano).
+
+[kwin]
+Overview=Meta+Tab,Meta+W,Alternar para visão geral
+Walk Through Windows=Alt+Tab,Alt+Tab\tMeta+Tab,Passear pelas janelas
+Window Close=Meta+W\tMeta+Q\tAlt+F4,Alt+F4,Fechar janela
+Window Maximize=Meta+Up\tMeta+PgUp,Meta+PgUp,Maximizar janela
+Window Minimize=Meta+M\tMeta+PgDown,Meta+PgDown,Minimizar janela
+Window Quick Tile Top=none,Meta+Up,Colocar a janela lado a lado parte superior
+Window Quick Tile Left=Meta+Left,Meta+Left,Colocar a janela lado a lado à esquerda
+Window Quick Tile Right=Meta+Right,Meta+Right,Colocar a janela lado a lado à direita
+Switch to Desktop 1=Meta+1\tCtrl+F1,Ctrl+F1\tMeta+F1,Mudar para a área de trabalho 1
+Switch to Desktop 2=Meta+2\tCtrl+F2,Ctrl+F2\tMeta+F2,Mudar para a área de trabalho 2
+Switch to Desktop 3=Meta+3\tCtrl+F3,Ctrl+F3\tMeta+F3,Mudar para a área de trabalho 3
+Switch to Desktop 4=Meta+4\tCtrl+F4,Ctrl+F4\tMeta+F4,Mudar para a área de trabalho 4
+Switch to Desktop 5=Meta+5\tCtrl+F5,Ctrl+F5\tMeta+F5,Mudar para a área de trabalho 5
+Switch to Desktop 6=Meta+6\tCtrl+F6,Ctrl+F6\tMeta+F6,Mudar para a área de trabalho 6
+Switch to Desktop 7=Meta+7\tCtrl+F7,Ctrl+F7\tMeta+F7,Mudar para a área de trabalho 7
+Switch to Desktop 8=Meta+8\tCtrl+F8,Ctrl+F8\tMeta+F8,Mudar para a área de trabalho 8
+Switch to Desktop 9=Meta+9\tCtrl+F9,Ctrl+F9\tMeta+F9,Mudar para a área de trabalho 9
+Window to Desktop 1=Meta+!,none,Janela para a área de trabalho 1
+Window to Desktop 2=Meta+@,none,Janela para a área de trabalho 2
+Window to Desktop 3=Meta+#,none,Janela para a área de trabalho 3
+Window to Desktop 4=none,none,Janela para a área de trabalho 4
+Window to Desktop 5=Meta+%,none,Janela para a área de trabalho 5
+Window to Desktop 6=Meta+^,none,Janela para a área de trabalho 6
+Window to Desktop 7=Meta+&,none,Janela para a área de trabalho 7
+Window to Desktop 8=Meta+*,none,Janela para a área de trabalho 8
+Window to Desktop 9=Meta+(,none,Janela para a área de trabalho 9
+
+[plasmashell]
+activate task manager entry 1=none,Meta+1,Ativar entrada 1 do gerenciador de tarefas
+activate task manager entry 2=none,Meta+2,Ativar entrada 2 do gerenciador de tarefas
+activate task manager entry 3=none,Meta+3,Ativar entrada 3 do gerenciador de tarefas
+activate task manager entry 4=none,Meta+4,Ativar entrada 4 do gerenciador de tarefas
+activate task manager entry 5=none,Meta+5,Ativar entrada 5 do gerenciador de tarefas
+activate task manager entry 6=none,Meta+6,Ativar entrada 6 do gerenciador de tarefas
+activate task manager entry 7=none,Meta+7,Ativar entrada 7 do gerenciador de tarefas
+activate task manager entry 8=none,Meta+8,Ativar entrada 8 do gerenciador de tarefas
+activate task manager entry 9=none,Meta+9,Ativar entrada 9 do gerenciador de tarefas
+activate task manager entry 10=none,Meta+0,Ativar entrada 10 do gerenciador de tarefas
+manage activities=none,Meta+Q,Mostrar seletor de atividade
+next activity=none,none,Percorrer as atividades
+
+[services][org.kde.krunner.desktop]
+_launch=Meta+Space\tAlt+Space\tAlt+F2\tSearch
+
+[services][org.kde.konsole.desktop]
+_launch=Meta+Return\tCtrl+Alt+T
+
+[services][org.kde.dolphin.desktop]
+_launch=Meta+E
+
+[services][org.kde.spectacle.desktop]
+RectangularRegionScreenShot=Meta+$\tMeta+Shift+Print
