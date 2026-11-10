@@ -7,3 +7,6 @@ cosign.private
 
 # Downloads guardados pelos scripts de tools/
 tools/.cache/
+
+# Cache do Python
+__pycache__/
