@@ -1,0 +1,19 @@
+{
+    "KPackageStructure": "KWin/Effect",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "Projeto Draconic (baseado nos efeitos Scale e Squash de Vlad Zahorodnii)"
+            }
+        ],
+        "Category": "Window Open/Close Animation",
+        "Description": "Animações do Draconic: abrir, fechar, minimizar, menus, Busca e notificações, com opção de reduzir movimento",
+        "EnabledByDefault": true,
+        "Id": "draconic_movimento",
+        "License": "GPL",
+        "Name": "Movimento do Draconic"
+    },
+    "X-KDE-Ordering": 60,
+    "X-KWin-Exclusive-Category": "toplevel-open-close-animation",
+    "X-Plasma-API": "javascript"
+}

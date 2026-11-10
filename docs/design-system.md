@@ -114,6 +114,12 @@ Cada animação mostra de onde algo veio e para onde foi. Nenhuma passa de 250 m
 
 Curvas: desacelera `cubic-bezier(0.2, 0, 0, 1)`, acelera `cubic-bezier(0.4, 0, 1, 1)`, suave `cubic-bezier(0.4, 0, 0.2, 1)`. Sem efeito elástico nem quique.
 
+**Hoje no sistema** (efeito do KWin `draconic_movimento`, em `files/system/usr/share/kwin/effects/`):
+- Abrir, fechar, minimizar, menus, Busca, painéis da barra e notificações seguem a tabela acima.
+- As curvas são aproximadas, porque os efeitos do KWin só aceitam curvas prontas: desacelera = OutCubic, acelera = InCubic, suave = InOutCubic.
+- **Trocar de área** usa o deslizar do KWin, que funciona como uma mola e não tem duração fixa. **Visão geral** usa a animação do próprio KWin. Nos dois, só a velocidade geral do Plasma muda o ritmo.
+- **Reduzir movimento** é o comando `draconic-reduzir-movimento ligar|desligar`, até existir a tela de Configurações. O Plasma não tem essa opção; a velocidade "Instantânea" dele desliga todas as animações.
+
 ## Atalhos
 
 A tecla **Meta** (a do logo do Windows) é a base de tudo.

@@ -3,3 +3,20 @@
 [Desktops]
 Number=3
 Rows=1
+
+# Movimento (docs/design-system.md): o efeito "Movimento do Draconic"
+# substitui as animações de abrir/fechar (scale), minimizar (squash),
+# menus (fadingpopups), popups dos painéis (slidingpopups) e notificações
+# (slidingnotifications).
+[Plugins]
+draconic_movimentoEnabled=true
+scaleEnabled=false
+squashEnabled=false
+fadingpopupsEnabled=false
+slidingpopupsEnabled=false
+slidingnotificationsEnabled=false
+
+# Com "Reduzir movimento", trocar de área vira um esmaecimento de 100 ms
+# (o comando draconic-reduzir-movimento liga este efeito no lugar do slide).
+[Effect-fadedesktop]
+AnimationDuration=100

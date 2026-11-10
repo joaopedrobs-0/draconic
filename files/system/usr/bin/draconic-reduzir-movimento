@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+# Liga ou desliga o "Reduzir movimento" do Draconic para o usuário atual.
+#
+#   draconic-reduzir-movimento ligar      deslocamentos e escalas viram esmaecimento curto
+#   draconic-reduzir-movimento desligar   volta às animações normais
+#   draconic-reduzir-movimento            mostra o estado atual
+#
+# Enquanto a tela de Configurações do Draconic não existe (Fase 7), este é o
+# jeito de mudar a opção. Vale na hora, sem reiniciar a sessão.
+set -euo pipefail
+
+estado() {
+    local v
+    v=$(kreadconfig6 --file kwinrc --group Effect-draconic_movimento --key ReduzirMovimento --default false)
+    if [ "$v" = "true" ]; then echo "Reduzir movimento: ligado"; else echo "Reduzir movimento: desligado"; fi
+}
+
+kwin() {  # chama um método do KWin pelo DBus da sessão
+    dbus-send --session --dest=org.kde.KWin --type=method_call --print-reply=literal "$@" >/dev/null 2>&1 || true
+}
+
+case "${1:-}" in
+    ligar)
+        kwriteconfig6 --file kwinrc --group Effect-draconic_movimento --key ReduzirMovimento true
+        # Trocar de área: esmaecimento no lugar do deslizar.
+        kwriteconfig6 --file kwinrc --group Plugins --key slideEnabled false
+        kwriteconfig6 --file kwinrc --group Plugins --key fadedesktopEnabled true
+        kwin /Effects org.kde.kwin.Effects.unloadEffect string:slide
+        kwin /Effects org.kde.kwin.Effects.loadEffect string:fadedesktop
+        ;;
+    desligar)
+        kwriteconfig6 --file kwinrc --group Effect-draconic_movimento --key ReduzirMovimento false
+        kwriteconfig6 --file kwinrc --group Plugins --key fadedesktopEnabled false
+        kwriteconfig6 --file kwinrc --group Plugins --key slideEnabled true
+        kwin /Effects org.kde.kwin.Effects.unloadEffect string:fadedesktop
+        kwin /Effects org.kde.kwin.Effects.loadEffect string:slide
+        ;;
+    "")
+        estado
+        exit 0
+        ;;
+    *)
+        echo "Uso: draconic-reduzir-movimento [ligar|desligar]" >&2
+        exit 2
+        ;;
+esac
+
+# Faz o efeito do Draconic reler a opção.
+kwin /KWin org.kde.KWin.reconfigure
+estado
