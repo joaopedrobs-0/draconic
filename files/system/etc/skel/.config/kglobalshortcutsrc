@@ -28,7 +28,7 @@ Switch to Desktop 9=Meta+9\tCtrl+F9,Ctrl+F9\tMeta+F9,Mudar para a área de traba
 Window to Desktop 1=Meta+!,none,Janela para a área de trabalho 1
 Window to Desktop 2=Meta+@,none,Janela para a área de trabalho 2
 Window to Desktop 3=Meta+#,none,Janela para a área de trabalho 3
-Window to Desktop 4=none,none,Janela para a área de trabalho 4
+Window to Desktop 4=Meta+$,none,Janela para a área de trabalho 4
 Window to Desktop 5=Meta+%,none,Janela para a área de trabalho 5
 Window to Desktop 6=Meta+^,none,Janela para a área de trabalho 6
 Window to Desktop 7=Meta+&,none,Janela para a área de trabalho 7
@@ -59,4 +59,4 @@ _launch=Meta+Return\tCtrl+Alt+T
 _launch=Meta+E
 
 [services][org.kde.spectacle.desktop]
-RectangularRegionScreenShot=Meta+$\tMeta+Shift+Print
+RectangularRegionScreenShot=Meta+Shift+S\tMeta+Shift+Print

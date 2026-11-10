@@ -123,7 +123,7 @@ A tecla **Meta** (a do logo do Windows) é a base de tudo.
 | Busca | Meta+Espaço |
 | Visão geral das janelas | Meta+Tab |
 | Central de controle | Meta+A |
-| Captura de uma área | Meta+Shift+4 |
+| Captura de uma área | Meta+Shift+S |
 | Bloquear a tela | Meta+L |
 | Fechar janela | Meta+W |
 | Fechar o app | Meta+Q |
@@ -137,7 +137,7 @@ A tecla **Meta** (a do logo do Windows) é a base de tudo.
 | Pré-visualizar arquivo selecionado | Espaço (no Arquivos) |
 
 **Hoje no sistema** (`files/system/etc/skel/.config/kglobalshortcutsrc`, só para usuários novos):
-- **Conflito:** `Meta+Shift+4` está na captura de área e em "Levar a janela para a área 4". Hoje vale a captura; a janela não tem atalho para a área 4. Precisa de decisão.
+- A captura de área era `Meta+Shift+4`, o que conflitava com "Levar a janela para a área 4". Decisão do dono (10/11/2026): `Meta+Shift+4` leva a janela para a área 4 e a captura passou para `Meta+Shift+S` (`Meta+Shift+Print` também funciona).
 - `Meta+Q` fecha a janela (o KDE não tem "fechar o app" genérico).
 - `Meta+A` está livre até existir a Central de controle (Fase 7).
 - Espaço no Arquivos (pré-visualizar) ainda não existe.
