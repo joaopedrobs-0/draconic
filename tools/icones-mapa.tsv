@@ -523,3 +523,23 @@ redshift-status-on	moon-stars	status
 system-software-update	arrows-clockwise	apps
 tools-check-spelling	checks	actions
 xorg	monitor	apps
+
+# ---- Lote 4: barra de busca, calendário e restos ----
+go-up-search	caret-up	actions
+go-down-search	caret-down	actions
+view-calendar	calendar-blank	actions
+view-calendar-day	calendar-dot	actions
+preview	eye	actions
+zoom	magnifying-glass	actions
+merge	git-merge	actions
+hint	lightbulb	actions
+home	house	places
+chronometer	timer	actions
+compass	compass	actions
+donate	heart	actions
+draw-brush	paint-brush	actions
+error	warning-circle	status
+table	table	actions
+font	text-aa	actions
+flag-green	flag	actions
+followmouse	cursor	actions
