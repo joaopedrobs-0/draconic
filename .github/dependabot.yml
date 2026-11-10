@@ -1,0 +1,7 @@
+# Abre pull requests automáticos quando a action do BlueBuild ganha versão nova.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"

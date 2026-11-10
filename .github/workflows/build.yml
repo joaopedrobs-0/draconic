@@ -1,0 +1,42 @@
+name: bluebuild
+on:
+  schedule:
+    # Todo dia às 06:00 UTC, para a imagem receber as atualizações do Fedora.
+    - cron: "00 06 * * *"
+  push:
+    # Mudanças só de documentação ou de design não geram imagem nova.
+    paths-ignore:
+      - "**.md"
+      - "docs/**"
+      - "design/**"
+  pull_request:
+  workflow_dispatch: # permite rodar o build na mão pela aba Actions
+
+concurrency:
+  # Um build por vez; um build novo cancela o anterior que ainda estiver rodando.
+  group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  bluebuild:
+    name: Construir a imagem do Draconic
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    strategy:
+      fail-fast: false
+      matrix:
+        recipe:
+          - recipe.yml
+    steps:
+      - name: Construir e assinar a imagem
+        uses: blue-build/github-action@v1.14
+        with:
+          recipe: ${{ matrix.recipe }}
+          cosign_private_key: ${{ secrets.SIGNING_SECRET }}
+          registry_token: ${{ github.token }}
+          pr_event_number: ${{ github.event.number }}
+          # Libera espaço em disco no runner do GitHub (a imagem é grande).
+          maximize_build_space: true
