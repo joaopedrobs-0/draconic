@@ -1,5 +1,5 @@
-# Tema global "Draconic Claro". Fase 2: cores, ícones e fontes.
-# Tema do Plasma, papel de parede e layout dos painéis chegam na Fase 3.
+# Tema global "Draconic Claro": cores, ícones, fontes (Fase 2) e
+# tema do Plasma, papel de parede e layout dos painéis (Fase 3).
 
 [kdeglobals][KDE]
 widgetStyle=Breeze
@@ -11,7 +11,10 @@ ColorScheme=DraconicClaro
 Theme=Draconic
 
 [plasmarc][Theme]
-name=default
+name=draconic-claro
+
+[Wallpaper]
+Image=Draconic
 
 [kcminputrc][Mouse]
 cursorTheme=breeze_cursors
