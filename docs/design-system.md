@@ -36,7 +36,12 @@ A qualidade visual sai de poucas regras aplicadas sempre, não de enfeite. Nenhu
 
 Texto com contraste de pelo menos 4,5:1. Estado nunca é indicado só por cor.
 
-**Seleção hoje × meta.** Hoje a seleção em listas e menus usa o âmbar sólido com texto escuro, igual ao botão principal e ao item de menu destacado. O Qt usa uma cor só para seleção, então não dá para ter linha de lista em âmbar translúcido e item de menu sólido ao mesmo tempo. A meta é a linha de lista em âmbar 20% (claro) / 26% (escuro), como em `Main.png`; fica para quando houver um tema Kvantum ou um estilo de widgets próprio.
+**Seleção hoje × meta.** A cor de seleção do esquema é o âmbar sólido com texto escuro, igual ao botão principal. Como ela aparece depende de quem desenha:
+
+- **Listas do Kirigami** (barra lateral das Configurações, apps QML): âmbar sólido com texto `#1A1A1A`.
+- **Widgets Qt com o estilo Breeze** (listas e grade do Dolphin, menus): o Breeze desenha a seleção e o destaque do menu como âmbar translúcido com borda âmbar. É comportamento fixo do Breeze, e já fica perto da meta.
+
+A meta é a linha de lista em âmbar 20% (claro) / 26% (escuro), como em `Main.png`, e o item de menu em âmbar sólido, como em `Componentes.png`. O controle exato fica para quando houver um tema Kvantum ou um estilo de widgets próprio.
 
 ## Tipografia
 
