@@ -4,3 +4,6 @@ cosign.private
 
 # Arquivos da VM de teste local (chave SSH e senha de teste)
 .vm/
+
+# Downloads guardados pelos scripts de tools/
+tools/.cache/
