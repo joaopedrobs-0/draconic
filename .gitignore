@@ -1,3 +1,6 @@
 # Chave privada de assinatura: NUNCA vai para o git
 cosign.key
 cosign.private
+
+# Arquivos da VM de teste local (chave SSH e senha de teste)
+.vm/
