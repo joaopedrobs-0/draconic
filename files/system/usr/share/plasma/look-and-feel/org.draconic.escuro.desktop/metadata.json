@@ -1,0 +1,15 @@
+{
+    "KPackageStructure": "Plasma/LookAndFeel",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "Projeto Draconic"
+            }
+        ],
+        "Description": "Tema escuro do Draconic",
+        "Id": "org.draconic.escuro.desktop",
+        "License": "GPL-2.0-or-later",
+        "Name": "Draconic Escuro",
+        "Website": "https://github.com/joaopedrobs-0/draconic"
+    }
+}
