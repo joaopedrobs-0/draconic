@@ -1,0 +1,3 @@
+# Chave privada de assinatura: NUNCA vai para o git
+cosign.key
+cosign.private
