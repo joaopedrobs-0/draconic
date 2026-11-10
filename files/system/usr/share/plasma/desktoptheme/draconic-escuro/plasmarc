@@ -1,0 +1,12 @@
+# Desfoque e contraste atrás da dock (vidro). A barra superior é sólida.
+[ContrastEffect]
+enabled=true
+contrast=1
+intensity=1
+saturation=1.6
+
+[BlurBehindEffect]
+enabled=true
+
+[AdaptiveTransparency]
+enabled=false

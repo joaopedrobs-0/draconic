@@ -1,0 +1,17 @@
+{
+    "KPackageStructure": "Plasma/Theme",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "Projeto Draconic"
+            }
+        ],
+        "Description": "Tema do Plasma Draconic Escuro",
+        "Id": "draconic-escuro",
+        "License": "GPL-2.0-or-later",
+        "Name": "Draconic Escuro",
+        "Version": "1.0",
+        "Website": "https://github.com/joaopedrobs-0/draconic"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
