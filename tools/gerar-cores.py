@@ -8,6 +8,8 @@ função)" e escreve:
   files/system/usr/share/color-schemes/DraconicEscuro.colors
   files/system/etc/xdg/kdeglobals   (padrões do sistema: fontes, ícones, tema
                                      global e as cores do tema claro)
+  files/system/usr/share/wallpapers/Draconic/   papel de parede liso (token
+                                     "wallpaper"), com versão clara e escura
 
 Uso (na raiz do repositório):
     python3 tools/gerar-cores.py
@@ -24,10 +26,11 @@ RAIZ = Path(__file__).resolve().parent.parent
 DOC = RAIZ / "docs" / "design-system.md"
 SAIDA_CORES = RAIZ / "files/system/usr/share/color-schemes"
 SAIDA_KDEGLOBALS = RAIZ / "files/system/etc/xdg/kdeglobals"
+SAIDA_PAPEL = RAIZ / "files/system/usr/share/wallpapers/Draconic"
 
 # Tokens que precisam existir no documento.
 OBRIGATORIOS = [
-    "text.primary", "text.secondary", "surface.window", "surface.chrome",
+    "wallpaper", "text.primary", "text.secondary", "surface.window", "surface.chrome",
     "surface.elevated", "fill", "border.separator", "accent", "on-accent",
     "status.success", "status.warning", "status.error",
 ]
@@ -188,6 +191,46 @@ def main() -> None:
     SAIDA_KDEGLOBALS.parent.mkdir(parents=True, exist_ok=True)
     SAIDA_KDEGLOBALS.write_text(CABECALHO + escrever_ini(padroes), encoding="utf-8")
     print(f"escrito: {SAIDA_KDEGLOBALS.relative_to(RAIZ)}")
+    papel_de_parede(claro, escuro)
+
+
+def papel_de_parede(claro: dict[str, str], escuro: dict[str, str]) -> None:
+    """Pacote de papel de parede liso: images/ (claro) e images_dark/ (escuro).
+
+    O Plasma troca sozinho para images_dark/ quando o tema escuro está ativo.
+    """
+    import json
+    import struct
+    import zlib
+
+    def png_liso(hexa: str, largura: int, altura: int) -> bytes:
+        cor = bytes(int(hexa[i:i + 2], 16) for i in (0, 2, 4))
+        linha = b"\x00" + cor * largura
+        dados = zlib.compress(linha * altura, 9)
+
+        def bloco(tipo: bytes, conteudo: bytes) -> bytes:
+            return (struct.pack(">I", len(conteudo)) + tipo + conteudo
+                    + struct.pack(">I", zlib.crc32(tipo + conteudo) & 0xFFFFFFFF))
+
+        return (b"\x89PNG\r\n\x1a\n"
+                + bloco(b"IHDR", struct.pack(">IIBBBBB", largura, altura, 8, 2, 0, 0, 0))
+                + bloco(b"IDAT", dados) + bloco(b"IEND", b""))
+
+    meta = {
+        "KPackageStructure": "Wallpaper/Images",
+        "KPlugin": {
+            "Authors": [{"Name": "Projeto Draconic"}],
+            "Id": "Draconic",
+            "License": "CC0-1.0",
+            "Name": "Draconic",
+        },
+    }
+    for pasta, t in (("images", claro), ("images_dark", escuro)):
+        destino = SAIDA_PAPEL / "contents" / pasta
+        destino.mkdir(parents=True, exist_ok=True)
+        (destino / "3840x2160.png").write_bytes(png_liso(t["wallpaper"], 3840, 2160))
+    (SAIDA_PAPEL / "metadata.json").write_text(json.dumps(meta, indent=4) + "\n", encoding="utf-8")
+    print(f"escrito: {SAIDA_PAPEL.relative_to(RAIZ)} (claro #{claro['wallpaper']}, escuro #{escuro['wallpaper']})")
 
 
 if __name__ == "__main__":

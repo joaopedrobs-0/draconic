@@ -1,0 +1,13 @@
+{
+    "KPackageStructure": "Wallpaper/Images",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "Projeto Draconic"
+            }
+        ],
+        "Id": "Draconic",
+        "License": "CC0-1.0",
+        "Name": "Draconic"
+    }
+}
