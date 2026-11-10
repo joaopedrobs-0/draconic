@@ -45,11 +45,28 @@ CONTEXTOS = {
 # Cor usada só quando o app não aplica o esquema de cores (o KDE troca pela cor do tema).
 COR_PADRAO = "#1A1A1A"
 
-MODELO = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="16" height="16">
+MODELO = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="{viewbox}" width="16" height="16">
 <style id="current-color-scheme" type="text/css">.ColorScheme-Text {{ color:{cor}; }}</style>
 <g class="ColorScheme-Text" fill="currentColor">{conteudo}</g>
 </svg>
 """
+VIEWBOX_PHOSPHOR = "0 0 256 256"
+
+# Ícones próprios do Draconic: no mapa, a coluna do Phosphor começa com "@".
+# "@marca" = assets/logo/draconic-mark.svg (marca reduzida, uma cor).
+PROPRIOS = {"@marca": RAIZ / "assets" / "logo" / "draconic-mark.svg"}
+
+
+def ler_proprio(chave: str) -> tuple[str, str]:
+    """Devolve (viewBox quadrado, conteúdo) de um SVG próprio de uma cor só."""
+    texto = PROPRIOS[chave].read_text(encoding="utf-8")
+    vb = [float(v) for v in re.search(r'viewBox="([^"]+)"', texto).group(1).split()]
+    lado = max(vb[2], vb[3])
+    x = vb[0] - (lado - vb[2]) / 2
+    y = vb[1] - (lado - vb[3]) / 2
+    interno = re.search(r"<svg[^>]*>(.*)</svg>", texto, re.S).group(1).strip()
+    interno = re.sub(r'\sfill="[^"]*"', "", interno)  # a cor vem do tema
+    return f"{x:g} {y:g} {lado:g} {lado:g}", interno
 
 
 def baixar_phosphor() -> bytes:
@@ -107,9 +124,10 @@ def ler_mapa() -> list[tuple[str, str, str]]:
 def main() -> None:
     svgs, licenca = ler_svgs(baixar_phosphor())
     entradas = ler_mapa()
-    faltando = sorted({p for _, p, _ in entradas if p not in svgs})
+    faltando = sorted({p for _, p, _ in entradas
+                       if p not in svgs and p not in PROPRIOS})
     if faltando:
-        sys.exit("Ícones que não existem no Phosphor: " + ", ".join(faltando))
+        sys.exit("Ícones que não existem no Phosphor nem em PROPRIOS: " + ", ".join(faltando))
 
     if SAIDA.exists():
         shutil.rmtree(SAIDA)
@@ -117,7 +135,11 @@ def main() -> None:
     for nome, phosphor, ctx in entradas:
         pasta = SAIDA / "scalable" / ctx
         pasta.mkdir(parents=True, exist_ok=True)
-        svg = MODELO.format(cor=COR_PADRAO, conteudo=svgs[phosphor])
+        if phosphor in PROPRIOS:
+            viewbox, conteudo = ler_proprio(phosphor)
+        else:
+            viewbox, conteudo = VIEWBOX_PHOSPHOR, svgs[phosphor]
+        svg = MODELO.format(viewbox=viewbox, cor=COR_PADRAO, conteudo=conteudo)
         for arquivo in (f"{nome}.svg", f"{nome}-symbolic.svg"):
             if nome.endswith("-symbolic") and arquivo.endswith("-symbolic-symbolic.svg"):
                 continue
