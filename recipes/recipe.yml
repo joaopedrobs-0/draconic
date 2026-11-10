@@ -13,16 +13,26 @@ image-version: 45
 
 # Passos executados em ordem durante a construção.
 modules:
-  # Copia tudo de files/system/ para a raiz (/) da imagem.
+  # Fontes do design (docs/design-system.md, Tipografia).
+  # A Michroma não tem pacote no Fedora e vem em files/system/usr/share/fonts/michroma.
+  - type: dnf
+    install:
+      packages:
+        - ibm-plex-sans-fonts
+        - ibm-plex-mono-fonts
+
+  # Copia tudo de files/system/ para a raiz (/) da imagem:
+  # fontes, esquemas de cor, temas globais, tema de ícones e /etc/xdg/kdeglobals.
   - type: files
     files:
       - source: system
         destination: /
 
-  # Identidade do sistema: nome "Draconic" no os-release.
+  # Identidade do sistema (nome "Draconic" no os-release) e caches de fontes/ícones.
   - type: script
     scripts:
       - os-release.sh
+      - caches.sh
 
   # Instala as políticas que permitem verificar a assinatura da imagem
   # (necessário para o rebase com ostree-image-signed).
