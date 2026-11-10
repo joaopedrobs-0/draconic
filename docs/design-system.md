@@ -27,7 +27,7 @@ A qualidade visual sai de poucas regras aplicadas sempre, não de enfeite. Nenhu
 | `control.border` | `#B8B8BC` | `#55555A` | borda de campos e botões |
 | `accent` | `#C8873A` | `#D99A4E` | botão principal, seleção, foco, prompt do terminal |
 | `on-accent` | `#1A1A1A` | `#1A1A1A` | texto sobre o destaque |
-| `selection.active` | âmbar 20% | âmbar 26% | linha/item selecionado |
+| `selection.active` | `#C8873A` sólido, texto `#1A1A1A` | `#D99A4E` sólido, texto `#1A1A1A` | linha/item selecionado em listas e menus |
 | `focus.ring` | âmbar 55% | âmbar 60% | anel de foco de 3 px |
 | `status.success` | `#2F6B3A` | `#6FBF7A` | sucesso |
 | `status.warning` | `#8A5320` | `#E0A867` | aviso |
@@ -35,6 +35,8 @@ A qualidade visual sai de poucas regras aplicadas sempre, não de enfeite. Nenhu
 | terminal | `#161616` fundo, `#D6D6D9` texto | igual | o terminal é escuro nos dois temas |
 
 Texto com contraste de pelo menos 4,5:1. Estado nunca é indicado só por cor.
+
+**Seleção hoje × meta.** Hoje a seleção em listas e menus usa o âmbar sólido com texto escuro, igual ao botão principal e ao item de menu destacado. O Qt usa uma cor só para seleção, então não dá para ter linha de lista em âmbar translúcido e item de menu sólido ao mesmo tempo. A meta é a linha de lista em âmbar 20% (claro) / 26% (escuro), como em `Main.png`; fica para quando houver um tema Kvantum ou um estilo de widgets próprio.
 
 ## Tipografia
 
@@ -53,7 +55,8 @@ IBM Plex e Michroma são livres (OFL). Michroma substitui a Nasalization, que ex
 ## Espaço e forma
 
 - Espaçamento só em **4, 8, 12, 16, 24, 32, 48** px.
-- Cantos: **6** controles · **8** menus, painéis e grupos · **12** janelas · **16** dock e Busca.
+- Cantos (meta): **6** controles · **8** menus, painéis e grupos · **12** janelas · **16** dock e Busca.
+  - **Hoje vale o raio do Breeze.** O Plasma não permite configurar o raio dos cantos dos controles nem das janelas. Os valores acima são a meta, para quando houver um tema Kvantum ou um estilo próprio. Painéis e dock (Plasma) podem seguir a meta antes, porque usam o tema do Plasma.
 - Altura de controles: 24 (compacto), 28 (barra de ferramentas), 32 (padrão), 40 (instalador).
 - Barra superior: 28 px. Barra de título/ferramentas: 48 px. Barra de status: 28 px.
 
