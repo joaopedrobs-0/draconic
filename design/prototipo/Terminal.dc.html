@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Draconic — Terminal</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 900px; overflow: hidden; background: #B7B9BC; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 13px; color: #1A1A1A">
+
+  <header style="position: absolute; top: 0; left: 0; right: 0; height: 28px; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; background: #F3F3F2; border-bottom: 1px solid #CFCFD1">
+    <nav aria-label="Menu do aplicativo" style="display: flex; align-items: center; gap: 16px">
+      <span style="width: 24px; height: 24px; display: flex; align-items: center; justify-content: center"><svg width="14" height="16" viewBox="337 299 579 640" aria-hidden="true"><path fill="#1A1A1A" fill-rule="evenodd" d="{{mark}}"></path></svg></span>
+      <span style="font-weight: 600">Terminal</span><span>Shell</span><span>Editar</span><span>Ver</span><span>Janela</span><span>Ajuda</span>
+    </nav>
+    <span>Seg 9 nov  21:52</span>
+  </header>
+
+  <section aria-label="Janela Terminal" style="position: absolute; left: 160px; top: 72px; width: 1120px; height: 720px; display: flex; flex-direction: column; background: #161616; border: 1px solid #303032; border-radius: 12px; box-shadow: 0 20px 48px rgba(0,0,0,0.35); overflow: hidden">
+    <div role="tablist" aria-label="Abas" style="height: 40px; flex-shrink: 0; box-sizing: border-box; padding: 0 4px 0 8px; display: flex; align-items: center; gap: 4px; background: #202021; border-bottom: 1px solid #2C2C2E">
+      <span role="tab" aria-selected="true" style="height: 28px; padding: 0 12px; display: flex; align-items: center; gap: 8px; border-radius: 6px; background: #161616; color: #EDEDED; font-size: 12px; font-weight: 500">draconic — git<span aria-hidden="true" style="font-size: 11px; color: #8E8E93">Meta+1</span></span>
+      <span role="tab" aria-selected="false" style="height: 28px; padding: 0 12px; display: flex; align-items: center; gap: 8px; border-radius: 6px; color: #A6A6AB; font-size: 12px">~ — zsh<span aria-hidden="true" style="font-size: 11px; color: #6E6E73">Meta+2</span></span>
+      <button aria-label="Nova aba" style="width: 28px; height: 28px; border: none; border-radius: 6px; background: transparent; color: #A6A6AB; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path></svg></button>
+      <span style="flex-grow: 1"></span>
+      <button aria-label="Minimizar" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 6px; color: #BDBDC1; cursor: pointer"><svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z"></path></svg></button>
+      <button aria-label="Maximizar" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 6px; color: #BDBDC1; cursor: pointer"><svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,48V88a8,8,0,0,1-16,0V56H168a8,8,0,0,1,0-16h40A8,8,0,0,1,216,48ZM88,200H56V168a8,8,0,0,0-16,0v40a8,8,0,0,0,8,8H88a8,8,0,0,0,0-16Zm120-40a8,8,0,0,0-8,8v32H168a8,8,0,0,0,0,16h40a8,8,0,0,0,8-8V168A8,8,0,0,0,208,160ZM88,40H48a8,8,0,0,0-8,8V88a8,8,0,0,0,16,0V56H88a8,8,0,0,0,0-16Z"></path></svg></button>
+      <button aria-label="Fechar" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 6px; color: #BDBDC1; cursor: pointer"><svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg></button>
+    </div>
+    <div style="flex-grow: 1; box-sizing: border-box; padding: 16px 20px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; line-height: 1.65; color: #D6D6D9; white-space: pre"><span style="color: #8E8E93">~</span> <span style="color: #D99A4E">$</span> cd Projetos/draconic
+<span style="color: #8E8E93">~/Projetos/draconic</span> <span style="color: #D99A4E">$</span> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+<span style="color: #8E8E93">~/Projetos/draconic</span> <span style="color: #D99A4E">$</span> ls
+<span style="color: #EDEDED; font-weight: 500">assets/</span>  <span style="color: #EDEDED; font-weight: 500">docs/</span>  README.md
+<span style="color: #8E8E93">~/Projetos/draconic</span> <span style="color: #D99A4E">$</span> git log --oneline -3
+<span style="color: #D99A4E">38a343e</span> Primeira versão: logo, sistema de design e prompt de construção
+<span style="color: #8E8E93">~/Projetos/draconic</span> <span style="color: #D99A4E">$</span> rpm-ostree status --booted
+State: idle
+BootedDeployment:
+● ostree-image-signed:docker://ghcr.io/draconic/draconic:1.0
+                 Version: 1.0 (2026-11-08T21:14:02Z)
+<span style="color: #8E8E93">~/Projetos/draconic</span> <span style="color: #D99A4E">$</span> <span style="display: inline-block; width: 8px; height: 16px; vertical-align: -3px; background: #D6D6D9"></span></div>
+    <div style="height: 24px; flex-shrink: 0; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; background: #1C1C1D; border-top: 1px solid #2C2C2E; font-size: 11px; color: #8E8E93">
+      <span>zsh · ~/Projetos/draconic</span>
+      <span>120 × 34</span>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { mark: 'M441,678 L421,699 L402,726 L391,748 L381,778 L381,786 L388,798 L405,822 L422,842 L448,867 L473,886 L503,904 L537,919 L571,929 L600,934 L654,935 L671,933 L671,929 L652,924 L620,910 L591,892 L571,876 L551,856 L533,832 L521,809 L513,784 L511,769 L511,752 L513,738 L521,712 L530,694 L541,677 L555,660 L576,640 L599,624 L600,619 L579,620 L552,624 L518,633 L500,640 L475,653 L461,662Z M580,346 L544,358 L525,367 L518,372 L598,413 L656,445 L722,486 L765,517 L784,574 L803,591 L813,598 L837,612 L866,624 L872,633 L880,652 L880,657 L872,685 L857,716 L832,734 L805,748 L802,747 L807,730 L807,716 L805,712 L784,702 L754,692 L729,686 L708,683 L663,684 L647,687 L627,694 L614,701 L599,712 L589,722 L579,735 L571,750 L565,769 L564,798 L571,822 L578,836 L594,858 L613,877 L639,896 L672,913 L691,920 L709,924 L729,917 L756,904 L776,892 L804,871 L830,846 L843,831 L858,811 L874,785 L893,743 L901,718 L909,680 L911,663 L912,631 L911,630 L910,604 L905,575 L898,549 L886,516 L864,474 L845,447 L827,426 L807,407 L784,389 L762,375 L730,359 L708,351 L685,345 L647,340 L622,340 L621,341 L601,342Z M341,408 L341,425 L344,441 L355,475 L367,498 L389,527 L368,562 L356,592 L349,620 L346,641 L345,669 L346,670 L346,686 L348,701 L353,723 L354,723 L354,716 L359,693 L369,667 L376,654 L397,624 L431,590 L445,579 L470,563 L498,550 L533,541 L551,539 L573,539 L546,528 L496,516 L458,504 L415,484 L388,466 L367,447 L351,427Z M428,303 L426,316 L426,346 L429,367 L439,397 L447,412 L459,428 L472,436 L483,439 L537,446 L573,455 L609,469 L623,476 L610,462 L591,447 L562,428 L512,399 L484,378 L459,353 L448,339 L435,318 L430,305Z' };
+  }
+}
+</script>
+</body>
+</html>

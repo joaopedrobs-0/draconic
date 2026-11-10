@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Draconic — Configurações</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400&amp;family=Michroma&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:var(--text)}a:hover{color:var(--text)}
+.th-light{--wall:#B7B9BC;--menubar:#F3F3F2;--menuline:#CFCFD1;--text:#1A1A1A;--surface:#FFFFFF;--winborder:#C4C4C7;--window:#F6F6F5;--sep:#E2E2E3;--text2:#55555A;--sidebar:#EDEDEC;--sideline:#DCDCDE;--fill:#E0E0E1;--icon:#3A3A3D;--disabled:#A3A3A6;--control:#B8B8BC}
+.th-dark{--wall:#3A3B3D;--menubar:#262628;--menuline:#38383B;--text:#EDEDED;--surface:#2A2A2C;--winborder:#4A4A4E;--window:#1E1E1F;--sep:#38383B;--text2:#A6A6AB;--sidebar:#262628;--sideline:#38383B;--fill:#333336;--icon:#C8C8CC;--disabled:#6E6E73;--control:#55555A}
+</style>
+</helmet>
+<div class="{{themeClass}}" style="position: relative; width: 1440px; height: 900px; overflow: hidden; background: var(--wall); font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 13px; color: var(--text)">
+
+  <header style="position: absolute; top: 0; left: 0; right: 0; height: 28px; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; background: var(--menubar); border-bottom: 1px solid var(--menuline)">
+    <nav aria-label="Menu do aplicativo" style="display: flex; align-items: center; gap: 16px">
+      <button aria-label="Menu do sistema" style="width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; padding: 0; cursor: pointer">
+        <svg width="14" height="16" viewBox="337 299 579 640" aria-hidden="true"><path fill="var(--text)" fill-rule="evenodd" d="M441,678 L421,699 L402,726 L391,748 L381,778 L381,786 L388,798 L405,822 L422,842 L448,867 L473,886 L503,904 L537,919 L571,929 L600,934 L654,935 L671,933 L671,929 L652,924 L620,910 L591,892 L571,876 L551,856 L533,832 L521,809 L513,784 L511,769 L511,752 L513,738 L521,712 L530,694 L541,677 L555,660 L576,640 L599,624 L600,619 L579,620 L552,624 L518,633 L500,640 L475,653 L461,662Z M580,346 L544,358 L525,367 L518,372 L598,413 L656,445 L722,486 L765,517 L784,574 L803,591 L813,598 L837,612 L866,624 L872,633 L880,652 L880,657 L872,685 L857,716 L832,734 L805,748 L802,747 L807,730 L807,716 L805,712 L784,702 L754,692 L729,686 L708,683 L663,684 L647,687 L627,694 L614,701 L599,712 L589,722 L579,735 L571,750 L565,769 L564,798 L571,822 L578,836 L594,858 L613,877 L639,896 L672,913 L691,920 L709,924 L729,917 L756,904 L776,892 L804,871 L830,846 L843,831 L858,811 L874,785 L893,743 L901,718 L909,680 L911,663 L912,631 L911,630 L910,604 L905,575 L898,549 L886,516 L864,474 L845,447 L827,426 L807,407 L784,389 L762,375 L730,359 L708,351 L685,345 L647,340 L622,340 L621,341 L601,342Z M341,408 L341,425 L344,441 L355,475 L367,498 L389,527 L368,562 L356,592 L349,620 L346,641 L345,669 L346,670 L346,686 L348,701 L353,723 L354,723 L354,716 L359,693 L369,667 L376,654 L397,624 L431,590 L445,579 L470,563 L498,550 L533,541 L551,539 L573,539 L546,528 L496,516 L458,504 L415,484 L388,466 L367,447 L351,427Z M428,303 L426,316 L426,346 L429,367 L439,397 L447,412 L459,428 L472,436 L483,439 L537,446 L573,455 L609,469 L623,476 L610,462 L591,447 L562,428 L512,399 L484,378 L459,353 L448,339 L435,318 L430,305Z"></path></svg>
+      </button>
+      <span style="font-weight: 600">Configurações</span><span>Editar</span><span>Ver</span><span>Janela</span><span>Ajuda</span>
+    </nav>
+    <span>Seg 9 nov  21:20</span>
+  </header>
+
+  <section aria-label="Janela Configurações" style="position: absolute; left: 160px; top: 64px; width: 1120px; height: 776px; display: flex; background: var(--window); border: 1px solid var(--winborder); border-radius: 12px; box-shadow: 0 16px 40px rgba(0,0,0,0.18); overflow: hidden">
+
+    <nav aria-label="Seções" style="width: 248px; flex-shrink: 0; box-sizing: border-box; padding: 12px 8px; display: flex; flex-direction: column; gap: 2px; background: var(--sidebar); border-right: 1px solid var(--sideline)">
+      <label style="height: 28px; box-sizing: border-box; margin: 4px 4px 12px; padding: 0 8px; display: flex; align-items: center; gap: 8px; border-radius: 6px; background: var(--fill); color: var(--text2)">
+        <svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+        <input aria-label="Buscar nas configurações" placeholder="Buscar" style="flex-grow: 1; border: none; outline: none; background: transparent; font: inherit; color: var(--text)">
+      </label>
+      <sc-for list="{{nav}}" as="n" hint-placeholder-count="12">
+        <sc-if value="{{n.gap}}" hint-placeholder-val="{{ false }}"><span style="height: 12px"></span></sc-if>
+        <sc-if value="{{n.link}}" hint-placeholder-val="{{ true }}">
+          <a href="#" style="height: 28px; padding: 0 8px; display: flex; align-items: center; gap: 8px; border-radius: 6px; text-decoration: none; background: {{n.bg}}; font-weight: {{n.weight}}">
+            <svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{n.icon}}"></path></svg>{{n.name}}
+          </a>
+        </sc-if>
+      </sc-for>
+    </nav>
+
+    <div style="flex-grow: 1; display: flex; flex-direction: column; min-width: 0">
+      <div style="height: 48px; flex-shrink: 0; box-sizing: border-box; padding: 0 8px 0 16px; display: flex; align-items: center; gap: 4px; border-bottom: 1px solid var(--sep)">
+        <button aria-label="Voltar" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 6px; color: var(--text); cursor: pointer"><svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path></svg></button>
+        <button aria-label="Avançar" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 6px; color: var(--disabled); cursor: pointer"><svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path></svg></button>
+        <h1 style="margin: 0 0 0 8px; font-size: 15px; font-weight: 600">{{paneTitle}}</h1>
+        <span style="flex-grow: 1"></span>
+        <button aria-label="Minimizar" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 6px; color: var(--icon); cursor: pointer"><svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z"></path></svg></button>
+        <button aria-label="Fechar" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 6px; color: var(--icon); cursor: pointer"><svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg></button>
+      </div>
+
+      <main style="flex-grow: 1; box-sizing: border-box; padding: 24px 32px; display: flex; flex-direction: column; gap: 24px; max-width: 760px">
+        <sc-if value="{{isAppearance}}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; flex-direction: column; gap: 24px">
+        <section style="display: flex; flex-direction: column; gap: 8px">
+          <h2 style="margin: 0; font-size: 13px; font-weight: 600">Tema</h2>
+          <div role="radiogroup" aria-label="Tema" style="display: flex; gap: 16px">
+            <sc-for list="{{themes}}" as="th" hint-placeholder-count="3">
+              <label style="display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer">
+                <input type="radio" name="tema" aria-label="{{th.name}}" style="position: absolute; opacity: 0; width: 1px; height: 1px">
+                <span style="position: relative; width: 136px; height: 88px; box-sizing: border-box; border-radius: 8px; overflow: hidden; background: {{th.wall}}; box-shadow: {{th.ring}}">
+                  <span style="position: absolute; left: 12px; top: 12px; width: 96px; height: 60px; border-radius: 4px; background: {{th.win}}; box-shadow: 0 2px 6px rgba(0,0,0,0.18)"></span>
+                  <span style="position: absolute; left: 12px; top: 12px; width: 28px; height: 60px; border-radius: 4px 0 0 4px; background: {{th.side}}"></span>
+                  <span style="position: absolute; left: 48px; top: 24px; width: 40px; height: 6px; border-radius: 3px; background: {{th.line}}"></span>
+                  <span style="position: absolute; left: 48px; top: 36px; width: 28px; height: 6px; border-radius: 3px; background: #C8873A"></span>
+                </span>
+                <span style="font-size: 12px; font-weight: {{th.weight}}">{{th.name}}</span>
+              </label>
+            </sc-for>
+          </div>
+        </section>
+
+        <section style="display: flex; flex-direction: column; gap: 8px">
+          <h2 style="margin: 0; font-size: 13px; font-weight: 600">Cor de destaque</h2>
+          <div style="display: flex; align-items: center; gap: 12px">
+            <div role="radiogroup" aria-label="Cor de destaque" style="display: flex; gap: 8px">
+              <sc-for list="{{accents}}" as="a" hint-placeholder-count="6">
+                <button role="radio" aria-checked="{{a.sel}}" aria-label="{{a.name}}" style="width: 24px; height: 24px; border-radius: 50%; border: none; padding: 0; background: {{a.hex}}; box-shadow: {{a.ring}}; cursor: pointer"></button>
+              </sc-for>
+            </div>
+            <span style="font-size: 12px; color: var(--text2)">Âmbar queimado</span>
+          </div>
+          <span style="font-size: 12px; color: var(--text2)">Usada no botão principal, na seleção e no foco do teclado.</span>
+        </section>
+
+        <sc-for list="{{groups}}" as="g" hint-placeholder-count="2">
+          <section style="display: flex; flex-direction: column; gap: 8px">
+            <h2 style="margin: 0; font-size: 13px; font-weight: 600">{{g.title}}</h2>
+            <div style="background: var(--surface); border: 1px solid var(--sep); border-radius: 8px; display: flex; flex-direction: column">
+              <sc-for list="{{g.rows}}" as="r" hint-placeholder-count="3">
+                <div style="min-height: 44px; box-sizing: border-box; padding: 8px 12px; display: flex; align-items: center; gap: 16px; border-top: {{r.top}}">
+                  <span style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px"><span>{{r.label}}</span><sc-if value="{{r.hasNote}}" hint-placeholder-val="{{ false }}"><span style="font-size: 11px; color: var(--text2)">{{r.note}}</span></sc-if></span>
+                  <sc-if value="{{r.popup}}" hint-placeholder-val="{{ true }}">
+                    <button aria-label="{{r.label}}" style="height: 24px; padding: 0 8px; display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--control); border-radius: 6px; font: inherit; font-size: 13px; color: var(--text); cursor: pointer">{{r.value}}<svg width="10" height="10" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg></button>
+                  </sc-if>
+                  <sc-if value="{{r.switch}}" hint-placeholder-val="{{ false }}">
+                    <button role="switch" aria-checked="{{r.on}}" aria-label="{{r.label}}" style="width: 36px; height: 20px; box-sizing: border-box; padding: 0 2px; display: flex; align-items: center; justify-content: {{r.justify}}; border-radius: 10px; border: 1px solid {{r.track}}; background: {{r.track}}; cursor: pointer"><span style="width: 16px; height: 16px; border-radius: 50%; background: #FFFFFE; box-shadow: 0 1px 2px rgba(0,0,0,0.3)"></span></button>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+          </section>
+        </sc-for>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{isKeys}}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 16px">
+          <section style="display: flex; flex-direction: column; gap: 8px">
+            <div style="background: var(--surface); border: 1px solid var(--sep); border-radius: 8px; display: flex; flex-direction: column">
+              <div style="min-height: 44px; box-sizing: border-box; padding: 8px 12px; display: flex; align-items: center; gap: 16px">
+                <span style="flex-grow: 1">Layout do teclado</span>
+                <button aria-label="Layout do teclado" style="height: 24px; padding: 0 8px; display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--control); border-radius: 6px; font: inherit; font-size: 13px; color: var(--text); cursor: pointer">Português (Brasil, ABNT2)<svg width="10" height="10" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg></button>
+              </div>
+              <div style="min-height: 44px; box-sizing: border-box; padding: 8px 12px; display: flex; align-items: center; gap: 16px; border-top: 1px solid var(--sep)">
+                <span style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px"><span>Tecla Meta</span><span style="font-size: 11px; color: var(--text2)">A tecla com o logo do Windows. Quase todo atalho do Draconic começa por ela.</span></span>
+                <span style="font-size: 13px; color: var(--text2)">Tecla Windows</span>
+              </div>
+            </div>
+          </section>
+          <label style="height: 28px; box-sizing: border-box; padding: 0 8px; display: flex; align-items: center; gap: 8px; border-radius: 6px; border: 1px solid var(--control); background: var(--surface); color: var(--text2); max-width: 320px">
+            <svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+            <input aria-label="Buscar atalho" placeholder="Buscar atalho ou ação" style="flex-grow: 1; border: none; outline: none; background: transparent; font: inherit; color: var(--text)">
+          </label>
+          <sc-for list="{{shortcuts}}" as="g" hint-placeholder-count="3">
+            <section style="display: flex; flex-direction: column; gap: 8px">
+              <h2 style="margin: 0; font-size: 13px; font-weight: 600">{{g.title}}</h2>
+              <div style="background: var(--surface); border: 1px solid var(--sep); border-radius: 8px; display: flex; flex-direction: column">
+                <sc-for list="{{g.rows}}" as="r" hint-placeholder-count="4">
+                  <div style="height: 32px; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; gap: 16px; border-top: {{r.top}}; background: {{r.bg}}">
+                    <span style="flex-grow: 1">{{r.label}}</span>
+                    <sc-if value="{{r.recording}}" hint-placeholder-val="{{ false }}">
+                      <span style="height: 24px; padding: 0 8px; display: flex; align-items: center; border-radius: 6px; border: 1px solid #C8873A; box-shadow: 0 0 0 3px rgba(200,135,58,0.35); background: var(--surface); font-size: 12px; color: var(--text2)">Pressione o novo atalho…</span>
+                      <button style="height: 24px; padding: 0 8px; border-radius: 6px; border: 1px solid var(--control); background: var(--surface); font: inherit; font-size: 12px; color: var(--text); cursor: pointer">Cancelar</button>
+                    </sc-if>
+                    <sc-if value="{{r.idle}}" hint-placeholder-val="{{ true }}">
+                      <span style="display: flex; gap: 4px">
+                        <sc-for list="{{r.keys}}" as="k" hint-placeholder-count="2">
+                          <kbd style="min-width: 24px; height: 22px; box-sizing: border-box; padding: 0 6px; display: flex; align-items: center; justify-content: center; border-radius: 5px; border: 1px solid var(--control); border-bottom-width: 2px; background: var(--window); font-family: inherit; font-size: 12px; color: var(--text)">{{k.k}}</kbd>
+                        </sc-for>
+                      </span>
+                    </sc-if>
+                  </div>
+                </sc-for>
+              </div>
+            </section>
+          </sc-for>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{isAbout}}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 24px; padding-top: 16px">
+          <svg width="96" height="106" viewBox="337 299 579 640" role="img" aria-label="Logo Draconic"><path fill="{{logoGray}}" fill-rule="evenodd" d="{{logoG}}"></path><path fill="var(--text)" fill-rule="evenodd" d="{{logoK}}"></path></svg>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 4px">
+            <span style="font-family: Michroma, sans-serif; font-size: 22px; letter-spacing: 0.04em">DRACONIC</span>
+            <span style="font-size: 13px; color: var(--text2)">Versão 1.0 · instalada em 8 nov 2026</span>
+          </div>
+          <div style="align-self: stretch; background: var(--surface); border: 1px solid var(--sep); border-radius: 8px; display: flex; flex-direction: column">
+            <sc-for list="{{about}}" as="a" hint-placeholder-count="7">
+              <div style="height: 36px; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; gap: 16px; border-top: {{a.top}}">
+                <span style="width: 200px; flex-shrink: 0; color: var(--text2)">{{a.label}}</span>
+                <span style="flex-grow: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: {{a.font}}">{{a.value}}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div style="align-self: stretch; display: flex; flex-wrap: wrap; gap: 8px">
+            <button style="height: 28px; padding: 0 12px; border-radius: 6px; border: 1px solid #C8873A; background: #C8873A; color: #1A1A1A; font: inherit; font-size: 13px; font-weight: 500; cursor: pointer">Procurar atualizações</button>
+            <button style="height: 28px; padding: 0 12px; border-radius: 6px; border: 1px solid var(--control); background: var(--surface); color: var(--text); font: inherit; font-size: 13px; cursor: pointer">Voltar para a versão 0.9…</button>
+            <button style="height: 28px; padding: 0 12px; border-radius: 6px; border: 1px solid var(--control); background: var(--surface); color: var(--text); font: inherit; font-size: 13px; cursor: pointer">Notas da versão</button>
+          </div>
+          <span style="align-self: flex-start; font-size: 12px; color: var(--text2)">Draconic é um projeto independente baseado no Fedora. Não é um produto oficial do Projeto Fedora.</span>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{isWifi}}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 24px">
+          <div style="background: var(--surface); border: 1px solid var(--sep); border-radius: 8px; display: flex; flex-direction: column">
+            <div style="min-height: 52px; box-sizing: border-box; padding: 8px 12px; display: flex; align-items: center; gap: 12px">
+              <span style="width: 32px; height: 32px; border-radius: 8px; background: #C8873A; color: #1A1A1A; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{wifiIcons.high}}"></path></svg></span>
+              <span style="flex-grow: 1; font-weight: 600">Wi-Fi</span>
+              <button role="switch" aria-checked="true" aria-label="Wi-Fi" style="width: 36px; height: 20px; box-sizing: border-box; padding: 0 2px; display: flex; align-items: center; justify-content: flex-end; border-radius: 10px; border: 1px solid #C8873A; background: #C8873A; cursor: pointer"><span style="width: 16px; height: 16px; border-radius: 50%; background: #FFFFFE; box-shadow: 0 1px 2px rgba(0,0,0,0.3)"></span></button>
+            </div>
+            <div style="min-height: 52px; box-sizing: border-box; padding: 8px 12px 8px 56px; display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--sep)">
+              <span style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 500">Rede de casa</span><span style="font-size: 12px; color: #2F6B3A">Conectada · 5 GHz · WPA3</span></span>
+              <svg width="14" height="14" viewBox="0 0 256 256" fill="var(--text2)" role="img" aria-label="Protegida por senha"><path d="{{wifiIcons.lock}}"></path></svg>
+              <svg width="18" height="18" viewBox="0 0 256 256" fill="var(--text)" role="img" aria-label="Sinal forte"><path d="{{wifiIcons.high}}"></path></svg>
+              <button style="height: 24px; padding: 0 8px; border-radius: 6px; border: 1px solid var(--control); background: var(--surface); font: inherit; font-size: 12px; color: var(--text); cursor: pointer">Detalhes…</button>
+            </div>
+          </div>
+          <section style="display: flex; flex-direction: column; gap: 8px">
+            <h2 style="margin: 0; display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600">Outras redes<span role="status" aria-label="Procurando redes" style="width: 12px; height: 12px; box-sizing: border-box; border-radius: 50%; border: 2px solid var(--sep); border-top-color: var(--text2)"></span></h2>
+            <div style="background: var(--surface); border: 1px solid var(--sep); border-radius: 8px; display: flex; flex-direction: column">
+              <sc-for list="{{networks}}" as="n" hint-placeholder-count="5">
+                <div style="height: 40px; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; gap: 12px; border-top: {{n.top}}">
+                  <span style="flex-grow: 1">{{n.name}}</span>
+                  <sc-if value="{{n.locked}}" hint-placeholder-val="{{ true }}"><svg width="14" height="14" viewBox="0 0 256 256" fill="var(--text2)" role="img" aria-label="Protegida por senha"><path d="{{wifiIcons.lock}}"></path></svg></sc-if>
+                  <svg width="18" height="18" viewBox="0 0 256 256" fill="var(--text)" role="img" aria-label="{{n.signalName}}"><path d="{{n.signal}}"></path></svg>
+                </div>
+              </sc-for>
+              <div style="height: 40px; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; border-top: 1px solid var(--sep)">Outra rede…</div>
+            </div>
+          </section>
+          <div style="background: var(--surface); border: 1px solid var(--sep); border-radius: 8px; display: flex; flex-direction: column">
+            <div style="min-height: 44px; box-sizing: border-box; padding: 8px 12px; display: flex; align-items: center; gap: 16px">
+              <span style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px"><span>Perguntar antes de entrar em redes novas</span><span style="font-size: 11px; color: var(--text2)">Redes conhecidas continuam conectando sozinhas.</span></span>
+              <button role="switch" aria-checked="false" aria-label="Perguntar antes de entrar em redes novas" style="width: 36px; height: 20px; box-sizing: border-box; padding: 0 2px; display: flex; align-items: center; justify-content: flex-start; border-radius: 10px; border: 1px solid var(--control); background: var(--control); cursor: pointer"><span style="width: 16px; height: 16px; border-radius: 50%; background: #FFFFFE; box-shadow: 0 1px 2px rgba(0,0,0,0.3)"></span></button>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <div style="display: flex; justify-content: flex-end">
+          <button aria-label="Ajuda" style="width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--control); background: var(--surface); font: inherit; font-size: 13px; font-weight: 600; color: var(--text); cursor: pointer">?</button>
+        </div>
+      </main>
+    </div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"dark":{"editor":"boolean","default":false},"pane":{"editor":"enum","options":["aparencia","teclado","sobre","wifi"],"default":"aparencia"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var I = {
+      wifi: 'M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z',
+      bt: 'M196.8,169.6,141.33,128,196.8,86.4a8,8,0,0,0,0-12.8l-64-48A8,8,0,0,0,120,32v80L68.8,73.6a8,8,0,0,0-9.6,12.8L114.67,128,59.2,169.6a8,8,0,1,0,9.6,12.8L120,144v80a8,8,0,0,0,12.8,6.4l64-48a8,8,0,0,0,0-12.8ZM136,48l42.67,32L136,112Zm0,160V144l42.67,32Z',
+      monitor: 'M208,40H48A24,24,0,0,0,24,64V176a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V64A24,24,0,0,0,208,40Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V64a8,8,0,0,1,8-8H208a8,8,0,0,1,8,8Zm-48,48a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,224Z',
+      sound: 'M155.51,24.81a8,8,0,0,0-8.42.88L77.25,80H32A16,16,0,0,0,16,96v64a16,16,0,0,0,16,16H77.25l69.84,54.31A8,8,0,0,0,160,224V32A8,8,0,0,0,155.51,24.81ZM32,96H72v64H32ZM144,207.64,88,164.09V91.91l56-43.55Zm54-106.08a40,40,0,0,1,0,52.88,8,8,0,0,1-12-10.58,24,24,0,0,0,0-31.72,8,8,0,0,1,12-10.58ZM248,128a79.9,79.9,0,0,1-20.37,53.34,8,8,0,0,1-11.92-10.67,64,64,0,0,0,0-85.33,8,8,0,1,1,11.92-10.67A79.83,79.83,0,0,1,248,128Z',
+      bell: 'M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z',
+      brush: 'M232,32a8,8,0,0,0-8-8c-44.08,0-89.31,49.71-114.43,82.63A60,60,0,0,0,32,164c0,30.88-19.54,44.73-20.47,45.37A8,8,0,0,0,16,224H92a60,60,0,0,0,57.37-77.57C182.3,121.31,232,76.08,232,32ZM92,208H34.63C41.38,198.41,48,183.92,48,164a44,44,0,1,1,44,44Zm32.42-94.45q5.14-6.66,10.09-12.55A76.23,76.23,0,0,1,155,121.49q-5.9,4.940-12.55,10.09A60.54,60.54,0,0,0,124.42,113.55Zm42.7-2.68a92.57,92.57,0,0,0-22-22c31.78-34.53,55.75-45,69.9-47.91C212.17,55.12,201.65,79.09,167.12,110.87Z',
+      desktop: 'M208,40H48A24,24,0,0,0,24,64V176a24,24,0,0,0,24,24h72v16H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16H136V200h72a24,24,0,0,0,24-24V64A24,24,0,0,0,208,40ZM48,56H208a8,8,0,0,1,8,8v80H40V64A8,8,0,0,1,48,56ZM208,184H48a8,8,0,0,1-8-8V160H216v16A8,8,0,0,1,208,184Z',
+      keyboard: 'M224,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48Zm0,144H32V64H224V192Zm-16-64a8,8,0,0,1-8,8H56a8,8,0,0,1,0-16H200A8,8,0,0,1,208,128Zm0-32a8,8,0,0,1-8,8H56a8,8,0,0,1,0-16H200A8,8,0,0,1,208,96ZM72,160a8,8,0,0,1-8,8H56a8,8,0,0,1,0-16h8A8,8,0,0,1,72,160Zm96,0a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,160Zm40,0a8,8,0,0,1-8,8h-8a8,8,0,0,1,0-16h8A8,8,0,0,1,208,160Z',
+      lock: 'M128,112a28,28,0,0,0-8,54.83V184a8,8,0,0,0,16,0V166.83A28,28,0,0,0,128,112Zm0,40a12,12,0,1,1,12-12A12,12,0,0,1,128,152Zm80-72H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Z',
+      disk: 'M208,136H48a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V152A16,16,0,0,0,208,136Zm0,64H48V152H208v48Zm0-160H48A16,16,0,0,0,32,56v48a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V56A16,16,0,0,0,208,40Zm0,64H48V56H208v48ZM192,80a12,12,0,1,1-12-12A12,12,0,0,1,192,80Zm0,96a12,12,0,1,1-12-12A12,12,0,0,1,192,176Z',
+      users: 'M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.640,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z',
+      info: 'M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z'
+    };
+    var pane = this.props.pane ?? 'aparencia';
+    var selName = { aparencia: 'Aparência', teclado: 'Teclado e atalhos', sobre: 'Sobre este computador', wifi: 'Wi-Fi' }[pane] || 'Aparência';
+    var L = function (name, icon) { var sel = name === selName; return { link: true, gap: false, name: name, icon: icon, bg: sel ? 'rgba(200,135,58,0.22)' : 'transparent', weight: sel ? '500' : '400' }; };
+    var G = { link: false, gap: true };
+    var nav = [L('Wi-Fi', I.wifi), L('Bluetooth', I.bt), G, L('Tela', I.monitor), L('Som', I.sound), L('Notificações', I.bell), G,
+      L('Aparência', I.brush), L('Área de trabalho e dock', I.desktop), L('Teclado e atalhos', I.keyboard), G,
+      L('Privacidade e segurança', I.lock), L('Armazenamento', I.disk), L('Usuários', I.users), L('Sobre este computador', I.info)];
+    var ring = '0 0 0 2px var(--window), 0 0 0 4px #C8873A';
+    var themes = [
+      { name: 'Claro', wall: '#C9CBCE', win: '#FFFFFF', side: '#EDEDEC', line: '#D6D6D8', ring: ring + ', 0 0 0 0 transparent', weight: '600' },
+      { name: 'Escuro', wall: '#3A3B3D', win: '#1E1E1F', side: '#262628', line: '#3E3E41', ring: 'inset 0 0 0 1px rgba(0,0,0,0.1)', weight: '400' },
+      { name: 'Automático', wall: 'linear-gradient(90deg, #C9CBCE 50%, #3A3B3D 50%)', win: 'linear-gradient(90deg, #FFFFFF 50%, #1E1E1F 50%)', side: '#EDEDEC', line: '#B8B8BC', ring: 'inset 0 0 0 1px rgba(0,0,0,0.1)', weight: '400' }
+    ];
+    var accents = [['Âmbar queimado', '#C8873A', true], ['Vermelho óxido', '#B5523B'], ['Verde musgo', '#7A8B5A'], ['Azul aço', '#4E6E8E'], ['Ameixa', '#7D5A7A'], ['Grafite', '#5E5E63']]
+      .map(function (a) { return { name: a[0], hex: a[1], sel: a[2] ? 'true' : 'false', ring: a[2] ? '0 0 0 2px var(--window), 0 0 0 4px ' + a[1] : 'inset 0 0 0 1px rgba(0,0,0,0.12)' }; });
+    var row = function (i, label, kind, value, note) {
+      var on = kind === 'on';
+      return { top: i === 0 ? 'none' : '1px solid var(--sep)', label: label, popup: kind === 'popup', switch: kind !== 'popup', value: value || '', on: on ? 'true' : 'false', justify: on ? 'flex-end' : 'flex-start', track: on ? '#C8873A' : 'var(--control)', hasNote: !!note, note: note || '' };
+    };
+    var groups = [
+      { title: 'Janelas', rows: [row(0, 'Tamanho dos ícones da barra lateral', 'popup', 'Médio'), row(1, 'Mostrar barras de rolagem', 'popup', 'Ao rolar'), row(2, 'Clique na barra de rolagem', 'popup', 'Pular para o ponto clicado')] },
+      { title: 'Visão', rows: [row(0, 'Reduzir transparência', 'off', '', 'Troca o vidro do dock e da Busca por uma cor sólida.'), row(1, 'Reduzir movimento', 'off', '', 'Animações viram transições rápidas de opacidade.'), row(2, 'Aumentar contraste', 'off')] }
+    ];
+
+    var keyRow = function (i, label, keys, rec) { return { top: i === 0 ? 'none' : '1px solid var(--sep)', label: label, keys: keys.map(function (x) { return { k: x }; }), recording: !!rec, idle: !rec, bg: rec ? 'rgba(200,135,58,0.10)' : 'transparent' }; };
+    var shortcuts = [
+      { title: 'Sistema', rows: [keyRow(0, 'Abrir a Busca', ['Meta', 'Espaço']), keyRow(1, 'Visão geral das janelas', ['Meta', 'Tab']), keyRow(2, 'Central de controle', ['Meta', 'A']), keyRow(3, 'Captura de uma área', [], true)] },
+      { title: 'Janelas', rows: [keyRow(0, 'Fechar janela', ['Meta', 'W']), keyRow(1, 'Fechar o app', ['Meta', 'Q']), keyRow(2, 'Encaixar à esquerda / à direita', ['Meta', '←', '→']), keyRow(3, 'Maximizar', ['Meta', '↑'])] },
+      { title: 'Áreas de trabalho e apps', rows: [keyRow(0, 'Ir para a área 1 a 9', ['Meta', '1…9']), keyRow(1, 'Abrir o Terminal', ['Meta', 'Enter']), keyRow(2, 'Abrir Arquivos', ['Meta', 'E'])] }
+    ];
+    var aboutRow = function (i, label, value, mono) { return { top: i === 0 ? 'none' : '1px solid var(--sep)', label: label, value: value, font: mono ? "'IBM Plex Mono', monospace" : 'inherit' }; };
+    var about = [aboutRow(0, 'Nome do computador', 'draconic-pc'), aboutRow(1, 'Processador', 'Intel Core i3 · 4 núcleos'), aboutRow(2, 'Memória', '16 GB'), aboutRow(3, 'Placa de vídeo', 'NVIDIA GeForce RTX 3050 · 6 GB'), aboutRow(4, 'Disco', 'SSD NVMe · 256 GB · 214 GB livres'), aboutRow(5, 'Base', 'Fedora Kinoite · KDE Plasma 6'), aboutRow(6, 'Imagem', 'ghcr.io/draconic/draconic:1.0', true)];
+    var titles = { aparencia: 'Aparência', teclado: 'Teclado e atalhos', sobre: 'Sobre este computador', wifi: 'Wi-Fi' };
+    var W = { high: I.wifi, med: 'M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204Zm65-81.23a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z', low: 'M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204Zm32.71-45.47a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z', lock: 'M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80ZM96,56a32,32,0,0,1,64,0V80H96ZM208,208H48V96H208V208Z' };
+    var networks = [['Rede do vizinho 2G', true, 'med'], ['Biblioteca Municipal', false, 'low'], ['Casa_Silva', true, 'med'], ['Escritório 5G', true, 'low']]
+      .map(function (n, k) { return { name: n[0], locked: n[1], signal: W[n[2]], signalName: n[2] === 'med' ? 'Sinal médio' : 'Sinal fraco', top: k === 0 ? 'none' : '1px solid var(--sep)' }; });
+    return { paneTitle: titles[pane] || 'Aparência', isAppearance: pane === 'aparencia', isKeys: pane === 'teclado', isAbout: pane === 'sobre', isWifi: pane === 'wifi', wifiIcons: W, networks: networks, shortcuts: shortcuts, about: about, logoGray: this.props.dark ? '#6E6E73' : '#A9A9A9', logoG: 'M441,678 L421,699 L402,726 L391,748 L381,778 L381,786 L388,798 L405,822 L422,842 L448,867 L473,886 L503,904 L537,919 L571,929 L600,934 L654,935 L671,933 L671,929 L652,924 L620,910 L591,892 L571,876 L551,856 L533,832 L521,809 L513,784 L511,769 L511,752 L513,738 L521,712 L530,694 L541,677 L555,660 L576,640 L599,624 L600,619 L579,620 L552,624 L518,633 L500,640 L475,653 L461,662Z', logoK: 'M824,648 L835,660 L842,663 L850,674 L852,666 L851,658 L847,654 L841,651Z M640,545 L669,565 L679,585 L687,594 L695,600 L715,607 L735,609 L757,614 L784,624 L757,601 L716,575 L697,565 L671,554Z M341,408 L341,425 L344,441 L355,475 L367,498 L389,527 L368,562 L356,592 L349,620 L346,641 L345,669 L346,670 L346,686 L348,701 L353,723 L354,723 L354,716 L359,693 L369,667 L376,654 L397,624 L431,590 L445,579 L470,563 L498,550 L533,541 L551,539 L573,539 L546,528 L496,516 L458,504 L415,484 L388,466 L367,447 L351,427Z M580,346 L544,358 L525,367 L518,372 L598,413 L656,445 L722,486 L765,517 L784,574 L803,591 L813,598 L837,612 L866,624 L872,633 L880,652 L880,657 L872,685 L857,716 L832,734 L805,748 L802,747 L807,730 L807,716 L805,712 L784,702 L754,692 L729,686 L708,683 L663,684 L647,687 L627,694 L614,701 L599,712 L589,722 L579,735 L571,750 L565,769 L564,798 L571,822 L578,836 L594,858 L613,877 L639,896 L672,913 L691,920 L709,924 L729,917 L756,904 L776,892 L804,871 L830,846 L843,831 L858,811 L874,785 L893,743 L901,718 L909,680 L911,663 L912,631 L911,630 L910,604 L905,575 L898,549 L886,516 L864,474 L845,447 L827,426 L807,407 L784,389 L762,375 L730,359 L708,351 L685,345 L647,340 L622,340 L621,341 L601,342Z M428,303 L426,316 L426,346 L429,367 L439,397 L447,412 L459,428 L472,436 L483,439 L537,446 L573,455 L609,469 L623,476 L610,462 L591,447 L562,428 L512,399 L484,378 L459,353 L448,339 L435,318 L430,305Z', themeClass: this.props.dark ? 'th-dark' : 'th-light', nav: nav, themes: themes, accents: accents, groups: groups };
+  }
+}
+</script>
+</body>
+</html>

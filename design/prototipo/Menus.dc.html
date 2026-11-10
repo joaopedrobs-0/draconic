@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Draconic — menu da barra aberto</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.menu{background:rgba(250,250,250,0.86);backdrop-filter:blur(24px) saturate(170%);-webkit-backdrop-filter:blur(24px) saturate(170%);border:1px solid rgba(0,0,0,0.1);box-shadow:inset 0 1px 0 rgba(255,255,255,0.8), 0 12px 32px rgba(0,0,0,0.2)}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 900px; overflow: hidden; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 13px; color: #1A1A1A">
+  <div aria-hidden="true" style="position: absolute; inset: 0">
+    <dc-import name="Main" hint-size="1440px,900px"></dc-import>
+  </div>
+
+  <header style="position: absolute; top: 0; left: 0; right: 0; height: 28px; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; background: #F3F3F2; border-bottom: 1px solid #CFCFD1">
+    <nav aria-label="Menu do aplicativo" style="display: flex; align-items: center; gap: 4px">
+      <span style="width: 24px; height: 24px; margin-right: 4px; display: flex; align-items: center; justify-content: center">
+        <svg width="14" height="16" viewBox="337 299 579 640" aria-hidden="true"><path fill="#1A1A1A" fill-rule="evenodd" d="{{mark}}"></path></svg>
+      </span>
+      <span style="padding: 0 8px; font-weight: 600">Arquivos</span>
+      <span style="position: relative">
+        <span style="height: 22px; padding: 0 8px; display: flex; align-items: center; border-radius: 5px; background: #C8873A">Arquivo</span>
+        <div role="menu" aria-label="Arquivo" class="menu" style="position: absolute; top: 26px; left: 0; width: 272px; padding: 4px; border-radius: 8px; display: flex; flex-direction: column">
+          <sc-for list="{{items}}" as="m" hint-placeholder-count="12">
+            <sc-if value="{{m.sep}}" hint-placeholder-val="{{ false }}"><span style="height: 1px; margin: 4px 8px; background: rgba(0,0,0,0.1)"></span></sc-if>
+            <sc-if value="{{m.item}}" hint-placeholder-val="{{ true }}">
+              <span role="menuitem" style="position: relative; height: 24px; padding: 0 8px; display: flex; align-items: center; justify-content: space-between; border-radius: 4px; background: {{m.bg}}; color: {{m.fg}}">
+                {{m.label}}
+                <span style="display: flex; align-items: center; gap: 4px; font-size: 12px; color: {{m.keyColor}}">{{m.key}}<sc-if value="{{m.sub}}" hint-placeholder-val="{{ false }}"><svg width="10" height="10" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path></svg></sc-if></span>
+                <sc-if value="{{m.open}}" hint-placeholder-val="{{ false }}">
+                  <div role="menu" aria-label="Abrir com" class="menu" style="position: absolute; top: -4px; left: 268px; width: 232px; padding: 4px; border-radius: 8px; display: flex; flex-direction: column">
+                    <sc-for list="{{sub}}" as="s" hint-placeholder-count="4">
+                      <sc-if value="{{s.sep}}" hint-placeholder-val="{{ false }}"><span style="height: 1px; margin: 4px 8px; background: rgba(0,0,0,0.1)"></span></sc-if>
+                      <sc-if value="{{s.item}}" hint-placeholder-val="{{ true }}">
+                        <span role="menuitem" style="height: 24px; padding: 0 8px; display: flex; align-items: center; gap: 8px; border-radius: 4px; color: #1A1A1A">
+                          <svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{s.icon}}"></path></svg>{{s.label}}<span style="margin-left: auto; font-size: 12px; color: #55555A">{{s.note}}</span>
+                        </span>
+                      </sc-if>
+                    </sc-for>
+                  </div>
+                </sc-if>
+              </span>
+            </sc-if>
+          </sc-for>
+        </div>
+      </span>
+      <span style="padding: 0 8px">Editar</span><span style="padding: 0 8px">Ver</span><span style="padding: 0 8px">Ir</span><span style="padding: 0 8px">Janela</span><span style="padding: 0 8px">Ajuda</span>
+    </nav>
+    <div style="display: flex; align-items: center; gap: 12px">
+      <span>PT</span>
+      <svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{wifi}}"></path></svg>
+      <span>82%</span>
+      <span>Seg 9 nov  21:40</span>
+    </div>
+  </header>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var it = function (label, key, o) { return Object.assign({ item: true, sep: false, label: label, key: key || '', sub: false, open: false, bg: 'transparent', fg: '#1A1A1A', keyColor: '#55555A' }, o || {}); };
+    var S = { item: false, sep: true };
+    var items = [
+      it('Nova janela', 'Meta+N'), it('Nova pasta', 'Meta+Shift+N'), S,
+      it('Abrir', 'Meta+O'),
+      it('Abrir com', '', { sub: true, open: true, bg: '#C8873A', keyColor: '#1A1A1A' }),
+      S,
+      it('Obter informações', 'Meta+I'), it('Renomear…', 'F2'), it('Comprimir “Relatório de física.pdf”'), it('Duplicar', 'Meta+D', { fg: '#9A9A9E', keyColor: '#9A9A9E' }), S,
+      it('Mover para a Lixeira', 'Meta+⌫'), S,
+      it('Fechar janela', 'Meta+W')
+    ];
+    var pdf = 'M224,152a8,8,0,0,1-8,8H192v16h16a8,8,0,0,1,0,16H192v16a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8h32A8,8,0,0,1,224,152ZM92,172a28,28,0,0,1-28,28H56v8a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8H64A28,28,0,0,1,92,172Zm-16,0a12,12,0,0,0-12-12H56v24h8A12,12,0,0,0,76,172Zm88,8a36,36,0,0,1-36,36H112a8,8,0,0,1-8-8V152a8,8,0,0,1,8-8h16A36,36,0,0,1,164,180Zm-16,0a20,20,0,0,0-20-20h-8v40h8A20,20,0,0,0,148,180ZM40,112V40A16,16,0,0,1,56,24h96a8,8,0,0,1,5.66,2.34l56,56A8,8,0,0,1,216,88v24a8,8,0,0,1-16,0V96H152a8,8,0,0,1-8-8V40H56v72a8,8,0,0,1-16,0ZM160,80h28.69L160,51.31Z';
+    var globe = 'M128,24h0A104,104,0,1,0,232,128,104.12,104.12,0,0,0,128,24Zm88,104a87.61,87.61,0,0,1-3.33,24H174.16a157.44,157.44,0,0,0,0-48h38.51A87.61,87.61,0,0,1,216,128ZM102,168H154a115.11,115.11,0,0,1-26,45A115.27,115.27,0,0,1,102,168Zm-3.9-16a140.84,140.84,0,0,1,0-48h59.88a140.84,140.84,0,0,1,0,48ZM40,128a87.61,87.61,0,0,1,3.33-24H81.84a157.44,157.44,0,0,0,0,48H43.33A87.61,87.61,0,0,1,40,128ZM154,88H102a115.11,115.11,0,0,1,26-45A115.27,115.27,0,0,1,154,88Zm52.33,0H170.71a135.28,135.28,0,0,0-22.3-45.6A88.29,88.29,0,0,1,206.37,88ZM107.59,42.4A135.28,135.28,0,0,0,85.29,88H49.63A88.29,88.29,0,0,1,107.59,42.4ZM49.63,168H85.29a135.28,135.28,0,0,0,22.3,45.6A88.29,88.29,0,0,1,49.63,168Zm98.78,45.6a135.28,135.28,0,0,0,22.3-45.6h35.66A88.29,88.29,0,0,1,148.41,213.6Z';
+    var pencil = 'M229.66,58.34l-32-32a8,8,0,0,0-11.32,0l-96,96A8,8,0,0,0,88,128v32a8,8,0,0,0,8,8h32a8,8,0,0,0,5.66-2.34l96-96A8,8,0,0,0,229.66,58.34ZM124.69,152H104V131.31l64-64L188.69,88ZM200,76.69,179.31,56,192,43.31,212.69,64ZM224,128v80a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32h80a8,8,0,0,1,0,16H48V208H208V128a8,8,0,0,1,16,0Z';
+    var sub = [
+      { item: true, sep: false, label: 'Visualizador de documentos', note: 'padrão', icon: pdf },
+      { item: true, sep: false, label: 'Navegador', note: '', icon: globe },
+      { item: true, sep: false, label: 'Editor de texto', note: '', icon: pencil },
+      { item: false, sep: true },
+      { item: true, sep: false, label: 'Escolher outro app…', note: '', icon: 'M0,0' }
+    ];
+    return {
+      items: items, sub: sub,
+      mark: 'M441,678 L421,699 L402,726 L391,748 L381,778 L381,786 L388,798 L405,822 L422,842 L448,867 L473,886 L503,904 L537,919 L571,929 L600,934 L654,935 L671,933 L671,929 L652,924 L620,910 L591,892 L571,876 L551,856 L533,832 L521,809 L513,784 L511,769 L511,752 L513,738 L521,712 L530,694 L541,677 L555,660 L576,640 L599,624 L600,619 L579,620 L552,624 L518,633 L500,640 L475,653 L461,662Z M580,346 L544,358 L525,367 L518,372 L598,413 L656,445 L722,486 L765,517 L784,574 L803,591 L813,598 L837,612 L866,624 L872,633 L880,652 L880,657 L872,685 L857,716 L832,734 L805,748 L802,747 L807,730 L807,716 L805,712 L784,702 L754,692 L729,686 L708,683 L663,684 L647,687 L627,694 L614,701 L599,712 L589,722 L579,735 L571,750 L565,769 L564,798 L571,822 L578,836 L594,858 L613,877 L639,896 L672,913 L691,920 L709,924 L729,917 L756,904 L776,892 L804,871 L830,846 L843,831 L858,811 L874,785 L893,743 L901,718 L909,680 L911,663 L912,631 L911,630 L910,604 L905,575 L898,549 L886,516 L864,474 L845,447 L827,426 L807,407 L784,389 L762,375 L730,359 L708,351 L685,345 L647,340 L622,340 L621,341 L601,342Z M341,408 L341,425 L344,441 L355,475 L367,498 L389,527 L368,562 L356,592 L349,620 L346,641 L345,669 L346,670 L346,686 L348,701 L353,723 L354,723 L354,716 L359,693 L369,667 L376,654 L397,624 L431,590 L445,579 L470,563 L498,550 L533,541 L551,539 L573,539 L546,528 L496,516 L458,504 L415,484 L388,466 L367,447 L351,427Z M428,303 L426,316 L426,346 L429,367 L439,397 L447,412 L459,428 L472,436 L483,439 L537,446 L573,455 L609,469 L623,476 L610,462 L591,447 L562,428 L512,399 L484,378 L459,353 L448,339 L435,318 L430,305Z',
+      wifi: 'M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z'
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Draconic — área de trabalho</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:var(--text)}a:hover{color:var(--text)}
+.dock{background:rgba(244,244,245,0.55);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border:1px solid rgba(255,255,255,0.7);box-shadow:inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 24px rgba(0,0,0,0.14)}
+.th-light{--wall:#B7B9BC;--menubar:#F3F3F2;--menuline:#CFCFD1;--text:#1A1A1A;--surface:#FFFFFF;--winborder:#C4C4C7;--chrome:#F6F6F5;--sep:#E2E2E3;--disabled:#A3A3A6;--text2:#55555A;--fill:#E9E9EA;--control:#B8B8BC;--icon:#3A3A3D;--off:#D6D6D8;--stripe:#FAFAFA;--selbg:#E2E2E3}
+.th-dark{--wall:#3A3B3D;--menubar:#262628;--menuline:#38383B;--text:#EDEDED;--surface:#1E1E1F;--winborder:#4A4A4E;--chrome:#262628;--sep:#38383B;--disabled:#6E6E73;--text2:#A6A6AB;--fill:#333336;--control:#55555A;--icon:#C8C8CC;--off:#4A4A4E;--stripe:#232325;--selbg:#38383B}
+.th-dark .dock{background:rgba(40,40,42,0.6);border-color:rgba(255,255,255,0.12);box-shadow:inset 0 1px 0 rgba(255,255,255,0.08), 0 8px 24px rgba(0,0,0,0.4)}
+</style>
+</helmet>
+<div class="{{themeClass}}" style="position: relative; width: 1440px; height: 900px; overflow: hidden; background: var(--wall); font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 13px; color: var(--text)">
+
+<header style="position: absolute; top: 0; left: 0; right: 0; height: 28px; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; background: var(--menubar); border-bottom: 1px solid var(--menuline)">
+  <nav aria-label="Menu do aplicativo" style="display: flex; align-items: center; gap: 16px">
+    <button aria-label="Menu do sistema" style="width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; padding: 0; cursor: pointer">
+      <svg width="14" height="16" viewBox="337 299 579 640" aria-hidden="true"><path fill="var(--text)" fill-rule="evenodd" d="{{mark}}"></path></svg>
+    </button>
+    <span style="font-weight: 600">Arquivos</span>
+    <span>Arquivo</span><span>Editar</span><span>Ver</span><span>Ir</span><span>Janela</span><span>Ajuda</span>
+  </nav>
+  <div style="display: flex; align-items: center; gap: 12px">
+    <span>PT</span>
+    <svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" role="img" aria-label="Wi-Fi conectado"><path d="{{i.wifi}}"></path></svg>
+    <span style="display: flex; align-items: center; gap: 4px"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.battery}}"></path></svg>82%</span>
+    <span>Seg 9 nov  21:20</span>
+  </div>
+</header>
+
+<section aria-label="Janela Arquivos" style="position: absolute; left: 72px; top: 64px; width: 880px; height: 560px; display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--winborder); border-radius: 12px; box-shadow: 0 10px 28px rgba(0,0,0,0.14); overflow: hidden">
+  <div style="height: 48px; flex-shrink: 0; box-sizing: border-box; padding: 0 8px 0 12px; display: flex; align-items: center; gap: 4px; background: var(--chrome); border-bottom: 1px solid var(--sep)">
+    <button aria-label="Voltar" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 6px; color: var(--text); cursor: pointer"><svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.left}}"></path></svg></button>
+    <button aria-label="Avançar" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 6px; color: var(--disabled); cursor: pointer"><svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.right}}"></path></svg></button>
+    <span style="margin-left: 8px; color: var(--text2)">Documentos</span>
+    <svg width="10" height="10" viewBox="0 0 256 256" fill="var(--disabled)" aria-hidden="true"><path d="{{i.right}}"></path></svg>
+    <span style="font-weight: 600">Escola</span>
+    <span style="flex-grow: 1"></span>
+    <div role="group" aria-label="Modo de exibição" style="display: flex; padding: 2px; background: var(--fill); border-radius: 6px">
+      <button aria-label="Lista" aria-pressed="true" style="width: 32px; height: 24px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: none; border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.12); color: var(--text); cursor: pointer"><svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.list}}"></path></svg></button>
+      <button aria-label="Grade" aria-pressed="false" style="width: 32px; height: 24px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 4px; color: var(--text2); cursor: pointer"><svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.grid}}"></path></svg></button>
+    </div>
+    <label style="margin-left: 8px; display: flex; align-items: center; gap: 8px; width: 180px; height: 28px; box-sizing: border-box; padding: 0 8px; background: var(--surface); border: 1px solid var(--control); border-radius: 6px; color: var(--text2)">
+      <svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.search}}"></path></svg>
+      <input aria-label="Buscar em Escola" placeholder="Buscar" style="background: transparent; border: none; outline: none; font: inherit; color: var(--text); width: 120px">
+    </label>
+    <span style="width: 1px; height: 16px; margin: 0 4px; background: var(--off)"></span>
+    <button aria-label="Minimizar" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 6px; color: var(--icon); cursor: pointer"><svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.minus}}"></path></svg></button>
+    <button aria-label="Maximizar" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 6px; color: var(--icon); cursor: pointer"><svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.max}}"></path></svg></button>
+    <button aria-label="Fechar" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 6px; color: var(--icon); cursor: pointer"><svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.x}}"></path></svg></button>
+  </div>
+  <div style="flex-grow: 1; display: flex; min-height: 0">
+    <nav aria-label="Locais" style="width: 196px; flex-shrink: 0; box-sizing: border-box; padding: 12px 8px; display: flex; flex-direction: column; gap: 2px; background: var(--chrome); border-right: 1px solid var(--sep)">
+      <span style="padding: 4px 8px 4px; font-size: 12px; font-weight: 500; color: var(--text2)">Favoritos</span>
+      <sc-for list="{{places}}" as="p" hint-placeholder-count="6">
+        <a href="#" style="height: 28px; padding: 0 8px; display: flex; align-items: center; gap: 8px; border-radius: 6px; text-decoration: none; background: {{p.bg}}; font-weight: {{p.weight}}">
+          <svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{p.icon}}"></path></svg>{{p.name}}
+        </a>
+      </sc-for>
+      <span style="padding: 16px 8px 4px; font-size: 12px; font-weight: 500; color: var(--text2)">Dispositivos</span>
+      <a href="#" style="height: 28px; padding: 0 8px; display: flex; align-items: center; gap: 8px; border-radius: 6px; text-decoration: none"><svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.disk}}"></path></svg>Disco interno</a>
+      <a href="#" style="height: 28px; padding: 0 8px; display: flex; align-items: center; gap: 8px; border-radius: 6px; text-decoration: none"><svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.usb}}"></path></svg>Pendrive</a>
+    </nav>
+    <div style="flex-grow: 1; display: flex; flex-direction: column; min-width: 0">
+      <table style="width: 100%; border-collapse: collapse">
+        <thead>
+          <tr style="height: 28px; text-align: left; color: var(--text2); font-size: 12px">
+            <th scope="col" style="padding: 0 16px; font-weight: 500; border-bottom: 1px solid var(--sep)">Nome</th>
+            <th scope="col" style="padding: 0 12px; font-weight: 500; border-bottom: 1px solid var(--sep); width: 140px">Modificado</th>
+            <th scope="col" style="padding: 0 16px; font-weight: 500; border-bottom: 1px solid var(--sep); width: 80px; text-align: right">Tamanho</th>
+            <th scope="col" style="padding: 0 16px; font-weight: 500; border-bottom: 1px solid var(--sep); width: 112px">Tipo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <sc-for list="{{files}}" as="f" hint-placeholder-count="9">
+            <tr style="height: 32px; background: {{f.bg}}">
+              <td style="padding: 0 16px"><span style="display: flex; align-items: center; gap: 8px"><svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{f.icon}}"></path></svg>{{f.name}}</span></td>
+              <td style="padding: 0 12px; color: var(--text2)">{{f.date}}</td>
+              <td style="padding: 0 16px; color: var(--text2); text-align: right; font-variant-numeric: tabular-nums">{{f.size}}</td>
+              <td style="padding: 0 16px; color: var(--text2)">{{f.kind}}</td>
+            </tr>
+          </sc-for>
+        </tbody>
+      </table>
+      <div style="flex-grow: 1"></div>
+      <div style="height: 28px; flex-shrink: 0; box-sizing: border-box; padding: 0 16px; display: flex; align-items: center; border-top: 1px solid var(--sep); font-size: 12px; color: var(--text2)">9 itens, 1 selecionado — 214 GB disponíveis</div>
+    </div>
+  </div>
+</section>
+
+<section aria-label="Janela Terminal" style="position: absolute; left: 740px; top: 392px; width: 620px; height: 340px; display: flex; flex-direction: column; background: #161616; border: 1px solid #303032; border-radius: 12px; box-shadow: 0 16px 40px rgba(0,0,0,0.3); overflow: hidden">
+  <div style="height: 36px; flex-shrink: 0; box-sizing: border-box; padding: 0 4px 0 16px; display: flex; align-items: center; justify-content: space-between; background: #202021; border-bottom: 1px solid #2C2C2E; color: #BDBDC1">
+    <span style="font-size: 12px">Terminal — ~</span>
+    <span style="display: flex">
+      <button aria-label="Minimizar" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 6px; color: inherit; cursor: pointer"><svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.minus}}"></path></svg></button>
+      <button aria-label="Maximizar" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 6px; color: inherit; cursor: pointer"><svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.max}}"></path></svg></button>
+      <button aria-label="Fechar" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 6px; color: inherit; cursor: pointer"><svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.x}}"></path></svg></button>
+    </span>
+  </div>
+  <div style="flex-grow: 1; box-sizing: border-box; padding: 12px 16px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; line-height: 1.6; color: #D6D6D9; white-space: pre">~ <span style="color: {{accent}}">$</span> rpm-ostree status
+State: idle
+Deployments:
+<span style="color: #FFFFFF">● ostree-image-signed:docker://ghcr.io/draconic/draconic:1.0</span>
+                  Digest: sha256:4f1c9e…a92e
+                 Version: 1.0 (2026-11-08T21:14:02Z)
+
+  ostree-image-signed:docker://ghcr.io/draconic/draconic:0.9
+                 Version: 0.9 (2026-11-01T18:40:55Z)
+
+~ <span style="color: {{accent}}">$</span> <span style="display: inline-block; width: 8px; height: 15px; vertical-align: -3px; background: #D6D6D9"></span></div>
+</section>
+
+<nav aria-label="Dock" class="dock" style="position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); box-sizing: border-box; padding: 4px 8px; display: flex; align-items: center; gap: 4px; border-radius: 16px">
+  <sc-for list="{{dock}}" as="d" hint-placeholder-count="8">
+    <sc-if value="{{d.sep}}" hint-placeholder-val="{{ false }}">
+      <span style="width: 1px; height: 32px; margin: 0 4px; background: rgba(0,0,0,0.16)"></span>
+    </sc-if>
+    <sc-if value="{{d.app}}" hint-placeholder-val="{{ true }}">
+      <button aria-label="{{d.name}}" style="position: relative; width: 48px; height: 52px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 8px; padding: 0; color: var(--text); cursor: pointer">
+        <svg width="28" height="28" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{d.icon}}"></path></svg>
+        <span style="position: absolute; bottom: 2px; width: 12px; height: 2px; border-radius: 1px; background: {{d.dot}}"></span>
+      </button>
+    </sc-if>
+  </sc-for>
+</nav>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"dark":{"editor":"boolean","default":false},"accent":{"editor":"color","default":"#C8873A","options":["#C8873A","#B5523B","#7A8B5A"]},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var a = this.props.accent ?? '#C8873A';
+    var n = parseInt(String(a).replace('#', '').slice(0, 6), 16) || 0;
+    var tint = 'rgba(' + ((n >> 16) & 255) + ',' + ((n >> 8) & 255) + ',' + (n & 255) + ',0.2)';
+    var i = {
+      wifi: 'M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z',
+      battery: 'M200,56H32A24,24,0,0,0,8,80v96a24,24,0,0,0,24,24H200a24,24,0,0,0,24-24V80A24,24,0,0,0,200,56Zm8,120a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H200a8,8,0,0,1,8,8ZM144,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm-40,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM64,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm192,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Z',
+      left: 'M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z',
+      right: 'M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z',
+      list: 'M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z',
+      grid: 'M104,40H56A16,16,0,0,0,40,56v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,104,40Zm0,64H56V56h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,64H152V56h48v48Zm-96,32H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm0,64H56V152h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Zm0,64H152V152h48v48Z',
+      search: 'M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z',
+      minus: 'M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z',
+      max: 'M216,48V88a8,8,0,0,1-16,0V56H168a8,8,0,0,1,0-16h40A8,8,0,0,1,216,48ZM88,200H56V168a8,8,0,0,0-16,0v40a8,8,0,0,0,8,8H88a8,8,0,0,0,0-16Zm120-40a8,8,0,0,0-8,8v32H168a8,8,0,0,0,0,16h40a8,8,0,0,0,8-8V168A8,8,0,0,0,208,160ZM88,40H48a8,8,0,0,0-8,8V88a8,8,0,0,0,16,0V56H88a8,8,0,0,0,0-16Z',
+      x: 'M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z',
+      disk: 'M208,136H48a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V152A16,16,0,0,0,208,136Zm0,64H48V152H208v48Zm0-160H48A16,16,0,0,0,32,56v48a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V56A16,16,0,0,0,208,40Zm0,64H48V56H208v48ZM192,80a12,12,0,1,1-12-12A12,12,0,0,1,192,80Zm0,96a12,12,0,1,1-12-12A12,12,0,0,1,192,176Z',
+      usb: 'M252.44,121.34l-48-32A8,8,0,0,0,192,96v24H72V72h33a32,32,0,1,0,0-16H72A16,16,0,0,0,56,72v48H8a8,8,0,0,0,0,16H56v48a16,16,0,0,0,16,16h32v8a16,16,0,0,0,16,16h32a16,16,0,0,0,16-16V176a16,16,0,0,0-16-16H120a16,16,0,0,0-16,16v8H72V136H192v24a8,8,0,0,0,12.44,6.66l48-32a8,8,0,0,0,0-13.32ZM136,48a16,16,0,1,1-16,16A16,16,0,0,1,136,48ZM120,176h32v32H120Zm88-30.95V111l25.58,17Z'
+    };
+    var P = {
+      folder: 'M216,72H131.31L104,44.69A15.86,15.86,0,0,0,92.69,40H40A16,16,0,0,0,24,56V200.62A15.4,15.4,0,0,0,39.38,216H216.89A15.13,15.13,0,0,0,232,200.89V88A16,16,0,0,0,216,72ZM40,56H92.69l16,16H40ZM216,200H40V88H216Z',
+      house: 'M219.31,108.68l-80-80a16,16,0,0,0-22.62,0l-80,80A15.87,15.87,0,0,0,32,120v96a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V160h32v56a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V120A15.87,15.87,0,0,0,219.31,108.68ZM208,208H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48V120l80-80,80,80Z',
+      text: 'M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z',
+      download: 'M224,144v64a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V144a8,8,0,0,1,16,0v56H208V144a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,124.69V32a8,8,0,0,0-16,0v92.69L93.66,98.34a8,8,0,0,0-11.32,11.32Z',
+      image: 'M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z',
+      music: 'M212.92,17.69a8,8,0,0,0-6.86-1.45l-128,32A8,8,0,0,0,72,56V166.08A36,36,0,1,0,88,196V110.25l112-28v51.83A36,36,0,1,0,216,164V24A8,8,0,0,0,212.92,17.69ZM52,216a20,20,0,1,1,20-20A20,20,0,0,1,52,216ZM88,93.75V62.25l112-28v31.5ZM180,184a20,20,0,1,1,20-20A20,20,0,0,1,180,184Z',
+      trash: 'M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z',
+      pdf: 'M224,152a8,8,0,0,1-8,8H192v16h16a8,8,0,0,1,0,16H192v16a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8h32A8,8,0,0,1,224,152ZM92,172a28,28,0,0,1-28,28H56v8a8,8,0,0,1-16,0V152a8,8,0,0,1,8-8H64A28,28,0,0,1,92,172Zm-16,0a12,12,0,0,0-12-12H56v24h8A12,12,0,0,0,76,172Zm88,8a36,36,0,0,1-36,36H112a8,8,0,0,1-8-8V152a8,8,0,0,1,8-8h16A36,36,0,0,1,164,180Zm-16,0a20,20,0,0,0-20-20h-8v40h8A20,20,0,0,0,148,180ZM40,112V40A16,16,0,0,1,56,24h96a8,8,0,0,1,5.66,2.34l56,56A8,8,0,0,1,216,88v24a8,8,0,0,1-16,0V96H152a8,8,0,0,1-8-8V40H56v72a8,8,0,0,1-16,0ZM160,80h28.69L160,51.31Z',
+      pic: 'M110.66,147.56a8,8,0,0,0-13.32,0L76.49,178.85l-9.76-15.18a8,8,0,0,0-13.46,0l-36,56A8,8,0,0,0,24,232H152a8,8,0,0,0,6.66-12.44ZM38.65,216,60,182.79l9.63,15a8,8,0,0,0,13.39.11l21-31.47L137.05,216Zm175-133.66-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40v88a8,8,0,0,0,16,0V40h88V88a8,8,0,0,0,8,8h48V216h-8a8,8,0,0,0,0,16h8a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160Z',
+      video: 'M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40v72a8,8,0,0,0,16,0V40h88V88a8,8,0,0,0,8,8h48V216h-8a8,8,0,0,0,0,16h8a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM155.88,145a8,8,0,0,0-8.12.22l-19.95,12.46A16,16,0,0,0,112,144H48a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h64a16,16,0,0,0,15.81-13.68l19.95,12.46A8,8,0,0,0,160,216V152A8,8,0,0,0,155.88,145ZM112,208H48V160h64v48Zm32-6.43-16-10V176.43l16-10Z',
+      md: 'M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40v72a8,8,0,0,0,16,0V40h88V88a8,8,0,0,0,8,8h48V224a8,8,0,0,0,16,0V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM144,144H128a8,8,0,0,0-8,8v56a8,8,0,0,0,8,8h16a36,36,0,0,0,0-72Zm0,56h-8V160h8a20,20,0,0,1,0,40Zm-40-48v56a8,8,0,0,1-16,0V177.38L74.55,196.59a8,8,0,0,1-13.1,0L48,177.38V208a8,8,0,0,1-16,0V152a8,8,0,0,1,14.55-4.59L68,178.05l21.45-30.64A8,8,0,0,1,104,152Z',
+      globe: 'M128,24h0A104,104,0,1,0,232,128,104.12,104.12,0,0,0,128,24Zm88,104a87.61,87.61,0,0,1-3.33,24H174.16a157.44,157.44,0,0,0,0-48h38.51A87.61,87.61,0,0,1,216,128ZM102,168H154a115.11,115.11,0,0,1-26,45A115.27,115.27,0,0,1,102,168Zm-3.9-16a140.84,140.84,0,0,1,0-48h59.88a140.84,140.84,0,0,1,0,48ZM40,128a87.61,87.61,0,0,1,3.33-24H81.84a157.44,157.44,0,0,0,0,48H43.33A87.61,87.61,0,0,1,40,128ZM154,88H102a115.11,115.11,0,0,1,26-45A115.27,115.27,0,0,1,154,88Zm52.33,0H170.71a135.28,135.28,0,0,0-22.3-45.6A88.29,88.29,0,0,1,206.37,88ZM107.59,42.4A135.28,135.28,0,0,0,85.29,88H49.63A88.29,88.29,0,0,1,107.59,42.4ZM49.63,168H85.29a135.28,135.28,0,0,0,22.3,45.6A88.29,88.29,0,0,1,49.63,168Zm98.78,45.6a135.28,135.28,0,0,0,22.3-45.6h35.66A88.29,88.29,0,0,1,148.41,213.6Z',
+      term: 'M128,128a8,8,0,0,1-3,6.25l-40,32a8,8,0,1,1-10-12.5L107.19,128,75,102.25a8,8,0,1,1,10-12.5l40,32A8,8,0,0,1,128,128Zm48,24H136a8,8,0,0,0,0,16h40a8,8,0,0,0,0-16Zm56-96V200a16,16,0,0,1-16,16H40a16,16,0,0,1-16-16V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56ZM216,200V56H40V200H216Z',
+      pencil: 'M229.66,58.34l-32-32a8,8,0,0,0-11.32,0l-96,96A8,8,0,0,0,88,128v32a8,8,0,0,0,8,8h32a8,8,0,0,0,5.66-2.34l96-96A8,8,0,0,0,229.66,58.34ZM124.69,152H104V131.31l64-64L188.69,88ZM200,76.69,179.31,56,192,43.31,212.69,64ZM224,128v80a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32h80a8,8,0,0,1,0,16H48V208H208V128a8,8,0,0,1,16,0Z',
+      gear: 'M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.21,107.21,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3-3L186,40.54a8,8,0,0,0-3.94-6,107.71,107.71,0,0,0-26.25-10.87,8,8,0,0,0-7.06,1.49L130.16,40Q128,40,125.84,40L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27q-1.56,1.49-3,3L40.54,70a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L40,125.84Q40,128,40,130.16L25.11,148.8a8,8,0,0,0-1.48,7.06,107.21,107.21,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.64q1.49,1.56,3,3L70,215.46a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87,8,8,0,0,0,7.06-1.49L125.84,216q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3-3L215.46,186a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25,8,8,0,0,0-1.49-7.06Zm-16.1-6.5a73.93,73.93,0,0,1,0,8.68,8,8,0,0,0,1.74,5.48l14.19,17.73a91.57,91.57,0,0,1-6.23,15L187,173.11a8,8,0,0,0-5.1,2.64,74.11,74.11,0,0,1-6.14,6.14,8,8,0,0,0-2.64,5.1l-2.51,22.58a91.32,91.32,0,0,1-15,6.23l-17.74-14.19a8,8,0,0,0-5-1.75h-.48a73.93,73.93,0,0,1-8.68,0,8,8,0,0,0-5.48,1.74L100.45,215.8a91.57,91.57,0,0,1-15-6.23L82.89,187a8,8,0,0,0-2.64-5.1,74.11,74.11,0,0,1-6.14-6.14,8,8,0,0,0-5.1-2.64L46.43,170.6a91.32,91.32,0,0,1-6.23-15l14.19-17.74a8,8,0,0,0,1.74-5.48,73.93,73.93,0,0,1,0-8.68,8,8,0,0,0-1.74-5.48L40.2,100.45a91.57,91.57,0,0,1,6.23-15L69,82.89a8,8,0,0,0,5.1-2.64,74.11,74.11,0,0,1,6.14-6.14A8,8,0,0,0,82.89,69L85.4,46.43a91.32,91.32,0,0,1,15-6.23l17.74,14.19a8,8,0,0,0,5.48,1.74,73.93,73.93,0,0,1,8.68,0,8,8,0,0,0,5.48-1.74L155.55,40.2a91.57,91.57,0,0,1,15,6.23L173.11,69a8,8,0,0,0,2.64,5.1,74.11,74.11,0,0,1,6.14,6.14,8,8,0,0,0,5.1,2.64l22.58,2.51a91.32,91.32,0,0,1,6.23,15l-14.19,17.74A8,8,0,0,0,199.87,123.66Z'
+    };
+    var rows = [
+      ['Aulas', P.folder, 'Ontem, 22:05', '—', 'Pasta'],
+      ['Projetos em grupo', P.folder, '7 nov, 16:30', '—', 'Pasta'],
+      ['Relatório de física.pdf', P.pdf, 'Hoje, 19:40', '1,2 MB', 'PDF'],
+      ['Redação — rascunho.odt', P.text, 'Hoje, 18:12', '48 KB', 'Texto'],
+      ['Notas do bimestre.ods', P.text, '5 nov, 09:14', '22 KB', 'Planilha'],
+      ['Apresentação.odp', P.text, '3 nov, 21:50', '6,8 MB', 'Apresentação'],
+      ['captura-2026-11-09.png', P.pic, 'Hoje, 20:02', '412 KB', 'Imagem'],
+      ['experimento.mp4', P.video, '30 out, 15:22', '184 MB', 'Vídeo'],
+      ['lista de leitura.md', P.md, '28 out, 10:03', '3 KB', 'Markdown']
+    ];
+    var files = rows.map(function (r, k) { return { name: r[0], icon: r[1], date: r[2], size: r[3], kind: r[4], bg: k === 2 ? tint : (k % 2 ? 'var(--stripe)' : 'var(--surface)') }; });
+    var places = [['Início', P.house], ['Documentos', P.text, true], ['Downloads', P.download], ['Imagens', P.image], ['Músicas', P.music], ['Lixeira', P.trash]]
+      .map(function (p) { return { name: p[0], icon: p[1], bg: p[2] ? 'var(--selbg)' : 'transparent', weight: p[2] ? '500' : '400' }; });
+    var app = function (name, icon, running) { return { app: true, sep: false, name: name, icon: icon, dot: running ? 'var(--text)' : 'transparent' }; };
+    var dock = [app('Arquivos', P.folder, true), app('Navegador', P.globe), app('Terminal', P.term, true), app('Editor de texto', P.pencil), app('Música', P.music), app('Configurações', P.gear), { sep: true, app: false }, app('Lixeira', P.trash)];
+    var mark = 'M441,678 L421,699 L402,726 L391,748 L381,778 L381,786 L388,798 L405,822 L422,842 L448,867 L473,886 L503,904 L537,919 L571,929 L600,934 L654,935 L671,933 L671,929 L652,924 L620,910 L591,892 L571,876 L551,856 L533,832 L521,809 L513,784 L511,769 L511,752 L513,738 L521,712 L530,694 L541,677 L555,660 L576,640 L599,624 L600,619 L579,620 L552,624 L518,633 L500,640 L475,653 L461,662Z M580,346 L544,358 L525,367 L518,372 L598,413 L656,445 L722,486 L765,517 L784,574 L803,591 L813,598 L837,612 L866,624 L872,633 L880,652 L880,657 L872,685 L857,716 L832,734 L805,748 L802,747 L807,730 L807,716 L805,712 L784,702 L754,692 L729,686 L708,683 L663,684 L647,687 L627,694 L614,701 L599,712 L589,722 L579,735 L571,750 L565,769 L564,798 L571,822 L578,836 L594,858 L613,877 L639,896 L672,913 L691,920 L709,924 L729,917 L756,904 L776,892 L804,871 L830,846 L843,831 L858,811 L874,785 L893,743 L901,718 L909,680 L911,663 L912,631 L911,630 L910,604 L905,575 L898,549 L886,516 L864,474 L845,447 L827,426 L807,407 L784,389 L762,375 L730,359 L708,351 L685,345 L647,340 L622,340 L621,341 L601,342Z M341,408 L341,425 L344,441 L355,475 L367,498 L389,527 L368,562 L356,592 L349,620 L346,641 L345,669 L346,670 L346,686 L348,701 L353,723 L354,723 L354,716 L359,693 L369,667 L376,654 L397,624 L431,590 L445,579 L470,563 L498,550 L533,541 L551,539 L573,539 L546,528 L496,516 L458,504 L415,484 L388,466 L367,447 L351,427Z M428,303 L426,316 L426,346 L429,367 L439,397 L447,412 L459,428 L472,436 L483,439 L537,446 L573,455 L609,469 L623,476 L610,462 L591,447 L562,428 L512,399 L484,378 L459,353 L448,339 L435,318 L430,305Z';
+    return { themeClass: this.props.dark ? 'th-dark' : 'th-light', accent: a, i: i, files: files, places: places, dock: dock, mark: mark };
+  }
+}
+</script>
+</body>
+</html>

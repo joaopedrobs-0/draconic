@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Draconic — login</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#EDEDED}a:hover{color:#FFFFFF}
+.pill{background:rgba(255,255,255,0.12);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.16)}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 900px; overflow: hidden; background: #3A3B3D; color: #EDEDED; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 13px">
+
+  <div style="position: absolute; top: 16px; right: 24px; display: flex; align-items: center; gap: 16px">
+    <span>PT</span>
+    <svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" role="img" aria-label="Wi-Fi conectado"><path d="M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z"></path></svg>
+    <span style="display: flex; align-items: center; gap: 4px"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M200,56H32A24,24,0,0,0,8,80v96a24,24,0,0,0,24,24H200a24,24,0,0,0,24-24V80A24,24,0,0,0,200,56Zm8,120a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H200a8,8,0,0,1,8,8ZM144,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm-40,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM64,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Zm192,0v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0Z"></path></svg>82%</span>
+  </div>
+
+  <div style="position: absolute; top: 112px; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; gap: 4px">
+    <span style="font-size: 15px; font-weight: 500; color: #D6D6D9">Segunda-feira, 9 de novembro</span>
+    <span style="font-size: 96px; font-weight: 500; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums">21:30</span>
+  </div>
+
+  <form style="position: absolute; top: 520px; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; gap: 12px">
+    <span style="width: 72px; height: 72px; border-radius: 50%; background: #5A5B5E; display: flex; align-items: center; justify-content: center; color: #EDEDED">
+      <svg width="36" height="36" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.560,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"></path></svg>
+    </span>
+    <label for="senha" style="font-size: 15px; font-weight: 600">Usuário</label>
+    <span class="pill" style="display: flex; align-items: center; width: 240px; height: 36px; box-sizing: border-box; padding: 0 4px 0 16px; border-radius: 18px">
+      <input id="senha" type="password" placeholder="Senha" style="flex-grow: 1; min-width: 0; border: none; outline: none; background: transparent; font: inherit; font-size: 13px; color: #FFFFFF">
+      <button type="button" aria-label="Entrar" style="width: 28px; height: 28px; flex-shrink: 0; border-radius: 50%; border: none; background: rgba(255,255,255,0.18); color: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg></button>
+    </span>
+  </form>
+
+  <nav aria-label="Energia" style="position: absolute; bottom: 40px; left: 0; right: 0; display: flex; justify-content: center; gap: 48px">
+    <sc-for list="{{power}}" as="p" hint-placeholder-count="3">
+      <button style="display: flex; flex-direction: column; align-items: center; gap: 8px; background: transparent; border: none; padding: 0; font: inherit; font-size: 12px; color: #D6D6D9; cursor: pointer">
+        <span class="pill" style="width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #EDEDED"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{p.icon}}"></path></svg></span>{{p.name}}
+      </button>
+    </sc-for>
+  </nav>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var power = [
+      ['Suspender', 'M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z'],
+      ['Reiniciar', 'M240,56v48a8,8,0,0,1-8,8H184a8,8,0,0,1,0-16H211.4L184.81,71.64l-.25-.24a80,80,0,1,0-1.67,114.78,8,8,0,0,1,11,11.63A95.44,95.44,0,0,1,128,224h-1.32A96,96,0,1,1,195.75,60L224,85.8V56a8,8,0,1,1,16,0Z'],
+      ['Desligar', 'M120,128V48a8,8,0,0,1,16,0v80a8,8,0,0,1-16,0Zm60.37-78.7a8,8,0,0,0-8.74,13.4C194.74,77.77,208,101.570,208,128a80,80,0,0,1-160,0c0-26.43,13.26-50.23,36.37-65.3a8,8,0,0,0-8.74-13.4C47.9,67.38,32,96.06,32,128a96,96,0,0,0,192,0C224,96.06,208.1,67.38,180.37,49.3Z']
+    ].map(function (p) { return { name: p[0], icon: p[1] }; });
+    return { power: power };
+  }
+}
+</script>
+</body>
+</html>

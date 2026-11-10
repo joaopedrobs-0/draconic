@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Draconic — central de controle</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1A1A1A}a:hover{color:#000000}
+.glass{background:rgba(246,246,247,0.72);backdrop-filter:blur(28px) saturate(170%);-webkit-backdrop-filter:blur(28px) saturate(170%);border:1px solid rgba(255,255,255,0.7);box-shadow:inset 0 1px 0 rgba(255,255,255,0.9), 0 16px 48px rgba(0,0,0,0.22), 0 0 0 0.5px rgba(0,0,0,0.12)}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 900px; overflow: hidden; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 13px; color: #1A1A1A">
+  <div aria-hidden="true" style="position: absolute; inset: 0">
+    <dc-import name="Main" hint-size="1440px,900px"></dc-import>
+  </div>
+
+  <section role="dialog" aria-label="Central de controle" class="glass" style="position: absolute; top: 36px; right: 12px; width: 344px; box-sizing: border-box; padding: 8px; border-radius: 20px; display: flex; flex-direction: column; gap: 8px">
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+      <div style="grid-row: span 2; padding: 8px; border-radius: 12px; background: rgba(255,255,255,0.62); display: flex; flex-direction: column; gap: 8px">
+        <sc-for list="{{conn}}" as="c" hint-placeholder-count="3">
+          <button role="switch" aria-checked="{{c.on}}" style="display: flex; align-items: center; gap: 8px; padding: 0; background: transparent; border: none; font: inherit; text-align: left; color: #1A1A1A; cursor: pointer">
+            <span style="width: 28px; height: 28px; flex-shrink: 0; border-radius: 50%; background: {{c.bg}}; color: {{c.fg}}; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{c.icon}}"></path></svg></span>
+            <span style="display: flex; flex-direction: column; min-width: 0"><span style="font-weight: 600; font-size: 12px">{{c.name}}</span><span style="font-size: 11px; color: #55555A">{{c.state}}</span></span>
+          </button>
+        </sc-for>
+      </div>
+      <button role="switch" aria-checked="false" style="padding: 8px; border-radius: 12px; border: none; background: rgba(255,255,255,0.62); display: flex; align-items: center; gap: 8px; font: inherit; text-align: left; color: #1A1A1A; cursor: pointer">
+        <span style="width: 28px; height: 28px; flex-shrink: 0; border-radius: 50%; background: rgba(0,0,0,0.08); display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.moon}}"></path></svg></span>
+        <span style="display: flex; flex-direction: column"><span style="font-weight: 600; font-size: 12px">Não perturbe</span><span style="font-size: 11px; color: #55555A">Desligado</span></span>
+      </button>
+      <button style="padding: 8px; border-radius: 12px; border: none; background: rgba(255,255,255,0.62); display: flex; align-items: center; gap: 8px; font: inherit; text-align: left; color: #1A1A1A; cursor: pointer">
+        <span style="width: 28px; height: 28px; flex-shrink: 0; border-radius: 50%; background: rgba(0,0,0,0.08); display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.camera}}"></path></svg></span>
+        <span style="display: flex; flex-direction: column"><span style="font-weight: 600; font-size: 12px">Captura</span><span style="font-size: 11px; color: #55555A">Meta+Shift+4</span></span>
+      </button>
+    </div>
+
+    <sc-for list="{{sliders}}" as="s" hint-placeholder-count="2">
+      <div style="padding: 8px 12px 12px; border-radius: 12px; background: rgba(255,255,255,0.62); display: flex; flex-direction: column; gap: 8px">
+        <span style="display: flex; justify-content: space-between; font-size: 12px"><span style="font-weight: 600">{{s.name}}</span><span style="color: #55555A">{{s.note}}</span></span>
+        <span role="slider" aria-label="{{s.name}}" aria-valuenow="{{s.value}}" aria-valuemin="0" aria-valuemax="100" style="position: relative; height: 24px; border-radius: 12px; background: rgba(0,0,0,0.08); overflow: hidden; display: flex">
+          <span style="width: {{s.pct}}; background: #FFFFFF; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.18); display: flex; align-items: center; padding-left: 6px; box-sizing: border-box; color: #55555A"><svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{s.icon}}"></path></svg></span>
+        </span>
+      </div>
+    </sc-for>
+
+    <div style="padding: 8px; border-radius: 12px; background: rgba(255,255,255,0.62); display: flex; align-items: center; gap: 12px">
+      <span style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 8px; background: #2E2E30; color: #A6A6AB; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.music}}"></path></svg></span>
+      <span style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-size: 12px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Gymnopédie n.º 1</span><span style="font-size: 11px; color: #55555A">Erik Satie · Música</span></span>
+      <span style="display: flex; align-items: center">
+        <button aria-label="Faixa anterior" style="width: 28px; height: 28px; border: none; background: transparent; border-radius: 6px; color: #1A1A1A; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.back}}"></path></svg></button>
+        <button aria-label="Pausar" style="width: 28px; height: 28px; border: none; background: transparent; border-radius: 6px; color: #1A1A1A; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.pause}}"></path></svg></button>
+        <button aria-label="Próxima faixa" style="width: 28px; height: 28px; border: none; background: transparent; border-radius: 6px; color: #1A1A1A; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.fwd}}"></path></svg></button>
+      </span>
+    </div>
+    <a href="#" style="padding: 4px 8px 4px; font-size: 12px; color: #55555A; text-decoration: none">Configurações da central…</a>
+  </section>
+
+  <section aria-label="Notificações" style="position: absolute; top: 36px; right: 368px; width: 344px; display: flex; flex-direction: column; gap: 8px">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0 4px; height: 24px">
+      <span style="font-size: 13px; font-weight: 600; color: #1A1A1A">Notificações</span>
+      <button style="height: 24px; padding: 0 8px; border: none; border-radius: 12px; background: rgba(255,255,255,0.6); font: inherit; font-size: 12px; color: #1A1A1A; cursor: pointer">Limpar tudo</button>
+    </div>
+    <sc-for list="{{notes}}" as="n" hint-placeholder-count="3">
+      <article class="glass" style="padding: 12px; border-radius: 16px; display: flex; gap: 12px">
+        <span style="width: 32px; height: 32px; flex-shrink: 0; border-radius: 8px; background: #FFFFFF; border: 1px solid rgba(0,0,0,0.08); display: flex; align-items: center; justify-content: center; color: #1A1A1A"><svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{n.icon}}"></path></svg></span>
+        <span style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+          <span style="display: flex; justify-content: space-between; font-size: 11px; color: #55555A"><span>{{n.app}}</span><span>{{n.time}}</span></span>
+          <span style="font-size: 13px; font-weight: 600">{{n.title}}</span>
+          <span style="font-size: 12px; color: #3A3A3D; line-height: 1.4">{{n.body}}</span>
+          <sc-if value="{{n.hasAction}}" hint-placeholder-val="{{ false }}">
+            <span style="display: flex; gap: 8px; margin-top: 8px">
+              <button style="height: 28px; padding: 0 12px; border-radius: 6px; border: none; background: #C8873A; color: #1A1A1A; font: inherit; font-size: 12px; font-weight: 500; cursor: pointer">{{n.action}}</button>
+              <button style="height: 28px; padding: 0 12px; border-radius: 6px; border: 1px solid rgba(0,0,0,0.12); background: rgba(255,255,255,0.7); color: #1A1A1A; font: inherit; font-size: 12px; cursor: pointer">Mais tarde</button>
+            </span>
+          </sc-if>
+        </span>
+      </article>
+    </sc-for>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var i = {
+      wifi: 'M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.08,99.37a156,156,0,0,1,197.84,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,11.24-1.3A8,8,0,0,0,205,122.77Zm-32.26,35.76a76.05,76.05,0,0,0-89.42,0,8,8,0,0,0,9.42,12.94,60,60,0,0,1,70.58,0,8,8,0,1,0,9.42-12.94Z',
+      bt: 'M196.8,169.6,141.33,128,196.8,86.4a8,8,0,0,0,0-12.8l-64-48A8,8,0,0,0,120,32v80L68.8,73.6a8,8,0,0,0-9.6,12.8L114.67,128,59.2,169.6a8,8,0,1,0,9.6,12.8L120,144v80a8,8,0,0,0,12.8,6.4l64-48a8,8,0,0,0,0-12.8ZM136,48l42.67,32L136,112Zm0,160V144l42.67,32Z',
+      plane: 'M185.33,114.21l29.14-27.42.17-.17a32,32,0,0,0-45.26-45.26c0,.06-.11.11-.17.17L141.79,70.67l-83-30.2a8,8,0,0,0-8.39,1.86l-24,24a8,8,0,0,0,1.22,12.31l63.89,42.59L76.69,136H56a8,8,0,0,0-5.65,2.34l-24,24A8,8,0,0,0,29,175.42l36.82,14.73,14.7,36.75.06.16a8,8,0,0,0,13.18,2.47l23.87-23.88A8,8,0,0,0,120,200V179.31l14.76-14.76,42.59,63.89a8,8,0,0,0,12.31,1.22l24-24a8,8,0,0,0,1.86-8.39Zm-.07,97.23-42.59-63.88A8,8,0,0,0,136.8,144c-.27,0-.53,0-.79,0a8,8,0,0,0-5.66,2.35l-24,24A8,8,0,0,0,104,176v20.69L90.93,209.76,79.43,181A8,8,0,0,0,75,176.57l-28.74-11.5L59.32,152H80a8,8,0,0,0,5.66-2.34l24-24a8,8,0,0,0-1.22-12.32L44.56,70.74l13.5-13.49,83.22,30.26a8,8,0,0,0,8.56-2L180.78,52.6A16,16,0,0,1,203.4,75.23l-32.87,30.93a8,8,0,0,0-2,8.56l30.26,83.22Z',
+      moon: 'M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z',
+      camera: 'M208,56H180.28L166.65,35.56A8,8,0,0,0,160,32H96a8,8,0,0,0-6.65,3.56L75.71,56H48A24,24,0,0,0,24,80V192a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V80A24,24,0,0,0,208,56Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H80a8,8,0,0,0,6.66-3.56L100.28,48h55.43l13.630,20.44A8,8,0,0,0,176,72h32a8,8,0,0,1,8,8ZM128,88a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,88Zm0,72a28,28,0,1,1,28-28A28,28,0,0,1,128,160Z',
+      sun: 'M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z',
+      speaker: 'M163.51,24.81a8,8,0,0,0-8.42.88L85.25,80H40A16,16,0,0,0,24,96v64a16,16,0,0,0,16,16H85.25l69.84,54.31A8,8,0,0,0,168,224V32A8,8,0,0,0,163.51,24.81ZM152,207.64,92.91,161.69A7.94,7.94,0,0,0,88,160H40V96H88a7.94,7.94,0,0,0,4.91-1.69L152,48.36ZM208,104v48a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm32-16v80a8,8,0,0,1-16,0V88a8,8,0,0,1,16,0Z',
+      music: 'M212.92,17.69a8,8,0,0,0-6.86-1.45l-128,32A8,8,0,0,0,72,56V166.08A36,36,0,1,0,88,196V110.25l112-28v51.83A36,36,0,1,0,216,164V24A8,8,0,0,0,212.92,17.69ZM52,216a20,20,0,1,1,20-20A20,20,0,0,1,52,216ZM88,93.75V62.25l112-28v31.5ZM180,184a20,20,0,1,1,20-20A20,20,0,0,1,180,184Z',
+      pause: 'M216,48V208a16,16,0,0,1-16,16H160a16,16,0,0,1-16-16V48a16,16,0,0,1,16-16h40A16,16,0,0,1,216,48ZM96,32H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V48A16,16,0,0,0,96,32Z',
+      fwd: 'M208,40V216a8,8,0,0,1-16,0V146.77L72.43,221.55A15.95,15.95,0,0,1,48,208.12V47.88A15.95,15.95,0,0,1,72.43,34.45L192,109.23V40a8,8,0,0,1,16,0Z',
+      back: 'M208,47.88V208.12a16,16,0,0,1-24.43,13.43L64,146.77V216a8,8,0,0,1-16,0V40a8,8,0,0,1,16,0v69.23L183.57,34.45A15.95,15.95,0,0,1,208,47.88Z',
+      download: 'M224,144v64a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V144a8,8,0,0,1,16,0v56H208V144a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,124.69V32a8,8,0,0,0-16,0v92.69L93.66,98.34a8,8,0,0,0-11.32,11.32Z',
+      image: 'M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z'
+    };
+    var on = function (name, icon, state, active) { return { name: name, icon: icon, state: state, on: active ? 'true' : 'false', bg: active ? '#C8873A' : 'rgba(0,0,0,0.08)', fg: '#1A1A1A' }; };
+    var conn = [on('Wi-Fi', i.wifi, 'Rede de casa', true), on('Bluetooth', i.bt, 'Ligado', true), on('Modo avião', i.plane, 'Desligado', false)];
+    var sliders = [
+      { name: 'Tela', note: 'Brilho', value: '70', pct: '70%', icon: i.sun },
+      { name: 'Som', note: 'Alto-falantes internos', value: '45', pct: '45%', icon: i.speaker }
+    ];
+    var notes = [
+      { app: 'Sistema', time: 'agora', title: 'Atualização 1.0.1 pronta', body: 'Entra na próxima vez que você reiniciar. A versão atual continua disponível no boot.', icon: i.download, hasAction: true, action: 'Reiniciar agora' },
+      { app: 'Arquivos', time: '20:02', title: 'Captura de tela salva', body: 'captura-2026-11-09.png em Imagens', icon: i.image, hasAction: false, action: '' }
+    ];
+    return { i: i, conn: conn, sliders: sliders, notes: notes };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Draconic — baixar</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Michroma&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1A1A1A}a:hover{color:#7A4E1D}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #F6F6F5; color: #1A1A1A; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 15px; line-height: 1.55">
+
+  <header style="background: #F6F6F5; border-bottom: 1px solid #E2E2E3">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px">
+      <a href="#" style="display: flex; align-items: center; gap: 8px; text-decoration: none">
+        <svg width="22" height="24" viewBox="337 299 579 640" aria-hidden="true"><path fill="#1A1A1A" fill-rule="evenodd" d="{{mark}}"></path></svg>
+        <span style="font-family: Michroma, sans-serif; font-size: 15px; letter-spacing: 0.06em">DRACONIC</span>
+      </a>
+      <nav aria-label="Principal" style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 14px; flex-grow: 1">
+        <a href="#recursos" style="text-decoration: none">Recursos</a>
+        <a href="#baixar" style="text-decoration: none">Baixar</a>
+        <a href="#instalar" style="text-decoration: none">Como instalar</a>
+        <a href="#" style="text-decoration: none">Documentação</a>
+      </nav>
+      <a href="#" style="display: flex; align-items: center; gap: 8px; font-size: 14px; text-decoration: none">
+        <svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.github}}"></path></svg>Código-fonte
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section style="max-width: 1200px; margin: 0 auto; padding: 64px 24px 48px; display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: flex-end">
+      <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <h1 style="margin: 0; font-family: Michroma, sans-serif; font-weight: 400; font-size: clamp(32px, 5vw, 48px); line-height: 1.15">Draconic 1.0</h1>
+        <p style="margin: 0; font-size: 18px; line-height: 1.5; color: #3A3A3D; max-width: 640px">Um sistema para PC baseado no Fedora Kinoite. Área de trabalho com a ergonomia do macOS, atalhos pela tecla Meta e atualizações atômicas que podem ser desfeitas no próximo boot.</p>
+      </div>
+      <div style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 8px">
+        <a href="#baixar" style="height: 44px; padding: 0 20px; display: flex; align-items: center; justify-content: center; gap: 8px; background: #C8873A; color: #1A1A1A; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none">
+          <svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.download}}"></path></svg>Baixar para PC (x86_64)
+        </a>
+        <span style="font-size: 13px; color: #55555A; text-align: center">ISO · [tamanho] · lançado em [data] · <a href="#baixar">outras versões</a></span>
+      </div>
+    </section>
+
+    <section aria-label="Captura de tela" style="max-width: 1200px; margin: 0 auto; padding: 0 24px">
+      <div style="width: 1080px; max-width: 100%; height: 675px; margin: 0 auto; overflow: hidden; border-radius: 12px; border: 1px solid #C4C4C7; box-shadow: 0 24px 48px rgba(0,0,0,0.12)">
+        <div style="width: 1440px; height: 900px; transform: scale(0.75); transform-origin: top left">
+          <dc-import name="Main" hint-size="1440px,900px"></dc-import>
+        </div>
+      </div>
+    </section>
+
+    <section id="recursos" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px 48px; display: flex; flex-wrap: wrap; gap: 32px 64px">
+      <h2 style="flex: 1 1 260px; margin: 0; font-size: 24px; font-weight: 600; line-height: 1.3">O que muda em relação ao Fedora</h2>
+      <dl style="flex: 999 1 560px; min-width: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px 48px">
+        <sc-for list="{{features}}" as="f" hint-placeholder-count="6">
+          <div style="display: flex; flex-direction: column; gap: 4px; padding-top: 16px; border-top: 1px solid #D6D6D8">
+            <dt style="font-weight: 600">{{f.t}}</dt>
+            <dd style="margin: 0; color: #3A3A3D">{{f.d}}</dd>
+          </div>
+        </sc-for>
+      </dl>
+    </section>
+
+    <section id="baixar" style="max-width: 1200px; margin: 0 auto; padding: 48px 24px; display: flex; flex-direction: column; gap: 24px">
+      <h2 style="margin: 0; font-size: 24px; font-weight: 600">Baixar</h2>
+      <div style="overflow-x: auto; border: 1px solid #E2E2E3; border-radius: 12px; background: #FFFFFF">
+        <table style="width: 100%; min-width: 720px; border-collapse: collapse; font-size: 14px">
+          <thead>
+            <tr style="height: 40px; text-align: left; font-size: 13px; color: #55555A; background: #F6F6F5">
+              <th scope="col" style="padding: 0 16px; font-weight: 500">Versão</th>
+              <th scope="col" style="padding: 0 16px; font-weight: 500">Para quem</th>
+              <th scope="col" style="padding: 0 16px; font-weight: 500; text-align: right">Tamanho</th>
+              <th scope="col" style="padding: 0 16px; font-weight: 500">Verificação</th>
+              <th scope="col" style="padding: 0 16px"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Baixar</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{isos}}" as="r" hint-placeholder-count="3">
+              <tr style="height: 64px; border-top: 1px solid #E2E2E3">
+                <td style="padding: 0 16px"><span style="display: flex; flex-direction: column"><span style="font-weight: 600">{{r.name}}</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #55555A">{{r.file}}</span></span></td>
+                <td style="padding: 0 16px; color: #3A3A3D">{{r.who}}</td>
+                <td style="padding: 0 16px; text-align: right; color: #55555A; font-variant-numeric: tabular-nums">[tamanho]</td>
+                <td style="padding: 0 16px"><a href="#" style="font-size: 13px">SHA256</a></td>
+                <td style="padding: 0 16px; text-align: right"><a href="#" style="height: 32px; padding: 0 12px; display: inline-flex; align-items: center; gap: 8px; border-radius: 6px; font-size: 13px; font-weight: 500; text-decoration: none; background: {{r.bg}}; color: #1A1A1A; border: 1px solid {{r.border}}"><svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.download}}"></path></svg>Baixar</a></td>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin: 0; font-size: 14px; color: #55555A">Requisitos: processador de 64 bits, inicialização UEFI, [RAM mínima] de memória e [espaço mínimo] de disco.</p>
+    </section>
+
+    <section id="instalar" style="max-width: 1200px; margin: 0 auto; padding: 48px 24px 96px; display: flex; flex-wrap: wrap; gap: 48px 64px">
+      <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <h2 style="margin: 0; font-size: 24px; font-weight: 600">Como instalar</h2>
+        <ol style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 12px; color: #3A3A3D">
+          <li>Baixe a ISO da versão certa para o seu computador.</li>
+          <li>Grave a ISO num pendrive de 8 GB ou mais com o <a href="#">Fedora Media Writer</a>. Tudo que estiver no pendrive será apagado.</li>
+          <li>Reinicie o computador e escolha o pendrive no menu de boot.</li>
+          <li>Siga o instalador. Ele mostra o que vai acontecer com o disco antes de gravar qualquer coisa.</li>
+        </ol>
+      </div>
+      <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <h2 style="margin: 0; font-size: 24px; font-weight: 600">Já usa Fedora Atomic?</h2>
+        <p style="margin: 0; color: #3A3A3D">Dá para trocar para o Draconic sem reinstalar. O sistema anterior continua no menu de boot até a próxima atualização.</p>
+        <div style="display: flex; align-items: flex-start; gap: 8px; padding: 12px 12px 12px 16px; background: #1E1E1F; color: #EDEDED; border-radius: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; line-height: 1.6">
+          <code style="flex-grow: 1; min-width: 0; overflow-wrap: anywhere">rpm-ostree rebase ostree-image-signed:docker://ghcr.io/draconic/draconic:latest</code>
+          <button aria-label="Copiar comando" style="width: 32px; height: 32px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; border: none; border-radius: 6px; background: #2E2E30; color: #EDEDED; cursor: pointer"><svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.copy}}"></path></svg></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="border-top: 1px solid #E2E2E3">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #55555A">
+      <span>Draconic é um projeto independente baseado no Fedora. Não é um produto oficial do Projeto Fedora.</span>
+      <span style="display: flex; gap: 16px"><a href="#">Código-fonte</a><a href="#">Licença</a><a href="#">Notas da versão</a></span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var i = {
+      download: 'M224,144v64a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V144a8,8,0,0,1,16,0v56H208V144a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,124.69V32a8,8,0,0,0-16,0v92.69L93.66,98.34a8,8,0,0,0-11.32,11.32Z',
+      copy: 'M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z',
+      github: 'M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z'
+    };
+    var features = [
+      ['Atualizações atômicas', 'O sistema é trocado inteiro a cada atualização. Se algo quebrar, escolha a versão anterior no boot.'],
+      ['Atalhos pela tecla Meta', 'Meta+Espaço busca, Meta+Q fecha o app, Meta+setas encaixam janelas. Uma lógica só para tudo.'],
+      ['Busca em todo lugar', 'Apps, arquivos e ajustes do sistema na mesma janela, sem abrir as Configurações.'],
+      ['Claro e escuro', 'Os dois temas usam as mesmas cores por função, então nenhum app fica esquecido.'],
+      ['Base Fedora Kinoite', 'Mesmos pacotes e atualizações de segurança do Fedora, com KDE Plasma por baixo.'],
+      ['Placas NVIDIA', 'Versão com o driver da NVIDIA já instalado, para não depender de configuração depois.']
+    ].map(function (f) { return { t: f[0], d: f[1] }; });
+    var isos = [
+      ['PC (Intel e AMD)', 'Draconic-1.0-x86_64.iso', 'A maioria dos computadores e notebooks.', true],
+      ['PC com placa NVIDIA', 'Draconic-1.0-x86_64-nvidia.iso', 'Inclui o driver proprietário da NVIDIA.', false],
+      ['ARM (aarch64)', 'Draconic-1.0-aarch64.iso', 'Máquinas virtuais em Mac com chip Apple e placas ARM.', false]
+    ].map(function (r) { return { name: r[0], file: r[1], who: r[2], bg: r[3] ? '#C8873A' : '#FFFFFF', border: r[3] ? '#C8873A' : '#B8B8BC' }; });
+    var mark = 'M441,678 L421,699 L402,726 L391,748 L381,778 L381,786 L388,798 L405,822 L422,842 L448,867 L473,886 L503,904 L537,919 L571,929 L600,934 L654,935 L671,933 L671,929 L652,924 L620,910 L591,892 L571,876 L551,856 L533,832 L521,809 L513,784 L511,769 L511,752 L513,738 L521,712 L530,694 L541,677 L555,660 L576,640 L599,624 L600,619 L579,620 L552,624 L518,633 L500,640 L475,653 L461,662Z M580,346 L544,358 L525,367 L518,372 L598,413 L656,445 L722,486 L765,517 L784,574 L803,591 L813,598 L837,612 L866,624 L872,633 L880,652 L880,657 L872,685 L857,716 L832,734 L805,748 L802,747 L807,730 L807,716 L805,712 L784,702 L754,692 L729,686 L708,683 L663,684 L647,687 L627,694 L614,701 L599,712 L589,722 L579,735 L571,750 L565,769 L564,798 L571,822 L578,836 L594,858 L613,877 L639,896 L672,913 L691,920 L709,924 L729,917 L756,904 L776,892 L804,871 L830,846 L843,831 L858,811 L874,785 L893,743 L901,718 L909,680 L911,663 L912,631 L911,630 L910,604 L905,575 L898,549 L886,516 L864,474 L845,447 L827,426 L807,407 L784,389 L762,375 L730,359 L708,351 L685,345 L647,340 L622,340 L621,341 L601,342Z M341,408 L341,425 L344,441 L355,475 L367,498 L389,527 L368,562 L356,592 L349,620 L346,641 L345,669 L346,670 L346,686 L348,701 L353,723 L354,723 L354,716 L359,693 L369,667 L376,654 L397,624 L431,590 L445,579 L470,563 L498,550 L533,541 L551,539 L573,539 L546,528 L496,516 L458,504 L415,484 L388,466 L367,447 L351,427Z M428,303 L426,316 L426,346 L429,367 L439,397 L447,412 L459,428 L472,436 L483,439 L537,446 L573,455 L609,469 L623,476 L610,462 L591,447 L562,428 L512,399 L484,378 L459,353 L448,339 L435,318 L430,305Z';
+    return { i: i, features: features, isos: isos, mark: mark };
+  }
+}
+</script>
+</body>
+</html>

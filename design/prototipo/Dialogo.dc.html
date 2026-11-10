@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Draconic — diálogo destrutivo</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 900px; overflow: hidden; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 13px; color: #1A1A1A">
+  <div aria-hidden="true" style="position: absolute; inset: 0">
+    <dc-import name="Main" hint-size="1440px,900px"></dc-import>
+  </div>
+  <span aria-hidden="true" style="position: absolute; left: 73px; top: 113px; width: 878px; height: 510px; border-radius: 0 0 12px 12px; background: rgba(20,20,22,0.22)"></span>
+
+  <section role="alertdialog" aria-labelledby="dlg-t" aria-describedby="dlg-d" style="position: absolute; left: 352px; top: 112px; width: 320px; box-sizing: border-box; padding: 24px 24px 16px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; background: #FFFFFF; border: 1px solid #C4C4C7; border-top: none; border-radius: 0 0 12px 12px; box-shadow: 0 16px 40px rgba(0,0,0,0.25)">
+    <span style="width: 48px; height: 48px; border-radius: 12px; background: #F3F3F2; border: 1px solid #E2E2E3; display: flex; align-items: center; justify-content: center; color: #1A1A1A">
+      <svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"></path></svg>
+    </span>
+    <h1 id="dlg-t" style="margin: 0; font-size: 15px; font-weight: 600">Esvaziar a Lixeira?</h1>
+    <p id="dlg-d" style="margin: 0; font-size: 13px; line-height: 1.5; color: #3A3A3D">Os 14 itens da Lixeira (312 MB) serão apagados para sempre. Isso não pode ser desfeito.</p>
+    <div style="align-self: stretch; display: flex; gap: 8px; margin-top: 8px">
+      <button style="flex: 1 1 0; height: 32px; border-radius: 6px; border: 1px solid #B8B8BC; background: #FFFFFF; color: #B3261E; font: inherit; font-size: 13px; font-weight: 500; cursor: pointer">Esvaziar</button>
+      <button style="flex: 1 1 0; height: 32px; border-radius: 6px; border: 1px solid #C8873A; background: #C8873A; color: #1A1A1A; font: inherit; font-size: 13px; font-weight: 500; outline: 3px solid rgba(200,135,58,0.45); outline-offset: 2px; cursor: pointer">Cancelar</button>
+    </div>
+    <span style="font-size: 11px; color: #55555A">Enter cancela · Meta+Delete esvazia</span>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

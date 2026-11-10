@@ -1,29 +1,38 @@
 # Draconic
 
-Sistema operacional para PC baseado no **Fedora Kinoite** (Fedora Atomic com KDE Plasma 6). A ideia é ter a ergonomia do macOS — barra superior com menu global, dock, busca com Meta+Espaço, atalhos consistentes — com identidade própria e sem visual genérico.
+Sistema operacional para PC baseado no **Fedora Kinoite** (Fedora Atomic com KDE Plasma 6). A ergonomia do macOS — barra superior com menu global, dock, busca com Meta+Espaço, atalhos consistentes — com identidade própria e sem visual genérico.
 
-> Status: **fase de design.** As telas estão prontas como protótipo; a imagem do sistema ainda não foi construída.
+![Área de trabalho do Draconic](design/telas/Main.png)
+
+> Status: **design pronto, construção começando.** A imagem do sistema ainda não existe.
 
 ## O que tem aqui
 
-| Pasta | Conteúdo |
+| Caminho | Conteúdo |
 |---|---|
-| `assets/logo/` | `draconic-logo.svg` (logo completo, para boot, login e "Sobre") e `draconic-mark.svg` (marca reduzida em uma cor, para 32 px ou menos) |
-| `docs/design-system.md` | Regras visuais: cores por função, tipografia, espaçamento, componentes e o que o sistema não faz |
-| `docs/prompt-construcao.md` | Prompt para uma IA construir a imagem com BlueBuild, fase por fase |
+| `CLAUDE.md` | Instruções para o agente de programação: ambiente, regras e fases |
+| `docs/prompt-construcao.md` | O prompt para colar no Claude Code e começar |
+| `docs/design-system.md` | Cores (claro e escuro), tipografia, espaço, componentes, movimento, atalhos e o que o sistema não faz |
+| `docs/telas.md` | Catálogo de todas as telas, como cada uma vira Plasma e o que é viável agora |
+| `design/telas/` | Imagens de referência de todas as telas |
+| `design/prototipo/` | Código das telas (HTML) para tirar valores exatos |
+| `assets/logo/` | Logo completo e marca reduzida, em SVG |
 
 ## Decisões principais
 
 - **Base:** Fedora Kinoite, imagem construída com BlueBuild e instalada com `rpm-ostree rebase`.
 - **Arquiteturas:** x86_64 (com variante NVIDIA) e aarch64 (máquinas virtuais em Mac com chip Apple).
-- **Fontes:** IBM Plex Sans e IBM Plex Mono na interface; Michroma só no nome "DRACONIC".
-- **Ícones:** Phosphor, peso regular, sem misturar com outras famílias.
-- **Cor de destaque:** âmbar queimado (`#C8873A` no claro, `#D99A4E` no escuro).
-- **Temas:** claro e escuro, a partir dos mesmos tokens.
+- **Fontes:** IBM Plex Sans e IBM Plex Mono; Michroma só no nome "DRACONIC".
+- **Ícones:** Phosphor, peso regular, sem misturar.
+- **Cor de destaque:** âmbar queimado (`#C8873A` claro, `#D99A4E` escuro).
+- **Temas:** claro e escuro, dos mesmos tokens.
 
-## Protótipo das telas
+## Algumas telas
 
-Área de trabalho, instalador (4 etapas), Busca, Configurações, boot, login, folha de componentes e site de download estão no canvas de design do projeto (privado).
+| | |
+|---|---|
+| ![Busca](design/telas/Busca.png) | ![Configurações](design/telas/Configuracoes-escuro.png) |
+| ![Central de controle](design/telas/Central.png) | ![Instalador](design/telas/Instalador-01.png) |
 
 ## Aviso
 

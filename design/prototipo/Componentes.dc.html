@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Draconic — tokens e componentes</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400&amp;family=Michroma&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:inherit}a:hover{color:inherit}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1560px; box-sizing: border-box; padding: 48px; display: flex; flex-direction: column; gap: 48px; background: {{t.chrome}}; color: {{t.text}}; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 13px">
+
+  <header style="display: flex; align-items: center; gap: 16px">
+    <svg width="48" height="53" viewBox="337 299 579 640" role="img" aria-label="Logo Draconic"><path fill="{{t.logoGray}}" fill-rule="evenodd" d="M441,678 L421,699 L402,726 L391,748 L381,778 L381,786 L388,798 L405,822 L422,842 L448,867 L473,886 L503,904 L537,919 L571,929 L600,934 L654,935 L671,933 L671,929 L652,924 L620,910 L591,892 L571,876 L551,856 L533,832 L521,809 L513,784 L511,769 L511,752 L513,738 L521,712 L530,694 L541,677 L555,660 L576,640 L599,624 L600,619 L579,620 L552,624 L518,633 L500,640 L475,653 L461,662Z"></path><path fill="{{t.text}}" fill-rule="evenodd" d="M824,648 L835,660 L842,663 L850,674 L852,666 L851,658 L847,654 L841,651Z M640,545 L669,565 L679,585 L687,594 L695,600 L715,607 L735,609 L757,614 L784,624 L757,601 L716,575 L697,565 L671,554Z M341,408 L341,425 L344,441 L355,475 L367,498 L389,527 L368,562 L356,592 L349,620 L346,641 L345,669 L346,670 L346,686 L348,701 L353,723 L354,723 L354,716 L359,693 L369,667 L376,654 L397,624 L431,590 L445,579 L470,563 L498,550 L533,541 L551,539 L573,539 L546,528 L496,516 L458,504 L415,484 L388,466 L367,447 L351,427Z M580,346 L544,358 L525,367 L518,372 L598,413 L656,445 L722,486 L765,517 L784,574 L803,591 L813,598 L837,612 L866,624 L872,633 L880,652 L880,657 L872,685 L857,716 L832,734 L805,748 L802,747 L807,730 L807,716 L805,712 L784,702 L754,692 L729,686 L708,683 L663,684 L647,687 L627,694 L614,701 L599,712 L589,722 L579,735 L571,750 L565,769 L564,798 L571,822 L578,836 L594,858 L613,877 L639,896 L672,913 L691,920 L709,924 L729,917 L756,904 L776,892 L804,871 L830,846 L843,831 L858,811 L874,785 L893,743 L901,718 L909,680 L911,663 L912,631 L911,630 L910,604 L905,575 L898,549 L886,516 L864,474 L845,447 L827,426 L807,407 L784,389 L762,375 L730,359 L708,351 L685,345 L647,340 L622,340 L621,341 L601,342Z M428,303 L426,316 L426,346 L429,367 L439,397 L447,412 L459,428 L472,436 L483,439 L537,446 L573,455 L609,469 L623,476 L610,462 L591,447 L562,428 L512,399 L484,378 L459,353 L448,339 L435,318 L430,305Z"></path></svg>
+    <div style="display: flex; flex-direction: column; gap: 4px">
+      <span style="font-family: Michroma, sans-serif; font-size: 22px; letter-spacing: 0.04em">DRACONIC</span>
+      <span style="font-size: 13px; color: {{t.text2}}">Tokens e componentes · tema {{themeName}}</span>
+    </div>
+  </header>
+
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px">
+    <section style="display: flex; flex-direction: column; gap: 12px">
+      <h2 style="margin: 0; font-size: 15px; font-weight: 600">Cores</h2>
+      <table style="border-collapse: collapse">
+        <tbody>
+          <sc-for list="{{colors}}" as="c" hint-placeholder-count="12">
+            <tr style="height: 32px; border-bottom: 1px solid {{t.sep}}">
+              <td style="width: 32px"><span style="display: block; width: 20px; height: 20px; border-radius: 4px; background: {{c.value}}; box-shadow: inset 0 0 0 1px {{t.swatchRing}}"></span></td>
+              <td style="font-family: 'IBM Plex Mono', monospace; font-size: 12px">{{c.name}}</td>
+              <td style="text-align: right; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: {{t.text2}}">{{c.value}}</td>
+            </tr>
+          </sc-for>
+        </tbody>
+      </table>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 12px">
+      <h2 style="margin: 0; font-size: 15px; font-weight: 600">Tipografia</h2>
+      <sc-for list="{{type}}" as="ty" hint-placeholder-count="7">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-bottom: 8px; border-bottom: 1px solid {{t.sep}}">
+          <span style="font-family: {{ty.family}}; font-size: {{ty.size}}; font-weight: {{ty.weight}}; line-height: 1.3">{{ty.sample}}</span>
+          <span style="flex-shrink: 0; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: {{t.text2}}">{{ty.spec}}</span>
+        </div>
+      </sc-for>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 12px">
+      <h2 style="margin: 0; font-size: 15px; font-weight: 600">Espaço e cantos</h2>
+      <sc-for list="{{space}}" as="s" hint-placeholder-count="7">
+        <div style="display: flex; align-items: center; gap: 12px; height: 24px">
+          <span style="width: 64px; font-family: 'IBM Plex Mono', monospace; font-size: 12px">{{s.name}}</span>
+          <span style="width: {{s.px}}; height: 12px; border-radius: 2px; background: {{t.accent}}"></span>
+          <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: {{t.text2}}">{{s.label}}</span>
+        </div>
+      </sc-for>
+      <div style="display: flex; gap: 16px; margin-top: 12px">
+        <div style="display: flex; flex-direction: column; gap: 8px; align-items: center"><span style="width: 48px; height: 32px; border-radius: 6px; border: 1.5px solid {{t.controlBorder}}"></span><span style="font-size: 12px; color: {{t.text2}}">6 · controle</span></div>
+        <div style="display: flex; flex-direction: column; gap: 8px; align-items: center"><span style="width: 64px; height: 40px; border-radius: 8px; border: 1.5px solid {{t.controlBorder}}"></span><span style="font-size: 12px; color: {{t.text2}}">8 · menu, painel</span></div>
+        <div style="display: flex; flex-direction: column; gap: 8px; align-items: center"><span style="width: 80px; height: 48px; border-radius: 12px; border: 1.5px solid {{t.controlBorder}}"></span><span style="font-size: 12px; color: {{t.text2}}">12 · janela</span></div>
+      </div>
+    </section>
+  </div>
+
+  <section style="display: flex; flex-direction: column; gap: 16px">
+    <h2 style="margin: 0; font-size: 15px; font-weight: 600">Botões</h2>
+    <div style="display: grid; grid-template-columns: 120px repeat(5, minmax(0, 1fr)); gap: 16px; align-items: center">
+      <span></span>
+      <sc-for list="{{stateNames}}" as="sn" hint-placeholder-count="5"><span style="font-size: 12px; color: {{t.text2}}">{{sn.name}}</span></sc-for>
+      <sc-for list="{{buttons}}" as="row" hint-placeholder-count="3">
+        <span style="font-size: 12px; color: {{t.text2}}">{{row.name}}</span>
+        <sc-for list="{{row.cells}}" as="b" hint-placeholder-count="5">
+          <span><button style="height: 32px; padding: 0 16px; border-radius: 6px; border: 1px solid {{b.border}}; background: {{b.bg}}; color: {{b.fg}}; font: inherit; font-size: 13px; font-weight: 500; outline: {{b.outline}}; outline-offset: 2px; cursor: default">{{b.label}}</button></span>
+        </sc-for>
+      </sc-for>
+    </div>
+  </section>
+
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px">
+    <section style="display: flex; flex-direction: column; gap: 16px">
+      <h2 style="margin: 0; font-size: 15px; font-weight: 600">Campos de texto</h2>
+      <sc-for list="{{fields}}" as="f" hint-placeholder-count="4">
+        <label style="display: flex; flex-direction: column; gap: 4px">
+          <span style="font-size: 12px; font-weight: 500; color: {{f.labelColor}}">{{f.label}}</span>
+          <span style="height: 32px; box-sizing: border-box; padding: 0 8px; display: flex; align-items: center; gap: 8px; border-radius: 6px; border: 1px solid {{f.border}}; background: {{f.bg}}; color: {{f.fg}}; box-shadow: {{f.ring}}">{{f.value}}</span>
+          <sc-if value="{{f.hasMsg}}" hint-placeholder-val="{{ false }}">
+            <span style="display: flex; align-items: center; gap: 4px; font-size: 12px; color: {{t.error}}"><svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-80V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,172Z"></path></svg>{{f.msg}}</span>
+          </sc-if>
+        </label>
+      </sc-for>
+      <span style="height: 32px; box-sizing: border-box; padding: 0 8px; display: flex; align-items: center; gap: 8px; border-radius: 6px; background: {{t.fill}}; color: {{t.text2}}"><svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>Buscar</span>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 16px">
+      <h2 style="margin: 0; font-size: 15px; font-weight: 600">Seleção</h2>
+      <sc-for list="{{toggles}}" as="g" hint-placeholder-count="3">
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <span style="font-size: 12px; color: {{t.text2}}">{{g.name}}</span>
+          <div style="display: flex; gap: 24px; align-items: center">
+            <sc-for list="{{g.items}}" as="i" hint-placeholder-count="4">
+              <span style="display: flex; flex-direction: column; align-items: center; gap: 8px">
+                <span style="width: {{i.w}}; height: {{i.h}}; box-sizing: border-box; border-radius: {{i.r}}; border: 1px solid {{i.border}}; background: {{i.bg}}; display: flex; align-items: center; justify-content: {{i.justify}}; padding: 0 2px; color: {{i.fg}}; box-shadow: {{i.ring}}">
+                  <sc-if value="{{i.check}}" hint-placeholder-val="{{ false }}"><svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg></sc-if>
+                  <sc-if value="{{i.minus}}" hint-placeholder-val="{{ false }}"><svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z"></path></svg></sc-if>
+                  <sc-if value="{{i.dot}}" hint-placeholder-val="{{ false }}"><span style="width: 6px; height: 6px; margin: 0 auto; border-radius: 50%; background: currentColor"></span></sc-if>
+                  <sc-if value="{{i.knob}}" hint-placeholder-val="{{ false }}"><span style="width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 1px 2px rgba(0,0,0,0.3)"></span></sc-if>
+                </span>
+                <span style="font-size: 11px; color: {{t.text2}}">{{i.label}}</span>
+              </span>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </section>
+
+    <section style="display: flex; gap: 24px; align-items: flex-start">
+      <div style="flex: 1 1 0; display: flex; flex-direction: column; gap: 12px">
+        <h2 style="margin: 0; font-size: 15px; font-weight: 600">Linhas de lista</h2>
+        <div style="padding: 4px; border-radius: 8px; border: 1px solid {{t.sep}}; background: {{t.window}}; display: flex; flex-direction: column">
+          <sc-for list="{{rows}}" as="r" hint-placeholder-count="5">
+            <span style="height: 28px; padding: 0 8px; display: flex; align-items: center; gap: 8px; border-radius: 4px; background: {{r.bg}}; color: {{r.fg}}; box-shadow: {{r.ring}}">
+              <svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,72H131.31L104,44.69A15.86,15.86,0,0,0,92.69,40H40A16,16,0,0,0,24,56V200.62A15.4,15.4,0,0,0,39.38,216H216.89A15.13,15.13,0,0,0,232,200.89V88A16,16,0,0,0,216,72ZM40,56H92.69l16,16H40ZM216,200H40V88H216Z"></path></svg>
+              <span style="flex-grow: 1">{{r.name}}</span><span style="font-size: 11px; color: {{t.text2}}">{{r.state}}</span>
+            </span>
+          </sc-for>
+        </div>
+      </div>
+      <div style="width: 220px; flex-shrink: 0; display: flex; flex-direction: column; gap: 12px">
+        <h2 style="margin: 0; font-size: 15px; font-weight: 600">Menu</h2>
+        <div role="menu" aria-label="Exemplo de menu" style="padding: 4px; border-radius: 8px; border: 1px solid {{t.sep}}; background: {{t.elevated}}; box-shadow: 0 8px 24px rgba(0,0,0,0.18); display: flex; flex-direction: column">
+          <sc-for list="{{menu}}" as="m" hint-placeholder-count="7">
+            <sc-if value="{{m.sep}}" hint-placeholder-val="{{ false }}"><span style="height: 1px; margin: 4px 8px; background: {{t.sep}}"></span></sc-if>
+            <sc-if value="{{m.item}}" hint-placeholder-val="{{ true }}">
+              <span role="menuitem" style="height: 24px; padding: 0 8px; display: flex; align-items: center; justify-content: space-between; border-radius: 4px; background: {{m.bg}}; color: {{m.fg}}">{{m.label}}<span style="display: flex; align-items: center; font-size: 12px; color: {{m.keyColor}}">{{m.key}}<sc-if value="{{m.sub}}" hint-placeholder-val="{{ false }}"><svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path></svg></sc-if></span></span>
+            </sc-if>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"dark":{"editor":"boolean","default":false},"$preview":{"width":1440,"height":1560}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var dark = !!this.props.dark;
+    var L = { text: '#1A1A1A', text2: '#55555A', window: '#FFFFFF', chrome: '#F3F3F2', elevated: '#FFFFFF', sep: '#E2E2E3', controlBorder: '#B8B8BC', fill: '#E9E9EA', hover: '#EDEDED', pressed: '#E0E0E1', accent: '#C8873A', accentHover: '#BB7B2F', accentPressed: '#A86C25', onAccent: '#1A1A1A', selection: 'rgba(200,135,58,0.20)', focus: 'rgba(200,135,58,0.55)', disabledBg: '#EDEDED', disabledFg: '#9A9A9E', error: '#B3261E', success: '#2F6B3A', warning: '#8A5320', logoGray: '#A9A9A9', swatchRing: 'rgba(0,0,0,0.12)' };
+    var D = { text: '#EDEDED', text2: '#A6A6AB', window: '#1E1E1F', chrome: '#262628', elevated: '#2E2E30', sep: '#38383B', controlBorder: '#55555A', fill: '#333336', hover: '#2C2C2E', pressed: '#38383B', accent: '#D99A4E', accentHover: '#E3A85F', accentPressed: '#C88A40', onAccent: '#1A1A1A', selection: 'rgba(217,154,78,0.26)', focus: 'rgba(217,154,78,0.6)', disabledBg: '#2C2C2E', disabledFg: '#6E6E73', error: '#F2867E', success: '#6FBF7A', warning: '#E0A867', logoGray: '#6E6E73', swatchRing: 'rgba(255,255,255,0.14)' };
+    var t = dark ? D : L;
+    var colors = [
+      ['text.primary', t.text], ['text.secondary', t.text2], ['surface.window', t.window], ['surface.chrome', t.chrome],
+      ['surface.elevated', t.elevated], ['border.separator', t.sep], ['control.border', t.controlBorder], ['accent', t.accent],
+      ['selection.active', t.selection], ['status.success', t.success], ['status.warning', t.warning], ['status.error', t.error]
+    ].map(function (c) { return { name: c[0], value: c[1] }; });
+    var plex = "'IBM Plex Sans', sans-serif";
+    var type = [
+      ['display', "Michroma, sans-serif", '22px', '400', 'Draconic', 'Michroma 22 · só marca'],
+      ['title', plex, '22px', '600', 'Configurações', 'title · 22/600'],
+      ['heading', plex, '15px', '600', 'Rede e internet', 'heading · 15/600'],
+      ['body', plex, '13px', '400', 'O texto padrão da interface.', 'body · 13/400'],
+      ['label', plex, '12px', '500', 'Rótulo de campo', 'label · 12/500'],
+      ['caption', plex, '11px', '400', 'Hoje, 20:11 · 1,2 MB', 'caption · 11/400'],
+      ['mono', "'IBM Plex Mono', monospace", '12px', '400', 'rpm-ostree status', 'mono · 12/400']
+    ].map(function (x) { return { family: x[1], size: x[2], weight: x[3], sample: x[4], spec: x[5] }; });
+    var space = [[1, 4, 'ajuste interno'], [2, 8, 'ícone–texto'], [3, 12, 'padding'], [4, 16, 'grupo pequeno'], [5, 24, 'entre grupos'], [6, 32, 'seções'], [8, 48, 'regiões']]
+      .map(function (s) { return { name: 'space-' + s[0], px: s[1] + 'px', label: s[1] + ' · ' + s[2] }; });
+    var ring = '3px solid ' + t.focus;
+    var mk = function (kind) {
+      var base = kind === 'primary' ? { bg: t.accent, fg: t.onAccent, border: t.accent } : { bg: t.window, fg: kind === 'danger' ? t.error : t.text, border: t.controlBorder };
+      var label = kind === 'primary' ? 'Salvar' : (kind === 'danger' ? 'Apagar' : 'Cancelar');
+      var hover = kind === 'primary' ? t.accentHover : t.hover, press = kind === 'primary' ? t.accentPressed : t.pressed;
+      return [
+        { label: label, bg: base.bg, fg: base.fg, border: base.border, outline: 'none' },
+        { label: label, bg: hover, fg: base.fg, border: kind === 'primary' ? hover : base.border, outline: 'none' },
+        { label: label, bg: press, fg: base.fg, border: kind === 'primary' ? press : base.border, outline: 'none' },
+        { label: label, bg: base.bg, fg: base.fg, border: base.border, outline: ring },
+        { label: label, bg: t.disabledBg, fg: t.disabledFg, border: t.disabledBg, outline: 'none' }
+      ];
+    };
+    var buttons = [{ name: 'Principal', cells: mk('primary') }, { name: 'Padrão', cells: mk('secondary') }, { name: 'Destrutivo', cells: mk('danger') }];
+    var stateNames = ['Normal', 'Hover', 'Pressionado', 'Foco', 'Desabilitado'].map(function (n) { return { name: n }; });
+    var fields = [
+      { label: 'Nome do computador', value: 'draconic-mac', border: t.controlBorder, bg: t.window, fg: t.text, ring: 'none', labelColor: t.text, hasMsg: false },
+      { label: 'Com foco', value: 'draconic-mac|', border: t.accent, bg: t.window, fg: t.text, ring: '0 0 0 3px ' + t.focus, labelColor: t.text, hasMsg: false },
+      { label: 'Com erro', value: 'meu pc!', border: t.error, bg: t.window, fg: t.text, ring: 'none', labelColor: t.text, hasMsg: true, msg: 'Use só letras, números e hífen.' },
+      { label: 'Desabilitado', value: 'draconic-mac', border: t.disabledBg, bg: t.disabledBg, fg: t.disabledFg, ring: 'none', labelColor: t.disabledFg, hasMsg: false }
+    ];
+    var box = function (label, o) { return Object.assign({ label: label, w: '16px', h: '16px', r: '4px', border: t.controlBorder, bg: t.window, fg: t.onAccent, justify: 'center', check: false, minus: false, dot: false, knob: false, ring: 'none' }, o); };
+    var toggles = [
+      { name: 'Caixa de seleção', items: [box('Desmarcada', {}), box('Marcada', { bg: t.accent, border: t.accent, check: true }), box('Parcial', { bg: t.accent, border: t.accent, minus: true }), box('Desabilitada', { bg: t.disabledBg, border: t.disabledBg })] },
+      { name: 'Opção', items: [box('Desmarcada', { r: '50%' }), box('Marcada', { r: '50%', bg: t.accent, border: t.accent, dot: true }), box('Foco', { r: '50%', ring: '0 0 0 3px ' + t.focus }), box('Desabilitada', { r: '50%', bg: t.disabledBg, border: t.disabledBg })] },
+      { name: 'Chave', items: [box('Desligada', { w: '36px', h: '20px', r: '10px', bg: t.fill, border: t.controlBorder, knob: true, justify: 'flex-start' }), box('Ligada', { w: '36px', h: '20px', r: '10px', bg: t.accent, border: t.accent, knob: true, justify: 'flex-end' }), box('Desabilitada', { w: '36px', h: '20px', r: '10px', bg: t.disabledBg, border: t.disabledBg, knob: true, justify: 'flex-start' })] }
+    ];
+    var rows = [
+      { name: 'Documentos', state: 'normal', bg: 'transparent', fg: t.text, ring: 'none' },
+      { name: 'Downloads', state: 'hover', bg: t.hover, fg: t.text, ring: 'none' },
+      { name: 'Escola', state: 'selecionada', bg: t.selection, fg: t.text, ring: 'none' },
+      { name: 'Projetos', state: 'selec. + foco', bg: t.selection, fg: t.text, ring: 'inset 0 0 0 2px ' + t.accent },
+      { name: 'Pendrive', state: 'desabilitada', bg: 'transparent', fg: t.disabledFg, ring: 'none' }
+    ];
+    var it = function (label, key, o) { return Object.assign({ item: true, sep: false, label: label, key: key, sub: false, bg: 'transparent', fg: t.text, keyColor: t.text2 }, o || {}); };
+    var menu = [
+      it('Abrir', 'Meta+O'),
+      it('Abrir com', '', { sub: true }),
+      it('Renomear…', 'F2', { bg: t.accent, fg: t.onAccent, keyColor: t.onAccent }),
+      { item: false, sep: true },
+      it('Copiar', 'Meta+C'),
+      it('Colar', 'Meta+V', { fg: t.disabledFg, keyColor: t.disabledFg }),
+      { item: false, sep: true },
+      it('Mover para a Lixeira', 'Meta+⌫')
+    ];
+    return { t: t, themeName: dark ? 'escuro' : 'claro', colors: colors, type: type, space: space, buttons: buttons, stateNames: stateNames, fields: fields, toggles: toggles, rows: rows, menu: menu };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,35 +1,22 @@
-# Prompt para construir o Draconic
+# Prompt para começar a construir
 
-Cole o texto abaixo em uma IA de programação junto com este repositório.
+Abra o Claude Code dentro da pasta deste repositório (depois de `git clone`) e cole o texto abaixo.
 
 ---
 
-Você vai me ajudar a construir o **Draconic**, uma distribuição Linux baseada no Fedora. Eu entendo o básico; escreva os arquivos completos, explique cada passo em português e diga exatamente quais comandos rodar.
+Você vai construir o **Draconic**, meu sistema operacional baseado no Fedora Kinoite (KDE Plasma 6). Este repositório já tem todo o design pronto.
 
-## Base técnica
-- Fedora Kinoite (KDE Plasma 6), versão estável mais recente.
-- Imagem construída com BlueBuild (`recipe.yml` + GitHub Actions), publicada no GitHub Container Registry e instalada com `rpm-ostree rebase`. Depois, gerar a ISO instalável.
-- Arquiteturas: x86_64 (com variante que já traz o driver NVIDIA) e aarch64 (para testar em VM no VMware Fusion num Mac M2). Diga quais limitações existem em cada uma.
-- Toda customização fica versionada neste repositório; nada de "clique aqui nas configurações".
+Antes de qualquer código:
+1. Leia o `CLAUDE.md` inteiro e siga as regras dele.
+2. Leia `docs/design-system.md` e `docs/telas.md`.
+3. Abra as imagens em `design/telas/` (comece por `Main.png`, `Componentes.png` e `Busca.png`) para entender como o sistema tem que ficar.
+4. Confira a documentação atual do BlueBuild, do Fedora Atomic e do KDE Plasma 6 para o que for usar. Não confie de memória em nomes de pacotes, opções ou formato de arquivos.
 
-## Regras visuais
-Siga `docs/design-system.md` à risca: tokens de cor, tipografia (IBM Plex Sans/Mono, Michroma só no nome), escala de espaço, ícones Phosphor e a lista do que o sistema não faz. Logo em `assets/logo/`.
+Depois me mostre, em português e curto:
+- A estrutura de pastas que você propõe para o repositório (recipe do BlueBuild, `files/`, temas, scripts).
+- O plano da **Fase 1** (imagem base): o que vai criar, quais comandos eu vou rodar e como eu sei que funcionou.
+- O que eu preciso fazer manualmente (por exemplo: gerar a chave do cosign e colocar nos *secrets* do GitHub, criar a VM).
 
-## Comportamento (estilo macOS)
-- Barra superior fina com menu global, bandeja e relógio.
-- Dock inferior centralizada, sem rótulos, com indicador de app aberto.
-- Busca centralizada em Meta+Espaço (KRunner) com resultados agrupados.
-- Atalhos: Meta+Espaço busca, Meta+Q fecha app, Meta+W fecha janela, Meta+Tab alterna apps, Meta+setas encaixam janelas, Meta+1..9 áreas de trabalho, Meta+Enter terminal, Meta+E arquivos, Meta+Shift+4 captura de área, Meta+L bloqueia. Verifique conflitos com o Plasma.
-- Animações do KWin de 150–250 ms, sem efeito elástico; tudo respeita "Reduzir movimento".
-- Tema Plymouth com o logo completo e o pedido de senha do disco; tela de login (SDDM) com relógio, usuário e botões Suspender/Reiniciar/Desligar.
+Meu computador é Ubuntu x86_64 (i3, 16 GB de RAM, RTX 3050). Não mexa no sistema dele: os testes são numa VM com Fedora Kinoite, onde eu faço `rpm-ostree rebase` para a imagem do Draconic.
 
-## Como trabalhar comigo
-1. Antes do código, mostre a estrutura de pastas e as decisões principais. Espere eu aprovar.
-2. Construa em fases, cada uma testável na VM:
-   1. Imagem base funcionando (boot + rebase).
-   2. Tema, fontes, ícones, layout (barra + dock).
-   3. Atalhos e busca.
-   4. Animações.
-   5. Plymouth, SDDM, logo e ISO.
-3. Em cada fase: arquivos completos, comandos exatos e como verificar.
-4. Se algo não for possível ou você não tiver certeza de que um pacote ou extensão existe, diga em vez de inventar.
+Espere meu ok antes de começar a Fase 1. Depois de cada fase, pare e me diga como testar.

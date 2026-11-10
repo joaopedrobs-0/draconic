@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Draconic — Música</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:var(--text)}a:hover{color:var(--text)}
+.th-light{--wall:#B7B9BC;--menubar:#F3F3F2;--menuline:#CFCFD1;--text:#1A1A1A;--surface:#FFFFFF;--winborder:#C4C4C7;--chrome:#F6F6F5;--sep:#E2E2E3;--disabled:#A3A3A6;--text2:#55555A;--fill:#E9E9EA;--control:#B8B8BC;--icon:#3A3A3D;--off:#D6D6D8;--tabs:#EDEDEC;--field:#E6E6E7;--stripe:#FAFAFA}
+.th-dark{--wall:#3A3B3D;--menubar:#262628;--menuline:#38383B;--text:#EDEDED;--surface:#1E1E1F;--winborder:#4A4A4E;--chrome:#262628;--sep:#38383B;--disabled:#6E6E73;--text2:#A6A6AB;--fill:#333336;--control:#55555A;--icon:#C8C8CC;--off:#4A4A4E;--tabs:#262628;--field:#333336;--stripe:#232325}
+</style>
+</helmet>
+<div class="{{themeClass}}" style="position: relative; width: 1440px; height: 900px; overflow: hidden; background: var(--wall); font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 13px; color: var(--text)">
+
+  <header style="position: absolute; top: 0; left: 0; right: 0; height: 28px; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; background: var(--menubar); border-bottom: 1px solid var(--menuline)">
+    <nav aria-label="Menu do aplicativo" style="display: flex; align-items: center; gap: 16px">
+      <span style="width: 24px; height: 24px; display: flex; align-items: center; justify-content: center"><svg width="14" height="16" viewBox="337 299 579 640" aria-hidden="true"><path fill="var(--text)" fill-rule="evenodd" d="{{mark}}"></path></svg></span>
+      <span style="font-weight: 600">Música</span><span>Arquivo</span><span>Editar</span><span>Controles</span><span>Janela</span><span>Ajuda</span>
+    </nav>
+    <span>Seg 9 nov  21:45</span>
+  </header>
+
+  <section aria-label="Janela Música" style="position: absolute; left: 120px; top: 56px; width: 1200px; height: 800px; display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--winborder); border-radius: 12px; box-shadow: 0 16px 40px rgba(0,0,0,0.18); overflow: hidden">
+    <span style="position: absolute; top: 8px; right: 8px; display: flex">
+      <button aria-label="Minimizar" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 6px; color: var(--icon); cursor: pointer"><svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z"></path></svg></button>
+      <button aria-label="Maximizar" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 6px; color: var(--icon); cursor: pointer"><svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,48V88a8,8,0,0,1-16,0V56H168a8,8,0,0,1,0-16h40A8,8,0,0,1,216,48ZM88,200H56V168a8,8,0,0,0-16,0v40a8,8,0,0,0,8,8H88a8,8,0,0,0,0-16Zm120-40a8,8,0,0,0-8,8v32H168a8,8,0,0,0,0,16h40a8,8,0,0,0,8-8V168A8,8,0,0,0,208,160ZM88,40H48a8,8,0,0,0-8,8V88a8,8,0,0,0,16,0V56H88a8,8,0,0,0,0-16Z"></path></svg></button>
+      <button aria-label="Fechar" style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; border-radius: 6px; color: var(--icon); cursor: pointer"><svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg></button>
+    </span>
+    <div style="flex-grow: 1; display: flex; min-height: 0">
+      <nav aria-label="Biblioteca" style="width: 220px; flex-shrink: 0; box-sizing: border-box; padding: 12px 8px; display: flex; flex-direction: column; gap: 2px; background: var(--menubar); border-right: 1px solid var(--sep)">
+        <label style="height: 28px; box-sizing: border-box; margin: 4px 4px 12px; padding: 0 8px; display: flex; align-items: center; gap: 8px; border-radius: 6px; background: var(--field); color: var(--text2)">
+          <svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.search}}"></path></svg>
+          <input aria-label="Buscar na biblioteca" placeholder="Buscar" style="flex-grow: 1; border: none; outline: none; background: transparent; font: inherit; color: var(--text)">
+        </label>
+        <span style="padding: 4px 8px; font-size: 12px; font-weight: 500; color: var(--text2)">Biblioteca</span>
+        <sc-for list="{{lib}}" as="l" hint-placeholder-count="4">
+          <a href="#" style="height: 28px; padding: 0 8px; display: flex; align-items: center; gap: 8px; border-radius: 6px; text-decoration: none; background: {{l.bg}}; font-weight: {{l.weight}}"><svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{l.icon}}"></path></svg>{{l.name}}</a>
+        </sc-for>
+        <span style="padding: 16px 8px 4px; font-size: 12px; font-weight: 500; color: var(--text2)">Playlists</span>
+        <sc-for list="{{lists}}" as="p" hint-placeholder-count="3">
+          <a href="#" style="height: 28px; padding: 0 8px; display: flex; align-items: center; gap: 8px; border-radius: 6px; text-decoration: none"><svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.playlist}}"></path></svg>{{p.name}}</a>
+        </sc-for>
+        <span style="flex-grow: 1"></span>
+        <span style="padding: 8px; font-size: 11px; color: var(--text2)">Lendo de ~/Músicas · 1 284 faixas</span>
+      </nav>
+
+      <main style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column">
+        <div style="padding: 32px 32px 24px; display: flex; gap: 24px; align-items: flex-end">
+          <div role="img" aria-label="Capa: Gymnopédies e Gnossiennes" style="width: 168px; height: 168px; flex-shrink: 0; box-sizing: border-box; padding: 16px; border-radius: 8px; background: #2B2C2E; color: #EDEDEE; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 8px 24px rgba(0,0,0,0.18)">
+            <span style="font-size: 11px; color: #A6A6AB">Erik Satie</span>
+            <span style="font-size: 18px; font-weight: 600; line-height: 1.2">Gymnopédies<br>e Gnossiennes</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px; min-width: 0">
+            <span style="font-size: 12px; color: var(--text2)">Álbum</span>
+            <h1 style="margin: 0; font-size: 28px; font-weight: 600; line-height: 1.2">Gymnopédies e Gnossiennes</h1>
+            <span style="color: var(--icon)">Erik Satie · piano solo · 7 faixas, 22 min</span>
+            <span style="display: flex; gap: 8px; margin-top: 8px">
+              <button style="height: 32px; padding: 0 16px; display: flex; align-items: center; gap: 8px; border-radius: 6px; border: 1px solid #C8873A; background: #C8873A; color: #1A1A1B; font: inherit; font-weight: 500; cursor: pointer"><svg width="12" height="12" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.playFill}}"></path></svg>Tocar</button>
+              <button style="height: 32px; padding: 0 16px; display: flex; align-items: center; gap: 8px; border-radius: 6px; border: 1px solid var(--control); background: var(--surface); color: var(--text); font: inherit; cursor: pointer"><svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.shuffle}}"></path></svg>Aleatório</button>
+            </span>
+          </div>
+        </div>
+        <table style="margin: 0 32px; border-collapse: collapse">
+          <thead>
+            <tr style="height: 28px; text-align: left; font-size: 12px; color: var(--text2); border-bottom: 1px solid var(--sep)">
+              <th scope="col" style="width: 40px; font-weight: 500; text-align: right; padding-right: 16px">#</th>
+              <th scope="col" style="font-weight: 500">Título</th>
+              <th scope="col" style="width: 80px; font-weight: 500; text-align: right; padding-right: 8px"><svg width="14" height="14" viewBox="0 0 256 256" fill="currentColor" role="img" aria-label="Duração"><path d="{{i.clock}}"></path></svg></th>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{tracks}}" as="t" hint-placeholder-count="7">
+              <tr style="height: 36px; background: {{t.bg}}">
+                <td style="text-align: right; padding-right: 16px; color: {{t.numColor}}; font-variant-numeric: tabular-nums">
+                  <sc-if value="{{t.playing}}" hint-placeholder-val="{{ false }}"><svg width="12" height="12" viewBox="0 0 256 256" fill="#7A4E1D" role="img" aria-label="Tocando"><path d="{{i.speaker}}"></path></svg></sc-if>
+                  <sc-if value="{{t.idle}}" hint-placeholder-val="{{ true }}">{{t.n}}</sc-if>
+                </td>
+                <td style="font-weight: {{t.weight}}">{{t.title}}</td>
+                <td style="text-align: right; padding-right: 8px; color: var(--text2); font-variant-numeric: tabular-nums">{{t.time}}</td>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </main>
+    </div>
+
+    <footer style="height: 72px; flex-shrink: 0; box-sizing: border-box; padding: 0 24px; display: grid; grid-template-columns: 1fr 2fr 1fr; align-items: center; gap: 24px; border-top: 1px solid var(--sep); background: var(--chrome)">
+      <div style="display: flex; align-items: center; gap: 12px; min-width: 0">
+        <span style="width: 40px; height: 40px; flex-shrink: 0; border-radius: 4px; background: #2B2C2E"></span>
+        <span style="display: flex; flex-direction: column; min-width: 0"><span style="font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Gymnopédie n.º 1</span><span style="font-size: 12px; color: var(--text2)">Erik Satie</span></span>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 4px">
+        <span style="display: flex; align-items: center; gap: 8px">
+          <button aria-label="Aleatório" style="width: 32px; height: 32px; border: none; border-radius: 6px; background: transparent; color: var(--text2); display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.shuffle}}"></path></svg></button>
+          <button aria-label="Faixa anterior" style="width: 32px; height: 32px; border: none; border-radius: 6px; background: transparent; color: var(--text); display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.back}}"></path></svg></button>
+          <button aria-label="Pausar" style="width: 40px; height: 40px; border: none; border-radius: 50%; background: var(--text); color: var(--surface); display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.pause}}"></path></svg></button>
+          <button aria-label="Próxima faixa" style="width: 32px; height: 32px; border: none; border-radius: 6px; background: transparent; color: var(--text); display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.fwd}}"></path></svg></button>
+          <button aria-label="Repetir" style="width: 32px; height: 32px; border: none; border-radius: 6px; background: transparent; color: var(--text2); display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.repeat}}"></path></svg></button>
+        </span>
+        <span style="width: 100%; max-width: 480px; display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--text2); font-variant-numeric: tabular-nums">
+          1:12
+          <span role="slider" aria-label="Posição" aria-valuenow="39" aria-valuemin="0" aria-valuemax="100" style="flex-grow: 1; height: 4px; border-radius: 2px; background: var(--off); display: flex"><span style="width: 39%; border-radius: 2px; background: var(--text)"></span></span>
+          3:05
+        </span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: flex-end; gap: 8px; color: var(--text2)">
+        <svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.speaker}}"></path></svg>
+        <span role="slider" aria-label="Volume" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 96px; height: 4px; border-radius: 2px; background: var(--off); display: flex"><span style="width: 60%; border-radius: 2px; background: var(--text)"></span></span>
+      </div>
+    </footer>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"dark":{"editor":"boolean","default":false},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var i = {
+      search: 'M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z',
+      music: 'M212.92,17.69a8,8,0,0,0-6.86-1.45l-128,32A8,8,0,0,0,72,56V166.08A36,36,0,1,0,88,196V110.25l112-28v51.83A36,36,0,1,0,216,164V24A8,8,0,0,0,212.92,17.69ZM52,216a20,20,0,1,1,20-20A20,20,0,0,1,52,216ZM88,93.75V62.25l112-28v31.5ZM180,184a20,20,0,1,1,20-20A20,20,0,0,1,180,184Z',
+      vinyl: 'M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm0-144a56.06,56.06,0,0,0-56,56,8,8,0,0,1-16,0,72.08,72.08,0,0,1,72-72,8,8,0,0,1,0,16Zm72,56a72.08,72.08,0,0,1-72,72,8,8,0,0,1,0-16,56.06,56.06,0,0,0,56-56,8,8,0,0,1,16,0Zm-40,0a32,32,0,1,0-32,32A32,32,0,0,0,160,128Zm-48,0a16,16,0,1,1,16,16A16,16,0,0,1,112,128Z',
+      artist: 'M144,165.68a68,68,0,1,0-71.9,0c-20.65,6.76-39.23,19.39-54.17,37.17a8,8,0,0,0,12.25,10.3C50.25,189.19,77.91,176,108,176s57.75,13.19,77.88,37.15a8,8,0,1,0,12.25-10.3C183.18,185.07,164.6,172.44,144,165.68ZM56,108a52,52,0,1,1,52,52A52.06,52.06,0,0,1,56,108ZM207.36,65.6a108.36,108.36,0,0,1,0,84.8,8,8,0,0,1-7.36,4.86,8,8,0,0,1-7.36-11.15,92.26,92.26,0,0,0,0-72.22,8,8,0,0,1,14.72-6.29ZM248,108a139,139,0,0,1-11.29,55.15,8,8,0,0,1-14.7-6.3,124.43,124.43,0,0,0,0-97.7,8,8,0,1,1,14.7-6.3A139,139,0,0,1,248,108Z',
+      heart: 'M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40ZM128,214.8C109.74,204.16,32,155.69,32,102A46.06,46.06,0,0,1,78,56c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,155.61,146.24,204.15,128,214.8Z',
+      playlist: 'M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64Zm8,72H160a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16Zm72,48H40a8,8,0,0,0,0,16h72a8,8,0,0,0,0-16Zm135.66-57.7a8,8,0,0,1-10,5.36L208,122.75V192a32.05,32.05,0,1,1-16-27.69V112a8,8,0,0,1,10.3-7.66l40,12A8,8,0,0,1,247.66,126.3ZM192,192a16,16,0,1,0-16,16A16,16,0,0,0,192,192Z',
+      shuffle: 'M237.66,178.34a8,8,0,0,1,0,11.32l-24,24a8,8,0,0,1-11.32-11.32L212.69,192H200.94a72.12,72.12,0,0,1-58.59-30.15l-41.72-58.4A56.1,56.1,0,0,0,55.06,80H32a8,8,0,0,1,0-16H55.06a72.12,72.12,0,0,1,58.59,30.15l41.72,58.4A56.1,56.1,0,0,0,200.94,176h11.75l-10.35-10.34a8,8,0,0,1,11.32-11.32ZM143,107a8,8,0,0,0,11.16-1.86l1.2-1.67A56.1,56.1,0,0,1,200.94,80h11.75L202.34,90.34a8,8,0,0,0,11.32,11.32l24-24a8,8,0,0,0,0-11.32l-24-24a8,8,0,0,0-11.32,11.32L212.69,64H200.94a72.12,72.12,0,0,0-58.59,30.15l-1.2,1.67A8,8,0,0,0,143,107Zm-30,42a8,8,0,0,0-11.16,1.86l-1.2,1.67A56.1,56.1,0,0,1,55.06,176H32a8,8,0,0,0,0,16H55.06a72.12,72.12,0,0,0,58.59-30.15l1.2-1.67A8,8,0,0,0,113,149Z',
+      repeat: 'M24,128A72.08,72.08,0,0,1,96,56H204.69L194.34,45.66a8,8,0,0,1,11.32-11.32l24,24a8,8,0,0,1,0,11.32l-24,24a8,8,0,0,1-11.32-11.32L204.69,72H96a56.06,56.06,0,0,0-56,56,8,8,0,0,1-16,0Zm200-8a8,8,0,0,0-8,8,56.06,56.06,0,0,1-56,56H51.31l10.35-10.34a8,8,0,0,0-11.32-11.32l-24,24a8,8,0,0,0,0,11.32l24,24a8,8,0,0,0,11.32-11.32L51.31,200H160a72.08,72.08,0,0,0,72-72A8,8,0,0,0,224,120Z',
+      clock: 'M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z',
+      speaker: 'M163.51,24.81a8,8,0,0,0-8.42.88L85.25,80H40A16,16,0,0,0,24,96v64a16,16,0,0,0,16,16H85.25l69.84,54.31A8,8,0,0,0,168,224V32A8,8,0,0,0,163.51,24.81ZM152,207.64,92.91,161.69A7.94,7.94,0,0,0,88,160H40V96H88a7.94,7.94,0,0,0,4.91-1.69L152,48.36ZM208,104v48a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm32-16v80a8,8,0,0,1-16,0V88a8,8,0,0,1,16,0Z',
+      playFill: 'M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z',
+      pause: 'M216,48V208a16,16,0,0,1-16,16H160a16,16,0,0,1-16-16V48a16,16,0,0,1,16-16h40A16,16,0,0,1,216,48ZM96,32H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V48A16,16,0,0,0,96,32Z',
+      fwd: 'M208,40V216a8,8,0,0,1-16,0V146.77L72.43,221.55A15.95,15.95,0,0,1,48,208.12V47.88A15.95,15.95,0,0,1,72.43,34.45L192,109.230V40a8,8,0,0,1,16,0Z',
+      back: 'M208,47.88V208.12a16,16,0,0,1-24.43,13.43L64,146.77V216a8,8,0,0,1-16,0V40a8,8,0,0,1,16,0v69.23L183.57,34.45A15.95,15.95,0,0,1,208,47.88Z'
+    };
+    var lib = [['Músicas', i.music], ['Álbuns', i.vinyl, true], ['Artistas', i.artist], ['Favoritas', i.heart]]
+      .map(function (l) { return { name: l[0], icon: l[1], bg: l[2] ? 'rgba(200,135,58,0.22)' : 'transparent', weight: l[2] ? '500' : '400' }; });
+    var lists = [{ name: 'Estudar' }, { name: 'Caminhada' }, { name: 'Recentes' }];
+    var tracks = [['Gymnopédie n.º 1', '3:05'], ['Gymnopédie n.º 2', '2:40'], ['Gymnopédie n.º 3', '2:35'], ['Gnossienne n.º 1', '3:40'], ['Gnossienne n.º 2', '1:55'], ['Gnossienne n.º 3', '2:50'], ['Je te veux', '5:10']]
+      .map(function (t, k) { var p = k === 0; return { n: String(k + 1), title: t[0], time: t[1], playing: p, idle: !p, bg: p ? 'rgba(200,135,58,0.14)' : (k % 2 ? 'var(--stripe)' : 'var(--surface)'), weight: p ? '600' : '400', numColor: 'var(--text2)' }; });
+    return { themeClass: this.props.dark ? 'th-dark' : 'th-light',  i: i, lib: lib, lists: lists, tracks: tracks,
+      mark: 'M441,678 L421,699 L402,726 L391,748 L381,778 L381,786 L388,798 L405,822 L422,842 L448,867 L473,886 L503,904 L537,919 L571,929 L600,934 L654,935 L671,933 L671,929 L652,924 L620,910 L591,892 L571,876 L551,856 L533,832 L521,809 L513,784 L511,769 L511,752 L513,738 L521,712 L530,694 L541,677 L555,660 L576,640 L599,624 L600,619 L579,620 L552,624 L518,633 L500,640 L475,653 L461,662Z M580,346 L544,358 L525,367 L518,372 L598,413 L656,445 L722,486 L765,517 L784,574 L803,591 L813,598 L837,612 L866,624 L872,633 L880,652 L880,657 L872,685 L857,716 L832,734 L805,748 L802,747 L807,730 L807,716 L805,712 L784,702 L754,692 L729,686 L708,683 L663,684 L647,687 L627,694 L614,701 L599,712 L589,722 L579,735 L571,750 L565,769 L564,798 L571,822 L578,836 L594,858 L613,877 L639,896 L672,913 L691,920 L709,924 L729,917 L756,904 L776,892 L804,871 L830,846 L843,831 L858,811 L874,785 L893,743 L901,718 L909,680 L911,663 L912,631 L911,630 L910,604 L905,575 L898,549 L886,516 L864,474 L845,447 L827,426 L807,407 L784,389 L762,375 L730,359 L708,351 L685,345 L647,340 L622,340 L621,341 L601,342Z M341,408 L341,425 L344,441 L355,475 L367,498 L389,527 L368,562 L356,592 L349,620 L346,641 L345,669 L346,670 L346,686 L348,701 L353,723 L354,723 L354,716 L359,693 L369,667 L376,654 L397,624 L431,590 L445,579 L470,563 L498,550 L533,541 L551,539 L573,539 L546,528 L496,516 L458,504 L415,484 L388,466 L367,447 L351,427Z M428,303 L426,316 L426,346 L429,367 L439,397 L447,412 L459,428 L472,436 L483,439 L537,446 L573,455 L609,469 L623,476 L610,462 L591,447 L562,428 L512,399 L484,378 L459,353 L448,339 L435,318 L430,305Z' };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Instalador — disco</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=Michroma&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1A1A1A}a:hover{color:#000000}
+</style>
+</helmet>
+<div style="width: 1440px; height: 900px; display: flex; background: #FFFFFF; font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #1A1A1A">
+
+  <aside style="width: 280px; flex-shrink: 0; box-sizing: border-box; padding: 32px 24px; display: flex; flex-direction: column; gap: 40px; background: #F3F3F2; border-right: 1px solid #E2E2E3">
+    <div style="display: flex; flex-direction: column; gap: 4px">
+      <span style="display: flex; align-items: center; gap: 8px"><svg width="22" height="24" viewBox="337 299 579 640" aria-hidden="true"><path fill="#1A1A1A" fill-rule="evenodd" d="M441,678 L421,699 L402,726 L391,748 L381,778 L381,786 L388,798 L405,822 L422,842 L448,867 L473,886 L503,904 L537,919 L571,929 L600,934 L654,935 L671,933 L671,929 L652,924 L620,910 L591,892 L571,876 L551,856 L533,832 L521,809 L513,784 L511,769 L511,752 L513,738 L521,712 L530,694 L541,677 L555,660 L576,640 L599,624 L600,619 L579,620 L552,624 L518,633 L500,640 L475,653 L461,662Z M580,346 L544,358 L525,367 L518,372 L598,413 L656,445 L722,486 L765,517 L784,574 L803,591 L813,598 L837,612 L866,624 L872,633 L880,652 L880,657 L872,685 L857,716 L832,734 L805,748 L802,747 L807,730 L807,716 L805,712 L784,702 L754,692 L729,686 L708,683 L663,684 L647,687 L627,694 L614,701 L599,712 L589,722 L579,735 L571,750 L565,769 L564,798 L571,822 L578,836 L594,858 L613,877 L639,896 L672,913 L691,920 L709,924 L729,917 L756,904 L776,892 L804,871 L830,846 L843,831 L858,811 L874,785 L893,743 L901,718 L909,680 L911,663 L912,631 L911,630 L910,604 L905,575 L898,549 L886,516 L864,474 L845,447 L827,426 L807,407 L784,389 L762,375 L730,359 L708,351 L685,345 L647,340 L622,340 L621,341 L601,342Z M341,408 L341,425 L344,441 L355,475 L367,498 L389,527 L368,562 L356,592 L349,620 L346,641 L345,669 L346,670 L346,686 L348,701 L353,723 L354,723 L354,716 L359,693 L369,667 L376,654 L397,624 L431,590 L445,579 L470,563 L498,550 L533,541 L551,539 L573,539 L546,528 L496,516 L458,504 L415,484 L388,466 L367,447 L351,427Z M428,303 L426,316 L426,346 L429,367 L439,397 L447,412 L459,428 L472,436 L483,439 L537,446 L573,455 L609,469 L623,476 L610,462 L591,447 L562,428 L512,399 L484,378 L459,353 L448,339 L435,318 L430,305Z"></path></svg><span style="font-family: Michroma, sans-serif; font-size: 16px; letter-spacing: 0.06em">DRACONIC</span></span>
+      <span style="font-size: 13px; color: #55555A">Instalador</span>
+    </div>
+    <ol aria-label="Etapas" style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px">
+      <sc-for list="{{steps}}" as="s" hint-placeholder-count="4">
+        <li style="height: 40px; padding: 0 10px; display: flex; align-items: center; gap: 12px; border-radius: 6px; background: {{s.bg}}; font-size: 13px; font-weight: {{s.weight}}; color: {{s.color}}">
+          <span style="width: 22px; height: 22px; box-sizing: border-box; border-radius: 50%; border: 1.5px solid {{s.ring}}; background: {{s.fill}}; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: {{s.numColor}}">{{s.mark}}</span>{{s.name}}
+        </li>
+      </sc-for>
+    </ol>
+    <div style="flex-grow: 1"></div>
+    <a href="#" style="font-size: 13px">Acessibilidade…</a>
+  </aside>
+
+  <div style="flex-grow: 1; display: flex; flex-direction: column; min-width: 0">
+    <main style="flex-grow: 1; box-sizing: border-box; padding: 64px 80px 32px; display: flex; flex-direction: column; gap: 28px">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <h1 style="margin: 0; font-family: Michroma, sans-serif; font-weight: 400; font-size: 28px; line-height: 1.3">Disco</h1>
+        <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #55555A; max-width: 620px">Escolha onde o Draconic vai ficar. Revise o resumo abaixo: é a última etapa antes de qualquer coisa ser gravada.</p>
+      </div>
+
+      <div style="display: flex; gap: 48px; align-items: flex-start">
+        <div style="flex-grow: 1; min-width: 0; max-width: 620px; display: flex; flex-direction: column; gap: 28px">
+          <section style="display: flex; flex-direction: column; gap: 8px">
+            <h2 style="margin: 0; font-size: 15px; font-weight: 600">Disco de destino</h2>
+            <table style="border-collapse: collapse; font-size: 13px; border: 1px solid #D6D6D8; border-radius: 8px; overflow: hidden">
+              <thead>
+                <tr style="height: 32px; background: #F6F6F5; color: #55555A; font-size: 12px; text-align: left">
+                  <th scope="col" style="width: 40px"></th>
+                  <th scope="col" style="font-weight: 500">Nome</th>
+                  <th scope="col" style="font-weight: 500; text-align: right">Tamanho</th>
+                  <th scope="col" style="font-weight: 500; text-align: right; padding-right: 16px">Livre</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="height: 44px; background: {{tint}}; border-top: 1px solid #E2E2E3">
+                  <td style="text-align: center"><input type="radio" name="disco" checked aria-label="SSD NVMe Kingston" style="accent-color: #1A1A1A"></td>
+                  <td>SSD NVMe Kingston <span style="color: #55555A">· nvme0n1</span></td>
+                  <td style="text-align: right; font-variant-numeric: tabular-nums">256 GB</td>
+                  <td style="text-align: right; padding-right: 16px; font-variant-numeric: tabular-nums">38 GB</td>
+                </tr>
+                <tr style="height: 44px; border-top: 1px solid #E2E2E3">
+                  <td style="text-align: center"><input type="radio" name="disco" aria-label="Pendrive SanDisk" style="accent-color: #1A1A1A"></td>
+                  <td>Pendrive SanDisk <span style="color: #55555A">· sda · mídia de instalação</span></td>
+                  <td style="text-align: right; font-variant-numeric: tabular-nums">32 GB</td>
+                  <td style="text-align: right; padding-right: 16px; color: #55555A">—</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section style="display: flex; flex-direction: column; gap: 8px">
+            <h2 style="margin: 0; font-size: 15px; font-weight: 600">Como usar o disco</h2>
+            <div role="radiogroup" aria-label="Como usar o disco" style="display: flex; flex-direction: column; gap: 8px">
+              <label style="display: flex; gap: 8px; align-items: flex-start; font-size: 13px; cursor: pointer"><input type="radio" name="uso" checked style="margin: 3px 0 0; accent-color: #1A1A1A"><span><span style="font-weight: 500">Apagar o disco e instalar</span><br><span style="font-size: 13px; color: #55555A">O Windows e os arquivos atuais deste disco serão removidos.</span></span></label>
+              <label style="display: flex; gap: 8px; align-items: flex-start; font-size: 13px; cursor: pointer"><input type="radio" name="uso" style="margin: 3px 0 0; accent-color: #1A1A1A"><span><span style="font-weight: 500">Instalar ao lado do Windows</span><br><span style="font-size: 13px; color: #55555A">Usa os 38 GB livres. Você escolhe o sistema ao ligar.</span></span></label>
+              <label style="display: flex; gap: 8px; align-items: flex-start; font-size: 13px; cursor: pointer"><input type="radio" name="uso" style="margin: 3px 0 0; accent-color: #1A1A1A"><span><span style="font-weight: 500">Configurar partições manualmente…</span></span></label>
+            </div>
+          </section>
+
+          <section style="display: flex; flex-direction: column; gap: 8px">
+            <label style="display: flex; gap: 8px; align-items: center; font-size: 13px; font-weight: 500; cursor: pointer"><input type="checkbox" checked style="margin: 0; accent-color: #1A1A1A">Criptografar o disco</label>
+            <div style="display: flex; gap: 12px; padding-left: 24px">
+              <label style="flex: 1 1 0; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; color: #55555A">Senha de criptografia</span><input type="password" value="••••••••••" style="height: 34px; box-sizing: border-box; padding: 0 10px; border: 1px solid #B8B8BC; border-radius: 6px; font: inherit; font-size: 13px"></label>
+              <label style="flex: 1 1 0; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; color: #55555A">Confirmar senha</span><input type="password" value="••••••••••" style="height: 34px; box-sizing: border-box; padding: 0 10px; border: 1px solid #B8B8BC; border-radius: 6px; font: inherit; font-size: 13px"></label>
+            </div>
+            <span style="padding-left: 24px; font-size: 13px; color: #55555A">Sem essa senha não dá para recuperar os arquivos. Anote em um lugar seguro.</span>
+          </section>
+        </div>
+
+        <section aria-label="Resumo" style="width: 300px; flex-shrink: 0; box-sizing: border-box; padding: 24px; display: flex; flex-direction: column; gap: 14px; background: #F6F6F5; border: 1px solid #E2E2E3; border-radius: 10px">
+          <h2 style="margin: 0; font-size: 15px; font-weight: 600">O que vai acontecer</h2>
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 12px; color: #55555A">Antes</span>
+            <div style="display: flex; height: 14px; gap: 2px"><span style="flex: 218 1 0; background: #8E8E92; border-radius: 3px 0 0 3px"></span><span style="flex: 38 1 0; background: #FFFFFF; border: 1px solid #B8B8BC; border-radius: 0 3px 3px 0"></span></div>
+            <span style="font-size: 12px; color: #55555A">Depois</span>
+            <div style="display: flex; height: 14px; gap: 2px"><span style="flex: 1 1 0; background: #1A1A1A; border-radius: 3px"></span></div>
+          </div>
+          <ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 1.45">
+            <li>Todas as partições de nvme0n1 serão apagadas.</li>
+            <li>Draconic usará os 256 GB, com sistema de arquivos Btrfs.</li>
+            <li>O disco será criptografado (LUKS2).</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer style="height: 72px; flex-shrink: 0; box-sizing: border-box; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #E2E2E3">
+      <button aria-label="Ajuda" style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid #B8B8BC; background: #FFFFFF; font: inherit; font-size: 13px; font-weight: 600; color: #1A1A1A; cursor: pointer">?</button>
+      <div style="display: flex; gap: 8px">
+        <a href="Instalador-02.dc.html" style="height: 40px; padding: 0 16px; display: flex; align-items: center; border: 1px solid #B8B8BC; border-radius: 6px; font-size: 13px; text-decoration: none">Voltar</a>
+        <a href="Instalador-04.dc.html" style="height: 40px; padding: 0 16px; display: flex; align-items: center; background: #FFFFFF; border: 1px solid #B8B8BC; color: #B3261E; border-radius: 6px; font-size: 13px; font-weight: 500; text-decoration: none">Apagar disco e instalar</a>
+      </div>
+    </footer>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var active = 2;
+    var names = ['Boas-vindas', 'Idioma e teclado', 'Disco', 'Instalação'];
+    var steps = names.map(function (n, i) {
+      var done = i < active, cur = i === active;
+      return {
+        name: n, mark: done ? '✓' : String(i + 1),
+        bg: cur ? '#E4E4E5' : 'transparent', weight: cur ? '600' : '400', color: (done || cur) ? '#1A1A1A' : '#55555A',
+        ring: (done || cur) ? '#1A1A1A' : '#A3A3A6', fill: done ? '#1A1A1A' : 'transparent', numColor: done ? '#FFFFFF' : (cur ? '#1A1A1A' : '#55555A')
+      };
+    });
+    return { steps: steps, tint: 'rgba(200,135,58,0.14)' };
+  }
+}
+</script>
+</body>
+</html>

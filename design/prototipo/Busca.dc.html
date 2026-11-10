@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Draconic — Busca</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.launcher{background:rgba(248,248,248,0.78);backdrop-filter:blur(28px) saturate(170%);-webkit-backdrop-filter:blur(28px) saturate(170%);border:1px solid rgba(255,255,255,0.7);box-shadow:inset 0 1px 0 rgba(255,255,255,0.9), 0 24px 64px rgba(0,0,0,0.28), 0 0 0 0.5px rgba(0,0,0,0.12)}
+.th-light{--wall:#B7B9BC;--menubar:#F3F3F2;--menuline:#CFCFD1;--text:#1A1A1A;--surface:#FFFFFF;--winborder:#C4C4C7;--window:#F6F6F5;--sep:#E2E2E3;--sep2:#ECECED;--text2:#55555A;--hair:rgba(0,0,0,0.08)}
+.th-dark{--wall:#3A3B3D;--menubar:#262628;--menuline:#38383B;--text:#EDEDED;--surface:#2A2A2C;--winborder:#4A4A4E;--window:#1E1E1F;--sep:#38383B;--sep2:#333336;--text2:#A6A6AB;--hair:rgba(255,255,255,0.1)}
+.th-dark .launcher{background:rgba(40,40,42,0.78);border-color:rgba(255,255,255,0.12);box-shadow:inset 0 1px 0 rgba(255,255,255,0.08), 0 24px 64px rgba(0,0,0,0.5)}
+</style>
+</helmet>
+<div class="{{themeClass}}" style="position: relative; width: 1440px; height: 900px; overflow: hidden; background: var(--wall); font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 13px; color: var(--text)">
+
+  <header style="position: absolute; top: 0; left: 0; right: 0; height: 28px; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; background: var(--menubar); border-bottom: 1px solid var(--menuline)">
+    <nav aria-label="Menu do aplicativo" style="display: flex; align-items: center; gap: 16px">
+      <button aria-label="Menu do sistema" style="width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; background: transparent; border: none; padding: 0; cursor: pointer">
+        <svg width="14" height="16" viewBox="337 299 579 640" aria-hidden="true"><path fill="var(--text)" fill-rule="evenodd" d="M441,678 L421,699 L402,726 L391,748 L381,778 L381,786 L388,798 L405,822 L422,842 L448,867 L473,886 L503,904 L537,919 L571,929 L600,934 L654,935 L671,933 L671,929 L652,924 L620,910 L591,892 L571,876 L551,856 L533,832 L521,809 L513,784 L511,769 L511,752 L513,738 L521,712 L530,694 L541,677 L555,660 L576,640 L599,624 L600,619 L579,620 L552,624 L518,633 L500,640 L475,653 L461,662Z M580,346 L544,358 L525,367 L518,372 L598,413 L656,445 L722,486 L765,517 L784,574 L803,591 L813,598 L837,612 L866,624 L872,633 L880,652 L880,657 L872,685 L857,716 L832,734 L805,748 L802,747 L807,730 L807,716 L805,712 L784,702 L754,692 L729,686 L708,683 L663,684 L647,687 L627,694 L614,701 L599,712 L589,722 L579,735 L571,750 L565,769 L564,798 L571,822 L578,836 L594,858 L613,877 L639,896 L672,913 L691,920 L709,924 L729,917 L756,904 L776,892 L804,871 L830,846 L843,831 L858,811 L874,785 L893,743 L901,718 L909,680 L911,663 L912,631 L911,630 L910,604 L905,575 L898,549 L886,516 L864,474 L845,447 L827,426 L807,407 L784,389 L762,375 L730,359 L708,351 L685,345 L647,340 L622,340 L621,341 L601,342Z M341,408 L341,425 L344,441 L355,475 L367,498 L389,527 L368,562 L356,592 L349,620 L346,641 L345,669 L346,670 L346,686 L348,701 L353,723 L354,723 L354,716 L359,693 L369,667 L376,654 L397,624 L431,590 L445,579 L470,563 L498,550 L533,541 L551,539 L573,539 L546,528 L496,516 L458,504 L415,484 L388,466 L367,447 L351,427Z M428,303 L426,316 L426,346 L429,367 L439,397 L447,412 L459,428 L472,436 L483,439 L537,446 L573,455 L609,469 L623,476 L610,462 L591,447 L562,428 L512,399 L484,378 L459,353 L448,339 L435,318 L430,305Z"></path></svg>
+      </button>
+      <span style="font-weight: 600">Arquivos</span><span>Arquivo</span><span>Editar</span><span>Ver</span><span>Janela</span><span>Ajuda</span>
+    </nav>
+    <span>Seg 9 nov  21:20</span>
+  </header>
+
+  <div aria-hidden="true" style="position: absolute; left: 72px; top: 64px; width: 880px; height: 560px; background: var(--surface); border: 1px solid var(--winborder); border-radius: 12px; box-shadow: 0 10px 28px rgba(0,0,0,0.14)">
+    <div style="height: 44px; background: var(--window); border-bottom: 1px solid var(--sep); border-radius: 12px 12px 0 0"></div>
+    <div style="position: absolute; left: 0; top: 44px; bottom: 0; width: 196px; background: var(--window); border-right: 1px solid var(--sep); border-radius: 0 0 0 12px"></div>
+    <div style="position: absolute; left: 220px; right: 24px; top: 72px; display: flex; flex-direction: column; gap: 16px">
+      <span style="height: 8px; width: 60%; border-radius: 4px; background: var(--sep2)"></span><span style="height: 8px; width: 48%; border-radius: 4px; background: var(--sep2)"></span><span style="height: 8px; width: 54%; border-radius: 4px; background: var(--sep2)"></span><span style="height: 8px; width: 40%; border-radius: 4px; background: var(--sep2)"></span>
+    </div>
+  </div>
+
+  <section role="dialog" aria-label="Busca" class="launcher" style="position: absolute; left: 50%; top: 168px; transform: translateX(-50%); width: 680px; border-radius: 16px; overflow: hidden">
+    <div style="height: 56px; box-sizing: border-box; padding: 0 16px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--hair)">
+      <svg width="22" height="22" viewBox="0 0 256 256" fill="var(--text2)" aria-hidden="true"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+      <input aria-label="Buscar apps, arquivos e ajustes" value="conf" style="flex-grow: 1; border: none; outline: none; background: transparent; font: inherit; font-size: 22px; color: var(--text)">
+      <span style="font-size: 12px; color: var(--text2)">5 resultados</span>
+    </div>
+    <div role="listbox" aria-label="Resultados" style="padding: 8px; display: flex; flex-direction: column; gap: 4px">
+      <sc-for list="{{groups}}" as="g" hint-placeholder-count="3">
+        <div style="display: flex; flex-direction: column">
+          <span style="padding: 8px 8px 4px; font-size: 12px; font-weight: 500; color: var(--text2)">{{g.title}}</span>
+          <sc-for list="{{g.items}}" as="i" hint-placeholder-count="2">
+            <div role="option" aria-selected="{{i.sel}}" style="height: 40px; padding: 0 8px; display: flex; align-items: center; gap: 12px; border-radius: 8px; background: {{i.bg}}">
+              <span style="width: 28px; height: 28px; flex-shrink: 0; border-radius: 6px; background: {{i.tileBg}}; border: 1px solid var(--hair); display: flex; align-items: center; justify-content: center; color: var(--text)">
+                <svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="{{i.icon}}"></path></svg>
+              </span>
+              <span style="flex-grow: 1; display: flex; flex-direction: column; min-width: 0">
+                <span style="font-size: 13px; font-weight: {{i.weight}}"><span>{{i.pre}}</span><strong style="font-weight: 600">{{i.match}}</strong><span>{{i.post}}</span></span>
+                <span style="font-size: 11px; color: var(--text2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{i.sub}}</span>
+              </span>
+              <span style="font-size: 12px; color: var(--text2)">{{i.hint}}</span>
+            </div>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+    <footer style="height: 36px; box-sizing: border-box; padding: 0 16px; display: flex; align-items: center; gap: 24px; border-top: 1px solid var(--hair); font-size: 12px; color: var(--text2)">
+      <span><kbd style="font-family: inherit; font-weight: 500; color: var(--text)">Enter</kbd> abrir</span>
+      <span><kbd style="font-family: inherit; font-weight: 500; color: var(--text)">Meta+Enter</kbd> mostrar na pasta</span>
+      <span><kbd style="font-family: inherit; font-weight: 500; color: var(--text)">↑ ↓</kbd> navegar</span>
+      <span style="margin-left: auto"><kbd style="font-family: inherit; font-weight: 500; color: var(--text)">Esc</kbd> fechar</span>
+    </footer>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"dark":{"editor":"boolean","default":false},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var gear = 'M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.21,107.21,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3-3L186,40.54a8,8,0,0,0-3.94-6,107.71,107.71,0,0,0-26.25-10.87,8,8,0,0,0-7.06,1.49L130.16,40Q128,40,125.84,40L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27q-1.56,1.49-3,3L40.54,70a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L40,125.84Q40,128,40,130.16L25.11,148.8a8,8,0,0,0-1.48,7.06,107.21,107.21,0,0,0,10.88,26.25,8,8,0,0,0,6,3.930l23.72,2.64q1.49,1.56,3,3L70,215.46a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87,8,8,0,0,0,7.06-1.49L125.84,216q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3-3L215.46,186a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25,8,8,0,0,0-1.49-7.06Zm-16.1-6.5a73.930,73.930,0,0,1,0,8.68,8,8,0,0,0,1.74,5.48l14.19,17.73a91.57,91.57,0,0,1-6.23,15L187,173.11a8,8,0,0,0-5.1,2.64,74.11,74.11,0,0,1-6.14,6.14,8,8,0,0,0-2.64,5.1l-2.51,22.58a91.32,91.32,0,0,1-15,6.23l-17.74-14.19a8,8,0,0,0-5-1.75h-.48a73.93,73.93,0,0,1-8.68,0,8,8,0,0,0-5.48,1.74L100.45,215.8a91.57,91.57,0,0,1-15-6.23L82.89,187a8,8,0,0,0-2.64-5.1,74.11,74.11,0,0,1-6.14-6.14,8,8,0,0,0-5.1-2.64L46.43,170.6a91.32,91.32,0,0,1-6.23-15l14.19-17.74a8,8,0,0,0,1.74-5.48,73.93,73.93,0,0,1,0-8.68,8,8,0,0,0-1.74-5.48L40.2,100.45a91.57,91.57,0,0,1,6.23-15L69,82.89a8,8,0,0,0,5.1-2.64,74.11,74.11,0,0,1,6.14-6.14A8,8,0,0,0,82.89,69L85.4,46.43a91.32,91.32,0,0,1,15-6.23l17.74,14.19a8,8,0,0,0,5.48,1.74,73.93,73.93,0,0,1,8.68,0,8,8,0,0,0,5.48-1.74L155.55,40.2a91.57,91.57,0,0,1,15,6.23L173.11,69a8,8,0,0,0,2.64,5.1,74.11,74.11,0,0,1,6.14,6.14,8,8,0,0,0,5.1,2.64l22.58,2.51a91.32,91.32,0,0,1,6.23,15l-14.19,17.74A8,8,0,0,0,199.870,123.66Z';
+    var keyboard = 'M224,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48Zm0,144H32V64H224V192Zm-16-64a8,8,0,0,1-8,8H56a8,8,0,0,1,0-16H200A8,8,0,0,1,208,128Zm0-32a8,8,0,0,1-8,8H56a8,8,0,0,1,0-16H200A8,8,0,0,1,208,96ZM72,160a8,8,0,0,1-8,8H56a8,8,0,0,1,0-16h8A8,8,0,0,1,72,160Zm96,0a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,160Zm40,0a8,8,0,0,1-8,8h-8a8,8,0,0,1,0-16h8A8,8,0,0,1,208,160Z';
+    var monitor = 'M208,40H48A24,24,0,0,0,24,64V176a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V64A24,24,0,0,0,208,40Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V64a8,8,0,0,1,8-8H208a8,8,0,0,1,8,8Zm-48,48a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,224Z';
+    var file = 'M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z';
+    var sel = 'rgba(200,135,58,0.22)';
+    var item = function (o) { return Object.assign({ sel: 'false', bg: 'transparent', tileBg: 'var(--surface)', weight: '400', hint: '', pre: '', post: '' }, o); };
+    var groups = [
+      { title: 'Aplicativos', items: [item({ icon: gear, match: 'Conf', post: 'igurações', sub: 'Aplicativo do sistema', sel: 'true', bg: sel, hint: 'Enter' })] },
+      { title: 'Ajustes', items: [
+        item({ icon: keyboard, pre: 'Teclado › Atalhos › ', match: 'Conf', post: 'igurar atalho…', sub: 'Configurações' }),
+        item({ icon: monitor, pre: 'Tela › ', match: 'Conf', post: 'iguração de vários monitores', sub: 'Configurações' })
+      ] },
+      { title: 'Arquivos', items: [
+        item({ icon: file, pre: 'Relatório de ', match: 'conf', post: 'erência — física.pdf', sub: 'Documentos › Escola · ontem', hint: '1,2 MB' }),
+        item({ icon: file, match: 'conf', post: 'ig-plasma.md', sub: 'Projetos › draconic · 3 nov', hint: '4 KB' })
+      ] }
+    ];
+    return { themeClass: this.props.dark ? 'th-dark' : 'th-light', groups: groups };
+  }
+}
+</script>
+</body>
+</html>
