@@ -24,6 +24,7 @@ A qualidade visual sai de poucas regras aplicadas sempre, não de enfeite. Nenhu
 | `fill` | `#E9E9EA` | `#333336` | controles segmentados, trilhos |
 | `border.separator` | `#E2E2E3` | `#38383B` | divisões |
 | `border.window` | `#C4C4C7` | `#4A4A4E` | borda de janela |
+| `border.menubar` | `#CFCFD1` | `#38383B` | linha embaixo da barra superior |
 | `control.border` | `#B8B8BC` | `#55555A` | borda de campos e botões |
 | `accent` | `#C8873A` | `#D99A4E` | botão principal, seleção, foco, prompt do terminal |
 | `on-accent` | `#1A1A1A` | `#1A1A1A` | texto sobre o destaque |
@@ -91,6 +92,7 @@ Todo controle tem os estados desenhados: normal, hover, pressionado, foco, desab
 Todo efeito responde "o que esta camada significa?".
 
 - **Vidro** (desfoque + transparência): só no que flutua sobre as janelas — dock, Busca, central de controle, menus e notificações. Nunca vidro sobre vidro. Barra superior e janelas são sólidas.
+  - Dock (valores de `design/prototipo/Main.dc.html`): fundo `#F4F4F5` a 55% (claro) / `#28282A` a 60% (escuro), contorno de 1 px branco a 70% (claro) / 12% (escuro), cantos de 16 px, margem de 8 px até a borda da tela, botões de 48×52 px com ícone de 28 px.
 - **Sombra**: janela acima de janela. Janela ativa com sombra maior que a inativa.
 - **Escurecimento (scrim)**: só quando a atenção está bloqueada (diálogo sobre uma janela, visão geral).
 - "Reduzir transparência" troca todo vidro por cor sólida.
