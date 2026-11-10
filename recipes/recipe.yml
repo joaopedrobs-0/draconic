@@ -1,0 +1,29 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# Receita da imagem do Draconic.
+# A imagem é publicada em ghcr.io/joaopedrobs-0/draconic
+name: draconic
+description: Draconic — sistema operacional baseado no Fedora Kinoite (KDE Plasma 6).
+
+# Base: a imagem oficial do Fedora Kinoite.
+# A versão fica fixa para nunca pular de Fedora sem querer.
+# Para subir de versão (ex.: 46), troque o número aqui e teste na VM.
+base-image: quay.io/fedora/fedora-kinoite
+image-version: 45
+
+# Passos executados em ordem durante a construção.
+modules:
+  # Copia tudo de files/system/ para a raiz (/) da imagem.
+  - type: files
+    files:
+      - source: system
+        destination: /
+
+  # Identidade do sistema: nome "Draconic" no os-release.
+  - type: script
+    scripts:
+      - os-release.sh
+
+  # Instala as políticas que permitem verificar a assinatura da imagem
+  # (necessário para o rebase com ostree-image-signed).
+  - type: signing
